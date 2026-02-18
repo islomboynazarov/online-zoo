@@ -7,20 +7,31 @@
 
 @font-face {
   font-family: 'Montserrat';
-  src: url('../../assets/fonts/montserrat/Montserrat-SemiBold.woff2') format('woff2');
+  src: url('../../assets/fonts/Montserrat/Montserrat-SemiBold.woff2') format('woff2');
   font-weight: 600;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Roboto';
-  src: url('../../assets/fonts/roboto/Roboto-Regular.woff2') format('woff2');
+  src: url('../../assets/fonts/Roboto/RobotoCondensed-Medium.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../../assets/fonts/Roboto/RobotoCondensed-Black.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
 .container {
-  width: 100%;
-  max-width: 1160px;
+  max-width: 1400px;
   margin: 0 auto;
 }

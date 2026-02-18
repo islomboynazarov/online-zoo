@@ -1,0 +1,86 @@
+
+
+.footer {
+  background: #20113D;
+  color: #fff;
+  padding: 60px 0;
+}
+
+.footer__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+}
+
+.footer__logo a {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer__list li {
+  margin-bottom: 10px;
+}
+
+.footer__list a {
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  transition: 0.3s;
+}
+
+.footer__list a:hover {
+  color: #f58021;
+}
+
+.footer_donate {
+  display: flex;
+  justify-content: center;
+}
+
+.btn_icon {
+  width: 1.5em;
+  height: 1.5em;
+  margin-left: 8px;
+  color:#fff;
+}
+
+.donate__btn {
+  background: #20113D;
+  border: solid 1px #fff;
+  border-radius: 2%;
+  padding: 12px 24px;
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.donate__btn:hover {
+  background: #20113D;
+}
+
+
+.footer__socials {
+  display: flex;
+  gap: 20px;
+}
+
+.footer__socials img {
+  width: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.footer__socials img:hover {
+  opacity: 0.6;
+}
