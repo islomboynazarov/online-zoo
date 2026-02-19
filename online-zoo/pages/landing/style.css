@@ -1,5 +1,70 @@
-.main {
-    width: 1400px;
-    margin: 0 auto;
-    background-color: grey;
+
+ .hero {
+  background: url("../../assets/images/animals/landinPage_panda.png") center/cover no-repeat;
+  min-height: 750px;
+ 
 }
+
+.hero__container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  padding: 0;
+  height: 750px
+}
+
+.hero__title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 6rem;
+  font-weight: 700;
+  color: #00A092;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  max-width: 900px;
+  margin: 0;
+}
+
+.section1__paragraph {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: #000;
+  max-width: 450px;
+  margin: 0;
+}
+
+.hero__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 2rem;
+  margin: 0;
+  background-color: #F58021;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hero__btn h5 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: lighter;
+  color: #fff; 
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-right: 10px;
+}
+
+.hero__btn:hover {
+  background-color: #D26004;
+  color: #fff;
+}
+
+.arrow-icon {
+  width: 1.5rem;
+  height: auto;
+  stroke: currentColor;
+}
+
