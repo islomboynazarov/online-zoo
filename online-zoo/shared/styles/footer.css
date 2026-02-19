@@ -3,32 +3,32 @@
 .footer {
   background: #20113D;
   color: #fff;
-  padding: 60px 0;
+  padding: 25px 0;
 }
 
-.footer__container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+
+.footer_top {
+  display: flex;
   align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+.footer__logo {
+  display: flex;
   gap: 40px;
 }
 
-.footer__logo a {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 22px;
-  font-weight: 700;
-  color: #fff;
-  text-decoration: none;
+.footer__logo img {
+  width: 100%;
+  max-width: 138px;
+  height: auto;
+  
 }
 
 .footer__list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.footer__list li {
-  margin-bottom: 10px;
+  display: flex;
+  gap: 40px;
 }
 
 .footer__list a {
@@ -36,39 +36,67 @@
   text-decoration: none;
   font-family: 'Montserrat', sans-serif;
   transition: 0.3s;
+  text-transform: uppercase;
 }
 
 .footer__list a:hover {
   color: #f58021;
 }
 
-.footer_donate {
-  display: flex;
-  justify-content: center;
-}
-
-.btn_icon {
-  width: 1.5em;
-  height: 1.5em;
-  margin-left: 8px;
-  color:#fff;
-}
-
 .donate__btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 30px;
   background: #20113D;
   border: solid 1px #fff;
-  border-radius: 2%;
-  padding: 12px 24px;
+  border-radius: 5%;
   font-family: 'Montserrat', sans-serif;
   color: #fff;
+  font-size: 1rem;
   cursor: pointer;
   transition: 0.3s;
 }
 
-.donate__btn:hover {
-  background: #20113D;
+.arrow {
+ font-size: 2em;
+ display: inline-block;
+ top: -5px;
 }
 
+.donate__btn:hover {
+  color: #20113D;
+}
+
+.footer__divider {
+  border: none;
+  border-top: 1px solid #fff;
+  margin: 40px 0;
+}
+
+/* From here bottom level starts */
+
+.footer__copyright ul {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.footer__copyright ul li {
+  font-family: 'Montserrat', sans-serif;
+  list-style: none;
+  font-size: 14px;
+  color: #fff;
+}
 
 .footer__socials {
   display: flex;
@@ -76,7 +104,8 @@
 }
 
 .footer__socials img {
-  width: 20px;
+  width: 2rem;
+  height: 2rem;
   cursor: pointer;
   transition: 0.3s;
 }
@@ -84,3 +113,18 @@
 .footer__socials img:hover {
   opacity: 0.6;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
