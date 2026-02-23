@@ -1,4 +1,3 @@
-/* ===== HERO ===== */
 
 .contact-hero img {
   width: 100%;
@@ -8,9 +7,6 @@
   background: #FFFFFF;
 }
 
-
-
-/* ===== CONTACT SECTION ===== */
 
 .contact {
   background: #FFFFFF;
@@ -25,7 +21,6 @@
   align-items: flex-start;
 }
 
-/* LEFT SIDE */
 
 .contact__info {
   flex: 1;
@@ -47,7 +42,6 @@
 
 }
 
-/* RIGHT SIDE */
 
 .contact__form {
   flex: 1;
@@ -79,7 +73,6 @@
   resize: vertical;
 }
 
-/* BUTTON */
 
 .btn-submit {
   margin-top: 10px;
