@@ -301,8 +301,8 @@ border: 4px solid #D26004;
 .arrow {
   background: none;
   border: none;
-  font-size: 2rem;
-  font-weight: bold;
+  font-size: 4rem;
+  font-weight: normal;
   cursor: pointer;
 }
 
