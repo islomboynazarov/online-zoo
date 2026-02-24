@@ -264,21 +264,7 @@
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
-/*
-.live__thumbnails {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  margin-bottom: 100px;
-}
 
-.thumb {
-  position: relative;
-  width: 300px;
-  cursor: pointer;
-}
-*/
 .thumb img {
   width: 100%;
   border-radius: 6px;
@@ -345,9 +331,10 @@ border: 4px solid #D26004;
 }
 
 .donation__title {
-  width: 800px;
-  padding: 2rem;
+ width: 800px;
   line-height: 1.5em;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .donation__title h1 {
@@ -425,7 +412,11 @@ border: 4px solid #D26004;
   justify-content: center;
   transition: background 0.2s;
 }
-.btn-split:hover .btn-split__arrow { background: #D26004; }
+.btn-split:hover .btn-split__arrow { 
+  background: #D26004;
+  transform: scale(0.90);
+  transition: transform 0.1s;
+ }
 
 
 /* Mini Panda info sectionis here starts */

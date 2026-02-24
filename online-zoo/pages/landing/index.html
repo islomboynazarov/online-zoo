@@ -90,7 +90,7 @@
   </section>
 
   <section class="donation__container">
-    <div class="container donation__purple">
+    <!-- <div class="container donation__purple">
         <div class="donation__title">
             <h1>Your donation makes a difference</h1>
             <p class="donation__paragraph">The Online Zoo's animal webcams are some of the most famous on the internet. Tune in to watch your favourite animals — live, 24/7!</p>
@@ -108,29 +108,56 @@
                 </a>
             </button>
         </div>
-    </div>
+    </div> -->
+    <div class="container donation__purple">
+          
+          <div class="donation__title">
+              <h1>Your donation makes a difference! </h1>
+              <p class="donation__paragraph">The Online Zoo's animal webcams are some of the most famous on the internet. Tune in to watch your favourite animals — live, 24/7!</p>
+          </div>
+
+          <div class="donation__form">
+              <h2>Quick Donate</h2>
+               <button class="btn-split">
+                  <span class="btn-split__text">$ Donation Amount</span>
+                  <span class="btn-split__arrow">
+                    <svg class="btn-arrow" viewBox="0 0 24 24" fill="none"><line x1="2" y1="12" x2="19" y2="12" stroke="white" stroke-width="2.5" stroke-linecap="round"/><polyline points="13,5 21,12 13,19" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </span>
+                </button>
+          </div>
+
+     </div>
   </section>
 
   <section class="pets">
     <div class="container">
 
-    <div class="pets__header">
-      <h2 class="pets__title">Meet Some Our Pets</h2>
-      <p class="pets__text">
-        Do you have a special place in your heart for animals? Who are your favorites?
-        Perhaps you'd like to donate to special ones or all our pets?
-        We think it's important for you to choose how your donation is used.
-      </p>
-
-      <div class="pets__controls">
-        <button class="pets__arrow">&#8592;</button>
-        <button class="pets__arrow">&#8594;</button>
+      <div class="pets__header">
+        <h2 class="pets__title">Meet Some Our Pets</h2>
+        <p class="pets__text">
+          Do you have a special place in your heart for animals? Who are your favorites?
+          Perhaps you'd like to donate to special ones or all our pets?
+          We think it's important for you to choose how your donation is used.
+        </p>
       </div>
+    <div class="pets__slider">
+        <div class="pets__controls">
+              <svg id="petsPrev" style="transform: rotate(180deg)" class="pets__arrow" viewBox="0 0 24 24" fill="none">
+                <line x1="2" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                <polyline points="13,5 21,12 13,19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+
+              <svg id="petsNext" class="pets__arrow" viewBox="0 0 24 24" fill="none">
+                <line x1="2" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                <polyline points="13,5 21,12 13,19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+        </div>
+
     </div>
-
-    <div class="pets__grid">
-
-      <!-- Panda card -->
+    <div class="pets__viewport">
+    <div class="pets__track">
+<!-- START HERE -->
+<!-- Panda card -->
       <div class="pet-card">
         <div class="pet-card__image">
           <img src="../../assets/images/pet-sliders/slider_panda.png" alt="Panda">
@@ -142,7 +169,7 @@
           <p>
             Native to central China, giant pandas have come to symbolize vulnerable species.
           </p>
-          <a href="#" class="pet-card__link">View Live Cam →</a>
+          <a href="#" class="pet-card__link">View Live Cam <svg class="slidecard_arrow" viewBox="0 0 24 24" fill="none"><line x1="2" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="13,5 21,12 13,19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
       </div>
 
@@ -159,7 +186,7 @@
           <p>
             Native to central China, giant pandas have come to symbolize vulnerable species.
           </p>
-          <a href="#" class="pet-card__link">View Live Cam →</a>
+         <a href="#" class="pet-card__link">View Live Cam <svg class="slidecard_arrow" viewBox="0 0 24 24" fill="none"><line x1="2" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="13,5 21,12 13,19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
       </div>
 
@@ -176,7 +203,7 @@
           <p>
             Native to central China, giant pandas have come to symbolize vulnerable species.
           </p>
-          <a href="#" class="pet-card__link">View Live Cam →</a>
+          <a href="#" class="pet-card__link">View Live Cam <svg class="slidecard_arrow" viewBox="0 0 24 24" fill="none"><line x1="2" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="13,5 21,12 13,19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
       </div>
 
@@ -193,9 +220,10 @@
           <p>
             Native to central China, giant pandas have come to symbolize vulnerable species.
           </p>
-          <a href="#" class="pet-card__link">View Live Cam →</a>
+          <a href="#" class="pet-card__link">View Live Cam <svg class="slidecard_arrow" viewBox="0 0 24 24" fill="none"><line x1="2" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="13,5 21,12 13,19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
       </div>
+
 
 <!-- Eagles card -->
 
@@ -210,7 +238,7 @@
           <p>
             Native to central China, giant pandas have come to symbolize vulnerable species.
           </p>
-          <a href="#" class="pet-card__link">View Live Cam →</a>
+          <a href="#" class="pet-card__link">View Live Cam <svg class="slidecard_arrow" viewBox="0 0 24 24" fill="none"><line x1="2" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="13,5 21,12 13,19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
       </div>
 
@@ -227,7 +255,7 @@
           <p>
             Native to central China, giant pandas have come to symbolize vulnerable species.
           </p>
-          <a href="#" class="pet-card__link">View Live Cam →</a>
+          <a href="#" class="pet-card__link">View Live Cam <svg class="slidecard_arrow" viewBox="0 0 24 24" fill="none"><line x1="2" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="13,5 21,12 13,19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
       </div>
 
@@ -244,7 +272,7 @@
           <p>
             Native to central China, giant pandas have come to symbolize vulnerable species.
           </p>
-          <a href="#" class="pet-card__link">View Live Cam →</a>
+          <a href="#" class="pet-card__link">View Live Cam <svg class="slidecard_arrow" viewBox="0 0 24 24" fill="none"><line x1="2" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="13,5 21,12 13,19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
       </div>
 
@@ -261,17 +289,132 @@
           <p>
             Native to central China, giant pandas have come to symbolize vulnerable species.
           </p>
-          <a href="#" class="pet-card__link">View Live Cam →</a>
+          <a href="#" class="pet-card__link">View Live Cam <svg class="slidecard_arrow" viewBox="0 0 24 24" fill="none"><line x1="2" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="13,5 21,12 13,19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
       </div>
+
+
+
+      <!-- Panda card -->
+      <div class="pet-card">
+        <div class="pet-card__image">
+          <img src="../../assets/images/pet-sliders/slider_panda.png" alt="Panda">
+          <span class="pet-card__name">Lucas</span>
+        </div>
+
+        <div class="pet-card__content">
+          <h3>Giant Panda</h3>
+          <p>
+            Native to central China, giant pandas have come to symbolize vulnerable species.
+          </p>
+          <a href="#" class="pet-card__link">View Live Cam <svg class="slidecard_arrow" viewBox="0 0 24 24" fill="none"><line x1="2" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="13,5 21,12 13,19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+
+<!-- Lemur card -->
+
+       <div class="pet-card">
+        <div class="pet-card__image">
+          <img src="../../assets/images/pet-sliders/slider_lemur.png" alt="Lemur">
+          <span class="pet-card__name">Lemmy</span>
+        </div>
+
+        <div class="pet-card__content">
+          <h3>Lemur</h3>
+          <p>
+            Native to central China, giant pandas have come to symbolize vulnerable species.
+          </p>
+         <a href="#" class="pet-card__link">View Live Cam <svg class="slidecard_arrow" viewBox="0 0 24 24" fill="none"><line x1="2" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="13,5 21,12 13,19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+
+<!-- Gorilla card -->
+
+       <div class="pet-card">
+        <div class="pet-card__image">
+          <img src="../../assets/images/pet-sliders/slider_gorilla.png" alt="Gorilla">
+          <span class="pet-card__name">Gorilla</span>
+        </div>
+
+        <div class="pet-card__content">
+          <h3>Gorilla</h3>
+          <p>
+            Native to central China, giant pandas have come to symbolize vulnerable species.
+          </p>
+          <a href="#" class="pet-card__link">View Live Cam <svg class="slidecard_arrow" viewBox="0 0 24 24" fill="none"><line x1="2" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="13,5 21,12 13,19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+
+<!-- Alligator card -->
+
+       <div class="pet-card">
+        <div class="pet-card__image">
+          <img src="../../assets/images/pet-sliders/slider_alligator.png" alt="Alligator">
+          <span class="pet-card__name">Alligator</span>
+        </div>
+
+        <div class="pet-card__content">
+          <h3>Alligator</h3>
+          <p>
+            Native to central China, giant pandas have come to symbolize vulnerable species.
+          </p>
+          <a href="#" class="pet-card__link">View Live Cam <svg class="slidecard_arrow" viewBox="0 0 24 24" fill="none"><line x1="2" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="13,5 21,12 13,19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+
+
+<!-- Eagles card -->
+
+       <div class="pet-card">
+        <div class="pet-card__image">
+          <img src="../../assets/images/pet-sliders/slider_eagles.png" alt="Eagle">
+          <span class="pet-card__name">Eagle</span>
+        </div>
+
+        <div class="pet-card__content">
+          <h3>Eagle</h3>
+          <p>
+            Native to central China, giant pandas have come to symbolize vulnerable species.
+          </p>
+          <a href="#" class="pet-card__link">View Live Cam <svg class="slidecard_arrow" viewBox="0 0 24 24" fill="none"><line x1="2" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="13,5 21,12 13,19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+
+<!-- Coala card -->
+
+       <div class="pet-card">
+        <div class="pet-card__image">
+          <img src="../../assets/images/pet-sliders/slider_coala.png" alt="Coala">
+          <span class="pet-card__name">Coala</span>
+        </div>
+
+        <div class="pet-card__content">
+          <h3>Coala</h3>
+          <p>
+            Native to central China, giant pandas have come to symbolize vulnerable species.
+          </p>
+          <a href="#" class="pet-card__link">View Live Cam <svg class="slidecard_arrow" viewBox="0 0 24 24" fill="none"><line x1="2" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="13,5 21,12 13,19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+
+<!-- END HERE -->
+    </div>
+    </div>
+    </div>
 
     </div>
 
      <div class="pets__cta">
-      <button class="btn btn-outline">
+      <!-- <button class="btn btn-outline">
         Choose Your Favourite →
-      </button>
-    </div>
+      </button> -->
+      <button class="favorite__btn">
+            Choose your favourite
+            <svg class="favorite__btn__arrow" viewBox="0 0 24 24" fill="none"><line x1="2" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="13,5 21,12 13,19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <!-- <span class="favourite__arrow">→</span> -->
+            <!-- <img src="../../assets/icons/arrows/arrowRight.png" alt="arrowRight" class="btn-icon"> -->
+        </button>
+    
 
   </section>
 
@@ -284,16 +427,17 @@
 
     <!-- Part 01 -->
     <div class="pay-feed__item">
-      <div class="pay-feed__number">01</div>
-      <div class="pay-feed__line"></div>
-
+       <div class="numandline">
+          <div class="pay-feed__number">01</div>
+          <div class="pay-feed__line">-</div>
+        </div>
       <div class="pay-feed__row">
         <div class="pay-feed__image">
           <img src="../../assets/images/animals/feedPage_gorilla.png" alt="feedPage_gorilla">
         </div>
 
         <div class="pay-feed__content">
-          <div class="pay-feed__icon">💚</div>
+          <div class="pay-feed__icon"><img src="../../assets/icons/ui/landingFeed_heart.svg" alt="heart"></div>
           <h3>Your donation has an impact</h3>
           <p>
             Providing our animals with high-quality nutritious diets is just one
@@ -306,16 +450,17 @@
 
     <!-- Part 02 -->
     <div class="pay-feed__item">
-      <div class="pay-feed__number">02</div>
-      <div class="pay-feed__line"></div>
-
+       <div class="numandline">
+          <div class="pay-feed__number">02</div>
+          <div class="pay-feed__line">-</div>
+        </div>
       <div class="pay-feed__row">
         <div class="pay-feed__image">
           <img src="../../assets/images/backgrounds/feedPage_banana.png" alt="feedPage_Banana">
         </div>
 
         <div class="pay-feed__content">
-          <div class="pay-feed__icon">💳</div>
+          <div class="pay-feed__icon"><img src="../../assets/icons/ui/landingFeed_card.svg" alt="card"></div>
           <h3>Make a donation</h3>
           <p>
             You can donate through your credit card without any fees.
@@ -327,25 +472,31 @@
     </div>
 
     <!-- Part 03 -->
-    <div class="pay-feed__item">
-      <div class="pay-feed__number">03</div>
-      <div class="pay-feed__line"></div>
-
+      <div class="pay-feed__item">
+        <div class="numandline">
+          <div class="pay-feed__number">03</div>
+          <div class="pay-feed__line">-</div>
+        </div>
       <div class="pay-feed__row">
         <div class="pay-feed__image">
           <img src="../../assets/images/animals/feedPage_gorillaEatingBanana.png" alt="feedPage_gorillaEatingBanana">
         </div>
 
         <div class="pay-feed__content">
-          <div class="pay-feed__icon">🍌</div>
+          <div class="pay-feed__icon"><img src="../../assets/icons/ui/landingFeed_food.svg" alt="food"></div>
           <h3>Bring your food charity — straight to your favorites pets</h3>
           <p>
             After your donation, the animal receives its favorite foods.
             You can support your favorite animal and make a real personal impact.
           </p>
-
-          <button class="btn btn-primary pay-feed__btn">
-            Donate Now →
+          <button class="btn hero__btn payfeed__btn">
+            <h5>Donate now</h5>
+            <a href="#" class="btn__arrowRight">
+              <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <line x1="0" y1="12" x2="18" y2="12" stroke="white" stroke-width="4"/>
+              <polyline points="12,4 20,12 12,20" fill="none" stroke="white" stroke-width="4"/>
+              </svg>
+            </a>
           </button>
         </div>
       </div>
@@ -357,7 +508,6 @@
 <!-- Here starts TESTIMONIALS and CARE section -->
 
   <section class="testimonials">
-  <div class="testimonials__overlay"></div>
 
   <div class="container testimonials__container">
 
@@ -370,10 +520,13 @@
         We are continuously striving to improve the experiences of our future guests.
         Below you can leave your own feedback, or simply view feedback from past clients.
       </p>
-
-      <button class="btn testimonials__btn">
+        <button class="feedback__btn">
+            Leave feedback
+            <svg class="feedback__btn__arrow" viewBox="0 0 24 24" fill="none"><line x1="2" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="13,5 21,12 13,19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      <!-- <button class="btn testimonials__btn">
         Leave Feedback →
-      </button>
+      </button> -->
     </div>
 
     <div class="testimonials__right">
@@ -399,8 +552,10 @@
        
 
       <div class="testimonials__controls">
-        <button class="testimonials__arrow">&#8592;</button>
-        <button class="testimonials__arrow">&#8594;</button>
+        <svg style="transform: rotate(180deg)" class="testimonial__btn__arrow" viewBox="0 0 24 24" fill="none"><line x1="2" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="13,5 21,12 13,19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <svg class="testimonial__btn__arrow" viewBox="0 0 24 24" fill="none"><line x1="2" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="13,5 21,12 13,19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <!-- <button class="testimonials__arrow">&#8592;</button>
+        <button class="testimonials__arrow">&#8594;</button> -->
       </div>
 
     </div>
@@ -433,7 +588,7 @@
         <img src="../../assets/images/animals/carePage_pandaEating.png" alt="carePage_pandaEating">
         <div class="care__card-body">
           <p>Your $30 could give Lucas a slice of panda cake, made with our secret recipe.</p>
-          <a href="#" class="care__link">FEED →</a>
+          <a href="#" class="pet-card__link">Feed <svg class="slidecard_arrow" viewBox="0 0 24 24" fill="none"><line x1="2" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="13,5 21,12 13,19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
       </div>
 
@@ -442,7 +597,7 @@
         <img src="../../assets/images/animals/carePage_tiger.png" alt="carePage_tiger">
         <div class="care__card-body">
           <p>Your $150 will help to care for Senja, a Sumatran tiger, for three weeks.</p>
-          <a href="#" class="care__link">FEED →</a>
+          <a href="#" class="pet-card__link">Feed <svg class="slidecard_arrow" viewBox="0 0 24 24" fill="none"><line x1="2" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="13,5 21,12 13,19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
       </div>
 
@@ -451,7 +606,7 @@
         <img src="../../assets/images/animals/carePage_lemur.png" alt="carePage_lemur">
         <div class="care__card-body">
           <p>With your support, we can give Andy his favorite fruits.</p>
-          <a href="#" class="care__link">FEED →</a>
+          <a href="#" class="pet-card__link">Feed <svg class="slidecard_arrow" viewBox="0 0 24 24" fill="none"><line x1="2" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="13,5 21,12 13,19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
       </div>
 
@@ -460,15 +615,24 @@
         <img src="../../assets/images/animals/carePage_eagles.png" alt="carePage_eagles">
         <div class="care__card-body">
           <p>Sam & Lara have hatched and raised numerous young.</p>
-          <a href="#" class="care__link">FEED →</a>
+          <a href="#" class="pet-card__link">Feed <svg class="slidecard_arrow" viewBox="0 0 24 24" fill="none"><line x1="2" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="13,5 21,12 13,19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
       </div>
 
     </div>
 
-    <div class="care__cta">
-      <a href="#" class="btn-outline">CHOOSE YOUR FAVOURITE →</a>
+    <div class="pets__cta">
+      <!-- <button class="btn btn-outline">
+        Choose Your Favourite →
+      </button> -->
+      <button class="favorite__btn">
+            Choose your favourite
+            <svg class="favorite__btn__arrow" viewBox="0 0 24 24" fill="none"><line x1="2" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="13,5 21,12 13,19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <!-- <span class="favourite__arrow">→</span> -->
+            <!-- <img src="../../assets/icons/arrows/arrowRight.png" alt="arrowRight" class="btn-icon"> -->
+        </button>
     </div>
+
 
     <div class="care__video">
       <img src="../../assets/images/backgrounds/carePage_screen.png" alt="carePage_screen">
@@ -499,7 +663,8 @@
         <div class="donate">
         <button class="donate__btn">
             Donate for volunteers
-            <span class="arrow">→</span>
+            <svg class="btn-arrow" viewBox="0 0 24 24" fill="none"><line x1="2" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="13,5 21,12 13,19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <!-- <span class="arrow">→</span> -->
             <!-- <img src="../../assets/icons/arrows/arrowRight.png" alt="arrowRight" class="btn-icon"> -->
         </button>
         </div>

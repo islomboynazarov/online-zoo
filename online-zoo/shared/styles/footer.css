@@ -43,6 +43,7 @@
   color: #f58021;
 }
 
+/* Footer button is here */
 .donate__btn {
   display: flex;
   align-items: center;
@@ -73,13 +74,14 @@
   transition: background 0.2s;
 }
 
-
 .donate__btn:hover,
 .btn-arrow {
   color: #ccc;
   transform: scale(0.90);
   transition: transform 0.1s;
 } 
+
+/* Button ends here */
 
 .footer__divider {
   border: none;
