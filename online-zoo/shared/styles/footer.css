@@ -46,27 +46,38 @@
 .donate__btn {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 10px 30px;
+  padding: 10px 20px;
   background: #20113D;
   border: solid 1px #fff;
-  border-radius: 5%;
+  border-radius: 5px;
   font-family: 'Montserrat', sans-serif;
+  padding: 1em 1.5em;
   color: #fff;
   font-size: 1rem;
   cursor: pointer;
   transition: 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 
-.arrow {
- font-size: 2em;
- display: inline-block;
- top: -5px;
+.btn-arrow {
+  width: 25px;
+  height: 25px;
+  flex-shrink: 0;
+  background: transparent;
+  color: #fff;
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
 }
 
-.donate__btn:hover {
-  color: #20113D;
-}
+
+.donate__btn:hover,
+.btn-arrow {
+  color: #ccc;
+} 
 
 .footer__divider {
   border: none;
