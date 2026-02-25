@@ -169,14 +169,6 @@
 
 
 
-
-
-
-
-
-
-
-
 /* Content */
 .live__content {
  flex: 1;
@@ -199,7 +191,7 @@
 }
 
 
-/* transferred btn from landing page */
+/* transferred orange btn from landing page */
 .hero__btn {
   display: inline-flex;
   align-items: center;
@@ -285,13 +277,24 @@ border: 4px solid #D26004;
 
 .prev,
 .next {
-  background: none;
+  /* background: none;
   border: 1px solid black;
   font-size: 4rem;
   font-weight: normal;
   cursor: pointer;
-  
+   */
 } 
+
+/* Brought from another page start */
+.testimonial__btn__arrow {
+  width: 3rem;
+  height: 3rem;
+  background: transparent;
+  color: #20113D;
+  cursor: pointer;
+}
+
+/* Brought from another page end */
 
 .live__slider {
   display: flex;
@@ -331,7 +334,7 @@ border: 4px solid #D26004;
 }
 
 .donation__title {
- width: 800px;
+  width: 800px;
   line-height: 1.5em;
   margin-top: 2rem;
   margin-bottom: 2rem;
