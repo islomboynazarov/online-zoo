@@ -765,6 +765,12 @@ border-radius: 5px;
   flex-direction: column;
 }
 
+.care__card:hover {
+  cursor: pointer;
+  transform: scale(0.96);
+  transition: ease-in-out;
+}
+
 .care__card img {
   width: 100%;
   display: block;
