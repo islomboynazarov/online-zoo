@@ -880,9 +880,6 @@ border-radius: 5px;
 
 /* ----------------------Popups window starts here ------------------------------*/
 
-/* ================================================
-   DONATION POPUPS
-   ================================================ */
 
 /* ── Overlay ──────────────────────────────────── */
 .popup-overlay {
@@ -988,6 +985,8 @@ border-radius: 5px;
 
 .amount-btn:hover {
   background: #007a6e;
+  opacity: 0.85;
+  transform: scale(0.98);
 }
 
 .amount-btn--other {
@@ -1074,6 +1073,8 @@ border-radius: 5px;
 .form-amount-btn:hover,
 .form-amount-btn.selected {
   background: #007a6e;
+  opacity: 0.85;
+  transform: scale(0.98);
 }
 
 /* ── Other Amount Row ────────────────────────── */
@@ -1253,6 +1254,8 @@ border-radius: 5px;
 
 .btn-next:hover {
   background: #007a6e;
+  opacity: 0.85;
+  transform: scale(0.98);
 }
 
 .btn-next svg {
