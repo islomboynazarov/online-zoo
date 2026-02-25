@@ -38,6 +38,13 @@ h1 {
   height: 144px;
   border-radius: 50%;
   transform: translate(-50%, -50%);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.map__icon:hover
+.map__icon:active {
+  transform: scale(1.15);
 }
 
 .map__icon__allegator { top: 55%; left: 25%; }
@@ -48,4 +55,3 @@ h1 {
 .map__icon__eagle     { top: 54%; left: 16%; }
 .map__icon__gorilla   { top: 61%; left: 53%; }
 .map__icon__lion      { top: 58%; left: 44%; }
-
