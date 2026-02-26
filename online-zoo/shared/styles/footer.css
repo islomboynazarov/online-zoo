@@ -131,16 +131,45 @@
 }
 
 
+/* Responsive - 1200 screen */
+
+@media (max-width: 1200px) {
+
+  .footer__container {
+    padding: 0 30px;
+  }
+
+  .footer__logo {
+    gap: 20px;
+  }
+
+  .footer__logo img {
+    max-width: 100px;
+  }
+
+  .footer__list {
+    gap: 20px;
+  }
+
+  .footer__list a {
+    font-size: 0.85rem;
+  }
+
+  .donate__btn {
+    font-size: 0.85rem;
+    padding: 0.8em 1em;
+  }
+
+  .footer__copyright ul {
+    gap: 20px;
+  }
+
+}
+
+
+/* Responsive - 640 screen */
 
 
 
 
-
-
-
-
-
-
-
-
-
+/* Responsive - 320 screen */

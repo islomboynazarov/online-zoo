@@ -75,3 +75,35 @@
   opacity: 0.85;
   transform: scale(0.90);
 }
+
+
+
+/* Responsive - 1200 screen */
+
+@media (max-width: 1200px) {
+
+  .header__container {
+    height: 90px;
+  }
+
+  .nav__list {
+    gap: 20px;
+  }
+
+  .nav__link {
+    font-size: 15px;
+  }
+
+  .header__socials img {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+
+}
+
+
+/* Responsive - 640 screen */
+
+
+
+/* Responsive - 320 screen */

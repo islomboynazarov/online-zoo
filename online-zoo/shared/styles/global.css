@@ -43,3 +43,12 @@ body {
 
 /* opacity: 0.85;
   transform: scale(0.98); */
+
+  @media (max-width: 1200px) {
+
+  .container {
+    padding: 0 30px !important;
+  }
+
+
+}
