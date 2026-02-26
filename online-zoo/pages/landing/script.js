@@ -90,3 +90,35 @@ function completeDonation() {
   alert('Thank you for your donation!');
   closeAll();
 }
+
+
+// Hamburger menu ------------------------------------------------------
+
+document.addEventListener('DOMContentLoaded', () => {
+  const burger = document.getElementById('burger');
+  const nav = document.querySelector('.header__nav');
+
+  burger.addEventListener('click', () => {
+    burger.classList.toggle('open');
+    nav.classList.toggle('open');
+  });
+});
+
+
+// Care section slide change
+
+const careGrid = document.querySelector('.care__grid');
+const careDots = document.querySelectorAll('.care__dot');
+
+careGrid.addEventListener('scroll', () => {
+  const index = Math.round(careGrid.scrollLeft / careGrid.offsetWidth);
+  careDots.forEach((dot, i) => {
+    dot.classList.toggle('active', i === index);
+  });
+});
+
+careDots.forEach((dot, i) => {
+  dot.addEventListener('click', () => {
+    careGrid.scrollTo({ left: i * careGrid.offsetWidth, behavior: 'smooth' });
+  });
+});
