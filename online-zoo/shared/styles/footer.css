@@ -1,3 +1,6 @@
+.footer__socials--mobile {
+  display: none;
+}
 
 
 .footer {
@@ -244,4 +247,61 @@
   .footer__copyright ul li {
     font-size: 11px;
   }
+  .footer_top {
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer__logo {
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.footer__logo img {
+  max-width: 80px;
+}
+
+.footer__list {
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.donate__btn {
+  width: 100%;
+  justify-content: center;
+}
+
+.footer__bottom {
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer__socials {
+  justify-content: center;
+}
+
+.footer__copyright ul {
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.footer__socials--mobile {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .footer__bottom .footer__socials {
+    display: none;
+  }
+  .footer__socials--mobile img {
+  width: 2rem;
+  height: 2rem;
+  object-fit: contain;
+}
 }
