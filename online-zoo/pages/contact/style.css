@@ -92,13 +92,25 @@
 }
 
 
-@media (max-width: 900px) {
+@media (max-width: 640px) {
   .contact__container {
     flex-direction: column;
     gap: 50px;
   }
 
+  .contact__info h2 {
+    text-align: center;
+  }
+
   .contact__info p {
     max-width: 100%;
+  }
+
+  .contact__form {
+    width: 100%;
+  }
+
+  .btn-submit {
+    width: 100%;
   }
 }
