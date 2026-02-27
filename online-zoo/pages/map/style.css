@@ -130,3 +130,20 @@ h1 {
   }
 
 }
+
+/* ------------ 320 screen ------------------------------ */
+
+@media (max-width: 320px) {
+
+  .map__title {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    padding: 0 15px;
+  }
+
+  .map__icon {
+    width: 35px;
+    height: 50px;
+  }
+
+}
