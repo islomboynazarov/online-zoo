@@ -92,6 +92,8 @@
 }
 
 
+/* ------------------- 640 screen ------------------------- */
+
 @media (max-width: 640px) {
   .contact__container {
     flex-direction: column;
@@ -112,5 +114,37 @@
 
   .btn-submit {
     width: 100%;
+  }
+}
+
+/* ------------------- 320 screen ------------------------- */
+
+@media (max-width: 320px) {
+
+  .contact-hero img {
+    height: 250px;
+    margin-bottom: 20px;
+  }
+
+  .contact {
+    margin: 0;
+    padding: 0;
+  }
+
+  .contact__info h2 {
+    font-size: 1.5rem;
+    padding: 20px auto;
+  }
+
+  .contact__info p {
+    font-size: 1rem;
+  }
+
+  .contact__form {
+    margin-bottom: 40px;
+  }
+
+  .footer__bottom ul {
+    gap: 20px;
   }
 }
