@@ -31,6 +31,12 @@ h1 {
   height: auto;
 }
 
+.map__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+}
 
 .map__icon {
   position: absolute;
@@ -55,3 +61,37 @@ h1 {
 .map__icon__eagle     { top: 54%; left: 16%; }
 .map__icon__gorilla   { top: 61%; left: 53%; }
 .map__icon__lion      { top: 58%; left: 44%; }
+
+
+
+
+/* 1200 px -------------------------------- */
+
+@media (max-width: 1200px) {
+
+.map__container {
+    padding: 0 30px;
+  }
+
+  .map__title {
+    font-size: 3rem;
+    line-height: 3.5rem;
+  }
+
+  .map__icon {
+    width: 75px;
+    height: 108px;
+  }
+
+  .map__image__wrapper {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .map__image {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+}
