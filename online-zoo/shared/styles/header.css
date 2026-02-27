@@ -54,7 +54,7 @@
 
 
 .nav__link.active {
-  color: #00A092;
+  color: #00A092 !important;
   font-weight: 600;
 }
 
@@ -151,11 +151,11 @@
     color: #fff;
   }
 
-.header__nav.open .nav__list .nav__link:hover {
-  color: #00A092 !important;
-}
+  .header__nav.open .nav__list .nav__link:hover {
+    color: #00A092 !important;
+  }
   .header__nav.open .nav__link.active {
-    color: #00A092;
+    color: #00A092 !important;
   }
 
   .nav__list {
