@@ -229,4 +229,19 @@
 }
 
 
-/* Responsive - 320 screen */
+/* ---------------------------Responsive - 320 screen ---------------------------*/
+
+@media (max-width: 320px) {
+  .footer__logo img {
+    max-width: 60px;
+  }
+  .footer__list a {
+    font-size: 0.7rem;
+  }
+  .donate__btn {
+    font-size: 0.75rem;
+  }
+  .footer__copyright ul li {
+    font-size: 11px;
+  }
+}

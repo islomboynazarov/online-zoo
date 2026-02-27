@@ -117,6 +117,18 @@
     position: relative;
   }
 
+  .header__logo {
+    margin-left: 30px;
+  }
+
+  .header__burger {
+    margin-right: 30px;
+  }
+
+  .header__burger span {
+    background: #000;
+  }
+
   /* Hide nav and socials by default */
   .header__nav {
     display: none;
@@ -196,4 +208,27 @@
   display: none;
 }
 
-/* Responsive - 320 screen */
+
+
+/* ----------------------------Responsive - 320 screen ------------------------------*/
+
+@media (max-width: 320px) {
+  .header__logo img {
+    width: 80px;
+  }
+  .header__container {
+    height: 80px;
+  }
+  .header__nav {
+    top: 60px;
+  }
+  .header__burger {
+    width: 25px;
+    height: 16px;
+  }
+
+  .header__burger span {
+    background: #000;
+    height: 2px;
+  }
+}

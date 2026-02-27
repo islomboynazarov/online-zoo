@@ -1803,4 +1803,257 @@ border-radius: 5px;
 
 
 
-/* RESPONSIVE — 320px queries */
+/* -------------------------RESPONSIVE — 320px queries ----------------------------*/
+
+@media (max-width: 320px) {
+
+  /* === HERO === */
+  .hero {
+  background-position: center bottom !important;
+  background-size: 120%;
+  min-height: 550px;
+}
+
+  .hero__container {
+  height: auto;
+  padding: 0px !important;
+  justify-content: flex-start;
+  }
+
+  .hero__title {
+  font-size: 2.5rem;
+  max-width: 100%;
+  padding: 0 10px;
+  }
+
+  .section1__paragraph {
+  font-size: 1rem;
+  max-width: 100%;
+  padding: 0 10px;
+  }
+  .hero__btn h5 {
+    font-size: 1rem;
+    padding: 0;
+    margin: 10px 10px;
+  }
+  
+  .hero__btn {
+  width: auto !important;
+  display: inline-flex;
+  padding: 0.05rem 3rem;
+  margin-left: 0;
+  align-self: center;
+}
+  /*  WELCOME  */
+  .welcome__text h1,
+  .wework__text h1 {
+    font-size: 2rem;
+  }
+  .welcome__text p,
+  .wework__text p {
+    font-size: 0.85rem;
+  }
+  .welcome__text,
+  .wework__text {
+    padding: 10px 15px;
+  }
+
+  /*  DONATION  */
+  .donation__title h1 {
+    font-size: 1.8rem;
+  }
+  .donation__title p {
+    font-size: 0.8rem;
+  }
+  .btn-split__text {
+    font-size: 1.1rem;
+    padding: 12px 25px;
+  }
+  .btn-split {
+    width: 90%;
+  }
+
+  .btn-split__arrow {
+    height: 35px;
+    width: 40px;
+    padding: 8px 12px;
+  }
+
+  .donation__form h2 {
+    color: #fff;
+  }
+
+  .donation__form {
+    width: 100%;
+  }
+
+  /*  PETS  */
+  .pets__title {
+    font-size: 1.5rem;
+  }
+  .pets__text {
+    font-size: 0.85rem;
+  }
+  .pet-card {
+    flex: 0 0 calc(100% - 5px);
+  }
+  .pet-card__image img {
+    height: 220px;
+  }
+  .pet-card__content h3 {
+    font-size: 14px;
+  }
+  .pet-card__link {
+    font-size: 1.1rem;
+  }
+
+  .pet-card__content p {
+    font-size: 12px;
+  }
+
+  .pets__controls {
+  display: none;
+}
+
+  .pets__track {
+    justify-content: flex-start;
+  }
+
+  .pet-card {
+    flex: 0 0 93%;
+  }
+
+  .pets__cta {
+    display: none;
+  }
+
+  
+  /*  PAY AND FEED  */
+  .pay-feed__title {
+    font-size: 1.5rem;
+  }
+  .pay-feed__content h3 {
+    font-size: 1.1rem;
+  }
+  .pay-feed__content p {
+    font-size: 0.85rem;
+  }
+  .payfeed__btn {
+    width: 80%;
+  }
+
+  /* TESTIMONIALS  */
+  .testimonials__title {
+    font-size: 1.5rem;
+  }
+  .testimonials__text {
+    font-size: 0.9rem;
+  }
+  .testimonial-card {
+    flex: 0 0 90%;
+    min-height: 200px;
+  }
+
+  .testimonials__grid {
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+  .testimonials__grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .testimonials {
+  background-size: cover;
+  background-position: center !important;
+}
+
+.testimonial-card {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  min-height: 350px;
+}
+
+.testimonial__dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 15px 0;
+}
+
+.testimonial__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ccc;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.testimonial__dot.active {
+  background: #fff;
+}
+
+.feedback__btn {
+  width: 100%;
+  font-size: 0.85rem;
+  padding: 0.8em 1em;
+  justify-content: center;
+}
+
+  /* CARE */
+  .care__title {
+    font-size: 1.5rem;
+  }
+  .care__subtitle {
+    font-size: 0.85rem;
+  }
+  .care__card {
+  flex: 0 0 100%;
+  flex-direction: column;
+}
+
+.care__card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.care__card-body {
+  width: 100%;
+  height: auto;
+  padding: 20px;
+}
+  .care .pets__cta .favorite__btn {
+  font-size: 0.85rem;
+  padding: 0.7em 0.8em;
+}
+
+  /* === POPUP === */
+  .popup-welcome__image {
+    height: 150px;
+  }
+  .popup-welcome__title {
+    font-size: 1.2rem;
+  }
+  .popup-welcome__text {
+    font-size: 0.8rem;
+  }
+  .amount-btn {
+    padding: 10px 12px;
+    font-size: 0.8rem;
+    min-width: 60px;
+  }
+  .popup-form__header h2 {
+    font-size: 1rem;
+  }
+  .form-amount-btn {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+  }
+  .btn-next {
+    padding: 10px 18px;
+    font-size: 0.8rem;
+  }
+
+}
