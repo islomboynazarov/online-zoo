@@ -305,7 +305,7 @@
 }
 
 .pets__viewport {
-  overflow: hidden !important;
+  overflow: hidden;
 }
 
 .pets__track {

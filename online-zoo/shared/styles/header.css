@@ -111,10 +111,15 @@
 }
 
 @media (max-width: 640px) {
+    .header {
+    position: relative;
+    z-index: 9999;
+  }
 
   .header__container {
     height: 70px;
     position: relative;
+    overflow:visible;
   }
 
   .header__logo {
@@ -137,7 +142,7 @@
     left: 0;
     width: 100%;
     background: #F58021;
-    z-index: 999;
+    z-index: 9999;
     padding: 20px 0;
   }
 
@@ -145,6 +150,11 @@
     display: block;
     background: #20113D;
     color: #fff;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
   }
 
   .header__nav.open .nav__link {
@@ -185,7 +195,7 @@
     display: block;
     width: 100%;
     height: 3px;
-    background: white;
+    background: #000;
     border-radius: 3px;
     transition: 0.3s;
   }
