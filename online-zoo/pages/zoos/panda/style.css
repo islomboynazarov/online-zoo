@@ -2,8 +2,8 @@
   position: relative;
   display: flex;
   align-items: flex-start;
-  min-height: 100vh;
-  background: #f2f2f2;
+  min-height: unset;
+  background: #fff;
   gap: 0;
 }
 
@@ -660,6 +660,9 @@ border: 4px solid #D26004;
     padding: 0 20px!important;
   } */
 
+  .live {
+    margin-right: 30px;
+  }
   .live__sidebar {
     width: 70px;
   }
@@ -681,10 +684,6 @@ border: 4px solid #D26004;
 
   .live__sidebar.open .live__logo img {
     width: 60px;
-  }
-
-  .live__content {
-    margin-left: 55px;
   }
 
   .live__logo {
@@ -833,13 +832,6 @@ border: 4px solid #D26004;
     text-align: center;
   }
 
-  .donation__title p {
-    padding-right: 30px;
-  }
-
-  .donation__form {
-    padding-right: 30px;
-  }
 
   .donation__form h2 {
     padding-left: 70px;
@@ -850,6 +842,39 @@ border: 4px solid #D26004;
   transform: scale(0.90);
   transition: transform 0.1s;
  }
+
+  .panda-fact {
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 80%;
+
+  }
+
+  .panda-content {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 90%;
+  }
+
+  .panda-description {
+    width: 600px;
+  }
+
+  p {
+    width: 100%;
+    max-width: 600px;
+    padding: 0 20px;
+  }
+
+  .panda-details {
+    max-width: 600px;
+  }
+
+  .panda-details p {
+    align-items: start;
+  }
 
 
 }
