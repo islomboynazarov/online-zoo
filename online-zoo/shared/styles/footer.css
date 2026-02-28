@@ -291,9 +291,9 @@
   gap: 10px;
 }
 .footer__socials--mobile {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
   }
 
 .footer__bottom .footer__socials {
