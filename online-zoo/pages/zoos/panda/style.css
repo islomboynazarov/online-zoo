@@ -768,6 +768,10 @@ border: 4px solid #D26004;
     gap: 15px;
   }
 
+  .live__video img {
+    height: 360px;
+  }
+
   .live__more {
     display: flex;
     flex-direction: column;
@@ -853,28 +857,46 @@ border: 4px solid #D26004;
   .panda-content {
     display: flex;
     flex-direction: column-reverse;
-    margin-left: 20px;
-    margin-right: 20px;
-    width: 90%;
+    width: 100%;
+  }
+
+  .panda-image {
+    width: 600px;
+  }
+
+  .panda-image img {
+    max-width: 640px !important;
+    width: 100%;
   }
 
   .panda-description {
     width: 600px;
   }
 
+  .panda-description p {
+    max-width: 600px;
+    width: 100%;
+    padding-left: 20px;
+  }
+
   p {
     width: 100%;
     max-width: 600px;
-    padding: 0 20px;
+
   }
 
   .panda-details {
     max-width: 600px;
+    width: 100%;
   }
 
   .panda-details p {
     align-items: start;
+    width: 100%;
   }
 
+  .panda-details a {
+    font-weight: 400;
+  }
 
 }
