@@ -224,17 +224,18 @@
 
 @media (max-width: 320px) {
   .header__logo img {
-    width: 80px;
+    width: 96px;
+    height: 50px;
   }
   .header__container {
-    height: 80px;
+    height: 110px;
   }
   .header__nav {
     top: 60px;
   }
   .header__burger {
-    width: 25px;
-    height: 16px;
+    width: 22px;
+    height: 30px;
   }
 
   .header__burger span {

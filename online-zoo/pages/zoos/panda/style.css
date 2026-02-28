@@ -900,3 +900,121 @@ border: 4px solid #D26004;
   }
 
 }
+
+
+/* --------------- 320 screen ------------------------ */
+
+@media (max-width: 320px) {
+
+  .live__sidebar {
+    width: 45px;
+    height: 280px;
+  }
+
+  .sidebar__boxes {
+    width: 50px;
+    height:50px;
+    
+  }
+
+  .sidebar__boxes img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .sidebar__boxes.live__arrow-down {
+    color: #fff;
+    padding: 0;
+    height: 35px;
+  }
+
+  .live__sidebar.open {
+    width: 230px;
+  }
+
+  .live__sidebar.open .sidebar__boxes {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .live__sidebar.open #lemur-open {
+    width: 25px;
+  }
+
+  .live__sidebar.open .animal-label {
+    flex: 1;
+    width: 100%;
+  }
+
+  .live__animals {
+    width: 230px;
+  }
+
+  .live__content {
+    margin-left: 45px;
+    margin-left: 45px;
+    width: calc(100% - 50px);
+  }
+
+  .live {
+    margin: 0;
+  }
+
+
+  .live__video img {
+    border: none;
+    height: 200px;
+  }
+
+  .live__header {
+    padding: 0;
+  }
+
+  .live__header h1 {
+    font-size: 23px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    line-height: 100%;
+  }
+
+  .live__logo img {
+    display: none;
+    
+  }
+
+  .live__collapse {
+    font-size: 1.5rem;
+    margin-right: 10px;
+  }
+
+  .live__more {
+    width: 460px;
+    height: 110px;
+  }
+
+  .live__more h3 {
+    font-size: 1rem;
+    outline: red 1px solid;
+  }
+
+  .thumb {
+    min-width: calc(50% - 5px);
+    height: 90px;
+  }
+
+  /* Full width donate btn below thumbnails */
+  .hero__btn__down {
+    display: flex !important;
+    position: static !important;
+    width: 100%;
+    justify-content: center;
+    margin-top: 15px;
+    font-size: 0.8rem;
+  }
+
+  .hero__btn__down h3 {
+    font-size: 0.8rem;
+    margin: 0;
+  }
+
+}
