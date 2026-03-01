@@ -98,6 +98,7 @@
   .contact__container {
     flex-direction: column;
     gap: 50px;
+    margin: 0 20px;
   }
 
   .contact__info h2 {
@@ -106,6 +107,7 @@
 
   .contact__info p {
     max-width: 100%;
+    text-align: justify;
   }
 
   .contact__form {
