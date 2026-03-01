@@ -749,14 +749,24 @@ border: 4px solid #D26004;
   }
 
   .live__sidebar.open {
-    width: 160px;
+    width: 200px;
+    height: 470px;
   }
 
-  .live__sidebar.open .sidebar__boxes img {
-    width: 25px;
-    height: 25px;
-    padding: 3px;
+  .sidebar__boxes {
+    width: 115px;
   }
+
+  .live__sidebar.open .sidebar__boxes {
+    width: 200px;
+    height: 100px;
+  } 
+
+  .live__sidebar.open .sidebar__boxes img {
+    width: 40px;
+    height: 40px;
+  }
+
 
   .live__sidebar.open .animal-label {
     font-size: 0.7rem;
