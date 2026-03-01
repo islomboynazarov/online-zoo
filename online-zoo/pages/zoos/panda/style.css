@@ -988,7 +988,8 @@ border: 4px solid #D26004;
 
   .panda-details p {
     align-items: start;
-    width: 100%;
+    width: 80%;
+    line-height: 2;
   }
 
   .panda-details a {
@@ -1251,7 +1252,7 @@ border: 4px solid #D26004;
 
   section.panda-info .panda-content {
     max-width: 320px;
-    width: 100%;
+    width: 300px;
   }
 
   .panda-fact {
@@ -1282,24 +1283,36 @@ border: 4px solid #D26004;
   }
 
   .view-map {
-  display: block;
-  text-align: center;
-  margin: 40px 20px;
+    display: block;
+    text-align: center;
+    margin: 40px 20px;
+  }
+
+  .panda-details {
+    max-width: 320px;
+    width: 300px;
+    display: block;
+    text-align: start;
   }
 
   .panda-details p {
+    max-width: 80%;
     line-height: 2;
-    padding-left: 10px;
-    padding-right: 10px;
-    width: auto;
+    padding-left: 0;
+    text-align: justify;
   }
 
-  .panda-description p {
+  .panda-description  {
+    max-width: 320px;
     width: 300px;
     font-size: 1rem;
     display: block;
     text-align: start;
+  }
 
-  
-}
+  .panda-description p {
+    max-width: 300px;
+    text-align: justify;
+    padding-left: 0;
+  }
 }

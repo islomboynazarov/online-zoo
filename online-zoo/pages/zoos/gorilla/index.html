@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="../../../shared/styles/global.css">
   <link rel="stylesheet" href="../../../shared/styles/header.css">
   <link rel="stylesheet" href="../../../shared/styles/footer.css">
-  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="./style.css">
   <link rel="icon" href="../../../favicon.ico">
 </head>
 
@@ -24,10 +24,10 @@
     </div>
     <nav class="header__nav">
       <ul class="nav__list">
-        <li><a href="../../../landing/index.html" class="nav__link">About</a></li>
+        <li><a href="../../landing/index.html" class="nav__link">About</a></li>
         <li><a href="../../../map/index.html" class="nav__link">Map</a></li>
-        <li><a href="../../../zoos/panda/index.html" class="nav__link">Zoos</a></li>
-        <li><a href="../contact/index.html" class="nav__link">Contact Us</a></li>
+        <li><a href="../../../pages/zoos/panda/index.html" class="nav__link">Zoos</a></li>
+        <li><a href="../../contact/index.html" class="nav__link">Contact Us</a></li>
         <li><a href="https://www.figma.com/design/lnK11foY8Aoa6oOlDXovVN/Online-ZOO-Project?node-id=0-1&p=f&t=uyyN8wxoAusOrWFn-0" class="nav__link">Design</a></li>
       </ul>
     </nav>
@@ -44,14 +44,187 @@
   </div>
   </header>
 
- 
-
-
-
-
   
+<section class="live container">
+  <!-- SidePanel is here -->
+  <aside class="live__sidebar">
+    <div class="live__logo">
+      <img src="../../../assets/icons/ui/liveBadge.png" id="liveBadge" alt="Live Badge">
+      <span class="live__collapse">>></span>
+    </div>
+    <div class="live__animals">
+      <a href="../panda/index.html">
+        <div class="sidebar__boxes active">
+          <img src="../../../assets/icons/navigation/sidePanel_pandaBig.png" alt="sidePanel_pandaBig">
+          <span class="animal-label">Watch live from China's Panda Center</span>
+        </div>
+      </a>
+      <a href="../eagle/index.html">
+        <div class="sidebar__boxes">
+          <img src="../../../assets/icons/navigation/sidePanel_eagleBig.png" alt="sidePanel_eagleBig">
+          <span class="animal-label">Watch The Bald Eagles Nest from West End cam</span>
+        </div>
+      </a>
+      <a href="../gorilla/index.html">
+        <div class="sidebar__boxes">
+          <img src="../../../assets/icons/navigation/sidePanel_gorillaBig.png" alt="sidePanel_gorilla">
+          <span class="animal-label">Livestream from Gorilla Forest Corridor habitat cam</span>
+        </div>
+      </a>
+      <a href="../lemur/index.html">
+        <div class="sidebar__boxes">
+          <img src="../../../assets/icons/navigation/sidePanel_lemurBig.png" alt="sidePanel_lemur" id="lemur-open">
+          <span class="animal-label">The ring-tailed lemurs play in Madagascar, Lemuria Land</span>
+        </div>
+      </a>
+      <div class="sidebar__boxes live__arrow-down">&#8964;</div>
+    </div>
+  </aside>
 
-  <footer class="footer">
+  <!-- Main Content -->
+  <div class="live__content">
+    <div class="content__container">
+
+      <div class="live__header">
+        <h1>LIVE PANDA CAMS</h1>
+        <button class="btn hero__btn">
+          <h3>Donate now</h3>
+          <a href="#" class="btn__arrowRight">
+            <svg class="btn-arrow" viewBox="0 0 24 24" fill="none"><line x1="2" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="13,5 21,12 13,19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </button>
+      </div>
+
+      <div class="live__video">
+        <a href="https://www.youtube.com/watch?v=Xt9xzgDL62Y&pp=ygUMcGFuZGEgdmlkZW9z">
+          <img src="../../../assets/images/animals/zooPagePanda_main.png" alt="Main Panda Cam">
+          <div class="play-btn">▶</div>
+        </a>
+        <button class="btn hero__btn__down">
+          <h3>Donate now</h3>
+          <a href="#" class="btn__arrowRight">
+            <svg class="btn-arrow" viewBox="0 0 24 24" fill="none"><line x1="2" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="13,5 21,12 13,19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </button>
+      </div>
+
+      <div class="live__more">
+        <h3>MORE LIVE VIEWS</h3>
+        <div class="live__slider">
+          <button class="arrow prev">
+            <svg style="transform: rotate(180deg)" class="testimonial__btn__arrow" viewBox="0 0 24 24" fill="none"><line x1="2" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="13,5 21,12 13,19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="slider__viewport">
+            <div class="slider__track">
+              <div class="thumb active">
+                <a href="https://www.youtube.com/shorts/C3MMFjlMJUw">
+                  <img src="../../../assets/images/animals/zooPagePanda_cam1.png" alt="Cam 1">
+                </a>
+              </div>
+              <div class="thumb">
+                <a href="https://www.youtube.com/shorts/fslTW1vYXHo">
+                  <img src="../../../assets/images/animals/zooPagePanda_cam2.png" alt="Cam 2">
+                </a>
+              </div>
+              <div class="thumb">
+                <a href="https://www.youtube.com/shorts/sxa7_6JYbg4">
+                  <img src="../../../assets/images/animals/zooPagePanda_cam3.png" alt="Cam 3">
+                </a>
+              </div>
+              <div class="thumb">
+                <a href="https://www.youtube.com/shorts/H5sRoDDeplY">
+                  <img src="../../../assets/images/animals/zooPagePanda_cam1.png" alt="Cam 1">
+                </a>
+              </div>
+              <div class="thumb">
+                <a href="https://www.youtube.com/shorts/Uk7uNW74v-o">
+                  <img src="../../../assets/images/animals/zooPagePanda_cam2.png" alt="Cam 2">
+                </a>
+              </div>
+              <div class="thumb">
+                <a href="https://www.youtube.com/shorts/Czd4cJkuqVY">
+                  <img src="../../../assets/images/animals/zooPagePanda_cam3.png" alt="Cam 3">
+                </a>
+              </div>
+            </div>
+          </div>
+          <button class="arrow next">
+            <svg class="testimonial__btn__arrow" viewBox="0 0 24 24" fill="none"><line x1="2" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="13,5 21,12 13,19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+          <button class="btn hero__btn__320">
+            <h3>Donate now</h3>
+            <a href="#" class="btn__arrowRight">
+              <svg class="btn-arrow" viewBox="0 0 24 24" fill="none"><line x1="2" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="13,5 21,12 13,19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </button>
+        <!-- 320 button should come here but I dont know how -->
+      </div>
+
+    </div> <!-- closes container -->
+  </div> <!-- closes live__content -->
+
+</section> <!-- closes live -->
+
+<!-- Purple Stripe part -->
+<section class="donation__container">
+  <div class="container donation__purple">
+    <div class="donation__title">
+      <h1>Make the bamboo donation!</h1>
+      <p class="donation__paragraph">Our process for bamboo donations first starts with a site evaluation. It is important that our team sees where the bamboo is growing, then determining if the bamboo is a species that our animals are currently eating. Thank you for your interest in donating bamboo for our pandas.</p>
+    </div>
+    <div class="donation__form">
+      <h2>Quick Donate</h2>
+      <button class="btn-split">
+        <span class="btn-split__text">$ Donation Amount</span>
+        <span class="btn-split__arrow">
+          <svg class="btn-arrow" viewBox="0 0 24 24" fill="none"><line x1="2" y1="12" x2="19" y2="12" stroke="white" stroke-width="2.5" stroke-linecap="round"/><polyline points="13,5 21,12 13,19" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<section class="panda-info container">
+  <div class="panda-fact">
+    <h3>DID YOU KNOW?</h3>
+    <p>
+      Pandas are often seen eating in a relaxed sitting posture, with their
+      hind legs stretched out before them. They may appear sedentary, but
+      they are skilled tree-climbers and efficient swimmers.
+    </p>
+  </div>
+  <div class="panda-content">
+    <div class="panda-details">
+      <p><span>Common name:</span> Giant Panda</p>
+      <p><span>Scientific name:</span> Ailuropoda melanoleuca</p>
+      <p><span>Type:</span> Herbivore</p>
+      <p><span>Size:</span> 4 to 5 feet</p>
+      <p><span>Diet:</span> Omnivore</p>
+      <p><span>Habitat:</span> Forests</p>
+      <p><span>Range:</span> Eastern Asia <a href="#" class="view-map">VIEW MAP →</a></p>
+    </div>
+    <div class="panda-image">
+      <img src="../../../assets/images/animals/zooPagePanda_mini.png" alt="Panda Mini">
+    </div>
+  </div>
+  <div class="panda-description">
+    <p>
+      Giant pandas are very unusual animals that eat almost exclusively bamboo,
+      which is very low in nutrients. Because of this, they have many unique
+      adaptations for their low-energy lifestyle. Giant pandas are solitary.
+      They have a highly developed sense of smell that males use to avoid each
+      other and to find females for mating in the spring. After a five-month
+      pregnancy, females give birth to a cub or two, though they cannot care
+      for both twins. The blind infants weigh only 5 ounces at birth and cannot
+      crawl until they reach three months of age. They are born white, and
+      develop their much loved coloring later. Habitat loss is the primary
+      threat to this species.
+    </p>
+  </div>
+</section>
+
+<footer class="footer">
   <div class="container footer__container">
 
     <div class="footer_top">
@@ -67,15 +240,19 @@
             <a href="../../contact/index.html">Contact Us</a>
         </div>
         <div class="donate">
-        <button class="donate__btn">
-            Donate for volunteers
-            <span class="arrow">→</span>
-            <!-- <img src="../../assets/icons/arrows/arrowRight.png" alt="arrowRight" class="btn-icon"> -->
-        </button>
+          <button class="donate__btn">
+              Donate for volunteers
+              <svg class="btn-arrow" viewBox="0 0 24 24" fill="none"><line x1="2" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="13,5 21,12 13,19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <div class="footer__socials--mobile">
+          <a href="https://www.youtube.com/@RollingScopesSchool"><img src="../../../assets/icons/social/youtube.png" alt="youtube"></a>
+          <a href="https://www.instagram.com/p/CyLSf57IRIe/"><img src="../../../assets/icons/social/instagram.png" alt="instagram"></a>
+          <a href="https://www.facebook.com/RollingScopesSchool"><img src="../../../assets/icons/social/facebook.png" alt="facebook"></a>
         </div>
     </div>
 
-  <hr class="footer_divider">
+    <hr class="footer_divider">
 
     <div class="footer__bottom">
         <div class="footer__copyright">
@@ -83,7 +260,7 @@
                 <li>© 2021 Dinak</li>
                 <li>© Yem Digital</li>
                 <li>© Rsschool</li>
-            </ul> 
+            </ul>
         </div>
         <div class="footer__socials">
             <a href="https://www.youtube.com/@RollingScopesSchool"><img src="../../../assets/icons/social/youtube.png" alt="youtube"></a>
@@ -91,12 +268,13 @@
             <a href="https://www.facebook.com/RollingScopesSchool"><img src="../../../assets/icons/social/facebook.png" alt="facebook"></a>
         </div>
     </div>
+
   </div>
-  </footer>
+</footer>
 
 
   <script src="../../../shared/scripts/navigation.js"></script>
-  <script src="../script.js"></script>
+  <script src="../panda/script.js"></script>
 
 </body>
 </html>
