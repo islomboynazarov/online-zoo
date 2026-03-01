@@ -26,3 +26,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 }); 
+
+
+// sidebar highlight part
+
+document.querySelectorAll('.sidebar__boxes').forEach(box => {
+  box.classList.remove('active');
+  const link = box.closest('a') || box.querySelector('a');
+  if (link && window.location.href.includes(link.getAttribute('href').replace('../', '').replace('index.html', ''))) {
+    box.classList.add('active');
+  }
+});
