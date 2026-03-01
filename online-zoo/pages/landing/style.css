@@ -42,7 +42,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.3rem 2rem;
+  padding: 1rem 1rem;
   margin: 0;
   background-color: #F58021;
   border: none;
@@ -51,7 +51,7 @@
   transition: all 0.3s ease;
 }
 
-.hero__btn h5 {
+.hero__btn span {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.2rem;
   font-weight: lighter;
@@ -67,6 +67,7 @@
   transform: scale(0.98);
   transition: transform 0.1s;
 }
+
 
 .arrow-icon {
   width: 1.5rem;
@@ -313,6 +314,8 @@
   gap: 15px;
   transition: transform 0.4s ease;
   margin-top: 2rem;
+  overflow: hidden;
+  max-width: 100%;
 }
 
 .pet-card {
@@ -395,6 +398,12 @@ background: #F58021;
 color: #fff;
 border-radius: 5px;
 }
+
+/* .care__slider,
+.slider__viewport,
+.pet-cards {
+  overflow: hidden;
+} */
 /* FAvorite button is here starts */
 .pets__cta {
   text-align: center;
@@ -1183,10 +1192,10 @@ border-radius: 5px;
     max-width: 900px;
   }
   .hero__btn {
-    padding: 0.2rem 1.2rem;
+    padding: 1rem 1rem;
   }
 
-  .hero__btn h5 {
+  .hero__btn span {
   font-size: 1rem;
 }
 
@@ -1226,7 +1235,7 @@ border-radius: 5px;
     flex-direction: column;
     align-items: flex-start;
     margin-bottom: 60px;
-    margin-left: 20rem;
+    margin-left: 27rem;
   }
   .wework__container img {
     max-width: 600px;
@@ -1381,6 +1390,9 @@ border-radius: 5px;
   order: 4;
   margin-top: 30px;
   align-self: flex-start;
+  position: relative;
+  z-index: 10;
+  color: #fff;
 }
 
 .testimonials__controls {
@@ -1491,10 +1503,10 @@ border-radius: 5px;
     padding-left: 20px;
   }
   .hero__btn {
-    padding: 0.3rem 0.8rem;
+    padding: 1rem 1rem;
     margin-left: 20px;
   }
-  .hero__btn h5 {
+  .hero__btn span {
     font-size: 0.7rem;
   }
 
@@ -1854,7 +1866,7 @@ border-radius: 5px;
   max-width: 100%;
   padding: 0 10px;
   }
-  .hero__btn h5 {
+  .hero__btn span {
     font-size: 1rem;
     padding: 0;
     margin: 10px 10px;
@@ -2020,8 +2032,14 @@ border-radius: 5px;
 .feedback__btn {
   width: 100%;
   font-size: 0.85rem;
-  padding: 0.8em 1em;
+  padding: 1em 1em;
   justify-content: center;
+  color: #fff !important;
+}
+
+.feedback__btn span {
+  color: #fff !important;
+  font-size: 1.3rem;
 }
 
   /* CARE */
