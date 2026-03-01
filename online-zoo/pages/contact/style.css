@@ -91,6 +91,31 @@
   background: #026d64;
 }
 
+@media (max-width: 1200px) {
+
+  .contact__container {
+    flex-direction: column;
+    gap: 50px;
+    max-width: 835px;
+  }
+
+  .contact__info h2 {
+    text-align: center;
+  }
+
+  .contact__info p {
+    max-width: 100%;
+    text-align: justify;
+  }
+
+  .contact__form {
+    width: 87%;
+  }
+
+  .btn-submit {
+    width: 100%;
+  }
+}
 
 /* ------------------- 640 screen ------------------------- */
 
