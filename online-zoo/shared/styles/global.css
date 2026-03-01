@@ -39,15 +39,10 @@ body {
 }
 
 
-  /* @media (max-width: 1200px) {
-
-  .container {
-    padding: 0 30px !important;
-  }
-} */
 
 @media (max-width: 320px) {
   .conatainer {
     max-width: 320px !important;
   }
 }
+

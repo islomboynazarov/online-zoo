@@ -6,11 +6,12 @@
   background-color: #F58021;
 }
 
-.header__container {
+.header__container{
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 110px;
+
   
 }
 
@@ -83,7 +84,9 @@
 @media (max-width: 1200px) {
 
   .header__container {
-    height: 90px;
+    height: 110px;
+    margin-left: 40px;
+    margin-right: 40px;
   }
 
   .nav__list {
@@ -117,7 +120,7 @@
   }
 
   .header__container {
-    height: 70px;
+    height: 110px;
     position: relative;
     overflow:visible;
   }
@@ -229,6 +232,7 @@
   }
   .header__container {
     height: 110px;
+    margin: 0;
   }
   .header__nav {
     top: 60px;
