@@ -120,21 +120,61 @@ function generateSidebar(cameras: Camera[]): void {
   animalsContainer.appendChild(arrow);
 }
 
+// export function initZoosPage(): void {
+//   getCameras()
+//     .then((cameras) => {
+//       generateSidebar(cameras);
+
+//       // Load current pet info on page load
+//       const currentPetId = getCurrentPetId();
+//       getPetById(currentPetId)
+//         .then((pet) => updateDidYouKnow(pet))
+//         .catch(() => console.error('Failed to load pet info'));
+//     })
+//     .catch(() => {
+//       const animalsContainer = document.querySelector('.live__animals') as HTMLElement;
+//       if (animalsContainer) {
+//         animalsContainer.innerHTML = '<p class="error-message">Something went wrong. Please, refresh the page</p>';
+//       }
+//     });
+// }
+
 export function initZoosPage(): void {
+  const animalsContainer = document.querySelector('.live__animals') as HTMLElement;
+  const pandaInfo = document.querySelector('.panda-info') as HTMLElement;
+
+  if (animalsContainer) {
+    animalsContainer.innerHTML = '<p class="loader" style="color:white; padding:20px;">Loading...</p>';
+  }
+  if (pandaInfo) {
+    pandaInfo.style.opacity = '0.4';
+    pandaInfo.style.pointerEvents = 'none';
+  }
+
   getCameras()
     .then((cameras) => {
       generateSidebar(cameras);
 
-      // Load current pet info on page load
       const currentPetId = getCurrentPetId();
       getPetById(currentPetId)
-        .then((pet) => updateDidYouKnow(pet))
-        .catch(() => console.error('Failed to load pet info'));
+        .then((pet) => {
+          updateDidYouKnow(pet);
+          if (pandaInfo) {
+            pandaInfo.style.opacity = '1';
+            pandaInfo.style.pointerEvents = 'auto';
+          }
+        })
+        .catch(() => {
+          if (pandaInfo) {
+            pandaInfo.innerHTML = '<p class="error-message">Something went wrong. Please, refresh the page</p>';
+            pandaInfo.style.opacity = '1';
+            pandaInfo.style.pointerEvents = 'auto';
+          }
+        });
     })
     .catch(() => {
-      const animalsContainer = document.querySelector('.live__animals') as HTMLElement;
       if (animalsContainer) {
-        animalsContainer.innerHTML = '<p class="error-message">Something went wrong. Please, refresh the page</p>';
+        animalsContainer.innerHTML = '<p class="error-message" style="color:white; padding:20px;">Something went wrong. Please, refresh the page</p>';
       }
     });
 }
