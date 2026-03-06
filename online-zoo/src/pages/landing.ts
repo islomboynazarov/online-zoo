@@ -10,6 +10,24 @@ function showError(container: HTMLElement): void {
 }
 
 // ─── PETS SLIDER ───────────────────────────────────────────
+
+const PET_IMAGES: Record<number, string> = {
+  1: 'slider_panda.png',
+  2: 'slider_lemur.png',
+  3: 'slider_gorilla.png',
+  4: 'slider_alligator.png',
+  5: 'slider_eagles.png',
+  6: 'slider_coala.png',
+  7: 'slider_lion.png',
+  8: 'slider_tiger.png',
+};
+
+const ALL_IMAGES = Object.values(PET_IMAGES);
+
+function getPetImage(petId: number): string {
+  return PET_IMAGES[petId] ?? ALL_IMAGES[(petId - 1) % ALL_IMAGES.length];
+}
+
 let pets: Pet[] = [];
 let petIndex: number = 0;
 const VISIBLE_PETS = 3;
@@ -26,7 +44,7 @@ function renderPetSlider(track: HTMLElement): void {
     };
     card.innerHTML = `
       <div class="pet-card__image">
-        <img src="../../assets/images/pet-sliders/slider_panda.png" alt="${pet.name}">
+        <img src="../../assets/images/pet-sliders/${getPetImage(pet.id)}" alt="${pet.name}">
         <span class="pet-card__name">${pet.name}</span>
       </div>
       <div class="pet-card__content">
@@ -74,7 +92,6 @@ function initPetSlider(): void {
     })
     .catch(() => showError(track));
 }
-
 // ─── FEEDBACK SLIDER ───────────────────────────────────────
 let feedbacks: Feedback[] = [];
 let feedbackIndex: number = 0;
