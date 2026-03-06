@@ -57,6 +57,7 @@ export interface RegisterPayload {
   login: string;
   password: string;
   name: string;
+  email: string;
 }
 
 export interface DonationPayload {
