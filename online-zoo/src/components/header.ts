@@ -11,13 +11,12 @@ function getUser(): User | null {
 }
 
 function createUserIcon(): void {
-  console.log('user from storage:', getUser());  // I will delete this later
-  const headerSocials = document.querySelector('.header__socials') as HTMLElement;
-  if (!headerSocials) return;
+  const headerContainer = document.querySelector('.header__container') as HTMLElement;
+  if (!headerContainer) return;
 
   const user = getUser();
+  const burger = document.querySelector('.header__burger') as HTMLElement;
 
-  // Create user icon wrapper
   const userWrapper = document.createElement('div');
   userWrapper.className = 'header__user';
 
@@ -52,9 +51,12 @@ function createUserIcon(): void {
     `;
   }
 
-  headerSocials.appendChild(userWrapper);
+  if (burger) {
+    headerContainer.insertBefore(userWrapper, burger);
+  } else {
+    headerContainer.appendChild(userWrapper);
+  }
 
-  // Toggle popup
   const userIcon = document.getElementById('user-icon') as HTMLElement;
   const userPopup = document.getElementById('user-popup') as HTMLElement;
 
@@ -67,7 +69,6 @@ function createUserIcon(): void {
     userPopup.classList.remove('active');
   });
 
-  // Sign out
   const signOutBtn = document.getElementById('signout-btn');
   if (signOutBtn) {
     signOutBtn.addEventListener('click', () => {

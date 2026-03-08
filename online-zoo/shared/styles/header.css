@@ -216,6 +216,24 @@
     transform: translateY(-8.5px) rotate(-45deg);
   }
 
+  /* profile icon function */
+  .header__user {
+  display: flex;
+  margin-right: 10px;
+  }
+
+  .header__user-name {
+  display: none;
+}
+
+  .header__socials {
+    display: none;
+  }
+
+  .header__socials .header__user {
+    display: flex;
+  }
+
 }
 
 /* Hide burger on desktop */
@@ -247,6 +265,16 @@
   .header__burger span {
     background: #000;
     height: 2px;
+  }
+
+  .header__user-popup {
+    position: fixed;
+    top: 80px;
+    left: 5px;
+    right: 5px;
+    width: auto;
+    min-width: unset;
+    box-sizing: border-box;
   }
 }
 
