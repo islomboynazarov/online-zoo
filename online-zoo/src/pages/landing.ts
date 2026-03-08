@@ -182,7 +182,56 @@ function initFeedbackSlider(): void {
     });
 }
 
+// function initDonationButtons(): void {
+  // const overlay = document.getElementById('popup-overlay') as HTMLElement;
+  // const popupWelcome = document.getElementById('popup-welcome') as HTMLElement;
+
+  // if (!overlay || !popupWelcome) return;
+
+  // const openPopup = (): void => {
+  //   overlay.style.display = 'flex';
+  //   popupWelcome.classList.add('active');
+  // };
+
+  // const quickDonateBtn = document.getElementById('quick-donate-btn');
+  // const donateNowBtn = document.getElementById('donate-now-btn');
+
+  // if (quickDonateBtn) quickDonateBtn.addEventListener('click', openPopup);
+  // if (donateNowBtn) donateNowBtn.addEventListener('click', openPopup);
+// }
+
+function initDonationButtons(): void {
+  const overlay = document.getElementById('popup-overlay') as HTMLElement;
+  const popupWelcome = document.getElementById('popup-welcome') as HTMLElement;
+
+  if (!overlay || !popupWelcome) return;
+
+  const openPopup = (): void => {
+    overlay.style.display = 'flex';
+    popupWelcome.classList.add('active');
+  };
+
+  const closePopup = (): void => {
+    overlay.style.display = 'none';
+    popupWelcome.classList.remove('active');
+  };
+
+  const quickDonateBtn = document.getElementById('quick-donate-btn');
+  const donateNowBtn = document.getElementById('donate-now-btn');
+  const closeWelcome = document.getElementById('close-welcome');
+
+  if (quickDonateBtn) quickDonateBtn.addEventListener('click', openPopup);
+  if (donateNowBtn) donateNowBtn.addEventListener('click', openPopup);
+  if (closeWelcome) closeWelcome.addEventListener('click', closePopup);
+
+  // Close on overlay click
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) closePopup();
+  });
+}
+
 export function initLandingPage(): void {
   initPetSlider();
   initFeedbackSlider();
+  initDonationButtons();
 }
