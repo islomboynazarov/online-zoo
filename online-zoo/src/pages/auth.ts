@@ -89,8 +89,8 @@ export function initSignIn(): void {
 
     login(payload)
       .then((response) => {
-        localStorage.setItem('token', response.token);
-        localStorage.setItem('user', JSON.stringify(response.user));
+        localStorage.setItem('token', response.data.access_token);
+        localStorage.setItem('user', JSON.stringify(response.data.user));
         window.location.href = '../zoos/panda/index.html';
       })
       .catch(() => {
@@ -189,8 +189,8 @@ export function initRegistration(): void {
 
     register(payload)
       .then((response) => {
-        localStorage.setItem('token', response.token);
-        localStorage.setItem('user', JSON.stringify(response.user));
+        localStorage.setItem('token', response.data.access_token);
+        localStorage.setItem('user', JSON.stringify(response.data.user));
         window.location.href = '../zoos/panda/index.html';
       })
       .catch((err: Error) => {

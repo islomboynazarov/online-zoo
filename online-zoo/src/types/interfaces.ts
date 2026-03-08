@@ -44,8 +44,11 @@ export interface User {
 }
 
 export interface AuthResponse {
-  token: string;
-  user: User;
+  data: {
+    access_token: string;
+    user: User;
+  };
+  message: string;
 }
 
 export interface LoginPayload {

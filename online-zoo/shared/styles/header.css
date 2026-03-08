@@ -11,6 +11,7 @@
   align-items: center;
   justify-content: space-between;
   height: 110px;
+  overflow: visible;
 
   
 }
@@ -247,4 +248,107 @@
     background: #000;
     height: 2px;
   }
+}
+
+
+/* ─── USER ICON ─────────────────────────────────── */
+.header__user {
+  position: relative;
+}
+
+.header__user-icon {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  color: #000;
+}
+
+.header__user-icon svg {
+  width: 2rem;
+  height: 2rem;
+}
+
+.header__user-icon:hover {
+  opacity: 0.8;
+}
+
+.header__user-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.header__user-popup {
+  display: none;
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  padding: 15px 20px;
+  min-width: 200px;
+  z-index: 9999;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.header__user-popup.active {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.user-popup__name,
+.user-popup__email {
+  display:block;
+  font-weight: 700;
+  color: #20113D;
+  margin: 0;
+}
+
+.user-popup__email {
+  font-size: 0.85rem;
+  color: #888;
+  margin: 0;
+}
+
+.user-popup__signout {
+  display: block;
+  width: 100%;
+  background: #F58021;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  margin-top: 5px;
+}
+
+.user-popup__signout:hover {
+  background: #D26004;
+}
+
+.user-popup__link {
+  color: #20113D;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  padding: 5px 0;
+}
+
+.user-popup__link:hover {
+  color: #F58021;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 5px 0;
 }
