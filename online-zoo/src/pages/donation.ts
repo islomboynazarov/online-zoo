@@ -95,18 +95,35 @@ function initDonationButtons(): void {
 }
 
 function initStep1(): void {
+  const otherInput = document.querySelector('.other-amount-input') as HTMLInputElement;
+  const nextBtn = document.querySelector('#step-1 .btn-next') as HTMLButtonElement;
+
+  const checkStep1Valid = (): void => {
+    const valid = state.amount > 0 && state.petId !== null;
+    if (nextBtn) {
+      nextBtn.disabled = !valid;
+      nextBtn.style.opacity = valid ? '1' : '0.5';
+      nextBtn.style.cursor = valid ? 'pointer' : 'not-allowed';
+    }
+  };
+
+  if (nextBtn) {
+    nextBtn.disabled = true;
+    nextBtn.style.opacity = '0.5';
+    nextBtn.style.cursor = 'not-allowed';
+  }
+
   document.querySelectorAll('.form-amount-btn').forEach((btn) => {
     btn.addEventListener('click', () => {
       document.querySelectorAll('.form-amount-btn').forEach(b => b.classList.remove('selected'));
       btn.classList.add('selected');
       const val = btn.textContent?.replace('$', '') ?? '0';
       state.amount = parseInt(val);
-      const otherInput = document.querySelector('.other-amount-input') as HTMLInputElement;
       if (otherInput) otherInput.value = '';
+      checkStep1Valid();
     });
   });
 
-  const otherInput = document.querySelector('.other-amount-input') as HTMLInputElement;
   if (otherInput) {
     otherInput.addEventListener('input', () => {
       document.querySelectorAll('.form-amount-btn').forEach(b => b.classList.remove('selected'));
@@ -116,6 +133,18 @@ function initStep1(): void {
       }
       const parsed = parseInt(otherInput.value);
       state.amount = (!isNaN(parsed) && parsed > 0) ? parsed : 0;
+      checkStep1Valid();
+    });
+  }
+
+  const otherAmountBtn = document.querySelector('.btn-other-amount') as HTMLButtonElement;
+  if (otherAmountBtn && otherInput) {
+    otherAmountBtn.addEventListener('click', () => {
+      document.querySelectorAll('.form-amount-btn').forEach(b => b.classList.remove('selected'));
+      state.amount = 0;
+      otherInput.value = '';
+      otherInput.focus();
+      checkStep1Valid();
     });
   }
 
@@ -133,6 +162,7 @@ function initStep1(): void {
 
     petSelect.addEventListener('change', () => {
       state.petId = petSelect.value ? parseInt(petSelect.value) : null;
+      checkStep1Valid();
     });
   }
 
@@ -143,33 +173,12 @@ function initStep1(): void {
     });
   }
 
-  const nextBtn = document.querySelector('#step-1 .btn-next') as HTMLButtonElement;
-if (nextBtn) {
-  nextBtn.disabled = true;
-  nextBtn.style.opacity = '0.5';
-  nextBtn.style.cursor = 'not-allowed';
-
-  const checkStep1Valid = (): void => {
-    const valid = state.amount > 0;
-    nextBtn.disabled = !valid;
-    nextBtn.style.opacity = valid ? '1' : '0.5';
-    nextBtn.style.cursor = valid ? 'pointer' : 'not-allowed';
-  };
-
-  // Call checkStep1Valid after amount buttons and otherInput listeners
-  document.querySelectorAll('.form-amount-btn').forEach((btn) => {
-    btn.addEventListener('click', checkStep1Valid);
-  });
-
-  if (otherInput) {
-    otherInput.addEventListener('input', checkStep1Valid);
+  if (nextBtn) {
+    nextBtn.onclick = () => {
+      if (state.amount <= 0 || state.petId === null) return;
+      goToStep(2);
+    };
   }
-
-  nextBtn.onclick = () => {
-    if (state.amount <= 0) return;
-    goToStep(2);
-  };
-}
 }
 
 function initStep2(): void {
