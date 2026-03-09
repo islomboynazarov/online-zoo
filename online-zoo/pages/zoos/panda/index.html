@@ -225,6 +225,165 @@
   </div>
 </section>
 
+<!-- DONATION POPUP -->
+<div class="popup-overlay" id="popup-overlay">
+
+  <!-- POPUP 1: Welcome -->
+  <div class="popup active" id="popup-welcome">
+    <button class="popup__close" id="close-welcome">✕</button>
+    <img src="../../../assets/images/backgrounds/popup_handshake.png" alt="Together we care" class="popup-welcome__image">
+    <div class="popup-welcome__body">
+      <h2 class="popup-welcome__title">Together We Care,<br>Save and Protect!</h2>
+      <p class="popup-welcome__text">
+        Your most generous gift not only cares for countless animals,
+        but it also offers hope and a vital lifeline to the world's most
+        endangered wildlife relying on us to survive.
+      </p>
+      <div class="popup-welcome__amounts">
+        <button class="amount-btn">$20</button>
+        <button class="amount-btn">$30</button>
+        <button class="amount-btn">$50</button>
+        <button class="amount-btn">$80</button>
+        <button class="amount-btn">$100</button>
+        <button class="amount-btn amount-btn--other">Other Amount</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- POPUP 2: Multi-step Donation Form -->
+  <div class="popup" id="popup-form">
+    <div class="popup-form__header">
+      <h2>Make Your Donation</h2>
+      <button class="popup__close" id="close-form">✕</button>
+    </div>
+    <div class="popup-form__body">
+
+      <!-- STEP 1 -->
+      <div class="form-step active" id="step-1">
+        <p class="form-step__section-title">Donation Information:</p>
+        <hr class="form-step__divider">
+        <span class="form-step__label">* Choose your donation amount:</span>
+        <div class="form-amounts">
+          <button class="form-amount-btn">$10</button>
+          <button class="form-amount-btn">$20</button>
+          <button class="form-amount-btn">$30</button>
+          <button class="form-amount-btn">$50</button>
+          <button class="form-amount-btn">$80</button>
+          <button class="form-amount-btn">$100</button>
+        </div>
+        <div class="other-amount-row">
+          <button class="btn-other-amount">Other Amount</button>
+          <input type="number" class="other-amount-input" placeholder="">
+        </div>
+        <div class="special-pet-row">
+          <button class="btn-special-pet">For Special Pet</button>
+          <select class="special-pet-select">
+            <option value="">Choose your favourite</option>
+          </select>
+        </div>
+        <label class="checkbox-row">
+          <input type="checkbox">
+          Make this a monthly recurring gift
+        </label>
+        <div class="form-step__footer">
+          <div class="step-dots">
+            <div class="step-dot active"></div>
+            <div class="step-dot"></div>
+            <div class="step-dot"></div>
+          </div>
+          <button class="btn-next">
+            Next
+            <svg viewBox="0 0 24 24" fill="none">
+              <line x1="2" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+              <polyline points="13,5 21,12 13,19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- STEP 2 -->
+      <div class="form-step" id="step-2">
+        <p class="form-step__section-title">Billing Information:</p>
+        <hr class="form-step__divider">
+        <span class="form-step__label">* Your Name</span>
+        <input type="text" class="form-input" placeholder="First and last name">
+        <span class="form-step__label">* Your Email Address</span>
+        <input type="email" class="form-input" placeholder="Enter your email">
+        <p class="form-hint">
+          You will receive emails from the Online Zoo, including updates and news
+          on the latest discoveries and translations. You can unsubscribe at any time.
+        </p>
+        <div class="form-step__footer">
+          <div class="step-dots">
+            <div class="step-dot active"></div>
+            <div class="step-dot active"></div>
+            <div class="step-dot"></div>
+          </div>
+          <div style="display:flex; align-items:center; gap:20px;">
+            <button class="btn-back">Back</button>
+            <button class="btn-next">
+              Next
+              <svg viewBox="0 0 24 24" fill="none">
+                <line x1="2" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                <polyline points="13,5 21,12 13,19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 3 -->
+      <div class="form-step" id="step-3">
+        <p class="form-step__section-title">Payment Information:</p>
+        <hr class="form-step__divider">
+        <div class="form-input-group">
+          <div>
+            <span class="form-step__label">* Credit Card Number</span>
+            <input type="text" class="form-input" placeholder="">
+          </div>
+          <div>
+            <span class="form-step__label">* CVV Number</span>
+            <input type="text" class="form-input" placeholder="">
+          </div>
+        </div>
+        <span class="form-step__label">* Expiration Date</span>
+        <div class="form-select-group">
+          <select class="form-select">
+            <option>Month</option>
+            <option>01</option><option>02</option><option>03</option>
+            <option>04</option><option>05</option><option>06</option>
+            <option>07</option><option>08</option><option>09</option>
+            <option>10</option><option>11</option><option>12</option>
+          </select>
+          <select class="form-select">
+            <option>Year</option>
+            <option>2025</option><option>2026</option><option>2027</option>
+            <option>2028</option><option>2029</option><option>2030</option>
+          </select>
+        </div>
+        <div class="form-step__footer">
+          <div class="step-dots">
+            <div class="step-dot active"></div>
+            <div class="step-dot active"></div>
+            <div class="step-dot active"></div>
+          </div>
+          <div style="display:flex; align-items:center; gap:20px;">
+            <button class="btn-back">Back</button>
+            <button class="btn-next">
+              Complete Donation
+              <svg viewBox="0 0 24 24" fill="none">
+                <line x1="2" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                <polyline points="13,5 21,12 13,19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
 <!-- MAP MODAL -->
 <div class="map-overlay" id="map-overlay">
   <div class="map-modal" id="map-modal">
