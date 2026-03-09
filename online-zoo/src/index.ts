@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   if (document.querySelector('.live__animals')) {
     initZoosPage();
+    initDonationForm();
   }
   if (document.getElementById('signin-btn')) {
     initSignIn();
