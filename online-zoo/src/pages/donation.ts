@@ -110,7 +110,12 @@ function initStep1(): void {
   if (otherInput) {
     otherInput.addEventListener('input', () => {
       document.querySelectorAll('.form-amount-btn').forEach(b => b.classList.remove('selected'));
-      state.amount = parseInt(otherInput.value) || 0;
+      const raw = otherInput.value;
+      if (/e/i.test(raw)) {
+        otherInput.value = raw.replace(/[eE]/g, '');
+      }
+      const parsed = parseInt(otherInput.value);
+      state.amount = (!isNaN(parsed) && parsed > 0) ? parsed : 0;
     });
   }
 
@@ -139,15 +144,32 @@ function initStep1(): void {
   }
 
   const nextBtn = document.querySelector('#step-1 .btn-next') as HTMLButtonElement;
-  if (nextBtn) {
-    nextBtn.onclick = () => {
-      if (state.amount <= 0) {
-        alert('Please select or enter a donation amount.');
-        return;
-      }
-      goToStep(2);
-    };
+if (nextBtn) {
+  nextBtn.disabled = true;
+  nextBtn.style.opacity = '0.5';
+  nextBtn.style.cursor = 'not-allowed';
+
+  const checkStep1Valid = (): void => {
+    const valid = state.amount > 0;
+    nextBtn.disabled = !valid;
+    nextBtn.style.opacity = valid ? '1' : '0.5';
+    nextBtn.style.cursor = valid ? 'pointer' : 'not-allowed';
+  };
+
+  // Call checkStep1Valid after amount buttons and otherInput listeners
+  document.querySelectorAll('.form-amount-btn').forEach((btn) => {
+    btn.addEventListener('click', checkStep1Valid);
+  });
+
+  if (otherInput) {
+    otherInput.addEventListener('input', checkStep1Valid);
   }
+
+  nextBtn.onclick = () => {
+    if (state.amount <= 0) return;
+    goToStep(2);
+  };
+}
 }
 
 function initStep2(): void {
