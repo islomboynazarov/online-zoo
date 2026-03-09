@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="../../../shared/styles/footer.css">
   <link rel="stylesheet" href="./style.css">
   <link rel="icon" href="../../../favicon.ico">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 </head>
 
 <body>
@@ -224,6 +225,17 @@
   </div>
 </section>
 
+<!-- MAP MODAL -->
+<div class="map-overlay" id="map-overlay">
+  <div class="map-modal" id="map-modal">
+    <div class="map-modal__header">
+      <h3 id="map-modal__title">Habitat Range</h3>
+      <button class="map-modal__close" id="map-modal-close">✕</button>
+    </div>
+    <div id="map-container" style="width:100%; height:400px;"></div>
+  </div>
+</div>
+
 <footer class="footer">
   <div class="container footer__container">
 
@@ -276,5 +288,6 @@
   <script src="../../../shared/scripts/navigation.js"></script>
   <script src="../panda/script.js"></script>
   <script src="../../../dist/bundle.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 </body>
 </html>
