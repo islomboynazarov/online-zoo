@@ -272,39 +272,89 @@ function initStep3(): void {
   const backBtn = document.querySelector('#step-3 .btn-back') as HTMLButtonElement;
   if (backBtn) backBtn.onclick = () => goToStep(2);
 
-  if (completeBtn) {
-    completeBtn.onclick = () => {
-      if (!state.petId) { alert('Please select a pet to donate to.'); return; }
-
-      const payload: DonationPayload = {
-        petId: state.petId,
-        amount: state.amount,
-        name: state.name,
-        email: state.email,
-        cardNumber: state.cardNumber,
-        expirationDate: state.expirationDate,
-        cvv: state.cvv,
-      };
-
-      completeBtn.disabled = true;
-      completeBtn.textContent = 'Processing...';
-
-      postDonation(payload)
-        .then(() => {
-          const overlay = document.getElementById('popup-overlay') as HTMLElement;
-          const popupForm = document.getElementById('popup-form') as HTMLElement;
-          popupForm.classList.remove('active');
-          overlay.style.display = 'none';
-          alert('Thank you for your donation!');
-        })
-        .catch(() => {
-          alert('Something went wrong. Please try again.');
-          completeBtn.disabled = false;
-          completeBtn.style.opacity = '1';
-          completeBtn.textContent = 'Complete Donation';
-        });
-    };
+  const saveCardRow = document.getElementById('save-card-row') as HTMLElement;
+  const saveCardCheckbox = document.getElementById('save-card-checkbox') as HTMLInputElement;
+  const user = getUser();
+  if (saveCardRow && user) {
+    saveCardRow.style.display = 'block';
   }
+
+  const savedCardsRow = document.getElementById('saved-cards-row') as HTMLElement;
+const savedCardsSelect = document.getElementById('saved-cards-select') as HTMLSelectElement;
+
+if (savedCardsRow && savedCardsSelect && user) {
+  const savedCards: { cardNumber: string; expirationDate: string; cvv: string }[] =
+    JSON.parse(localStorage.getItem('savedCards') || '[]');
+
+  if (savedCards.length > 0) {
+    savedCardsRow.style.display = 'block';
+    savedCards.forEach((card, index) => {
+      const option = document.createElement('option');
+      option.value = String(index);
+      const num = card.cardNumber;
+      option.textContent = `${num.slice(0, 4)} **** **** ${num.slice(-4)}`;
+      savedCardsSelect.appendChild(option);
+    });
+
+    savedCardsSelect.addEventListener('change', () => {
+      const idx = parseInt(savedCardsSelect.value);
+      if (!isNaN(idx) && savedCards[idx]) {
+        const card = savedCards[idx];
+        if (cardInput) { cardInput.value = card.cardNumber; state.cardNumber = card.cardNumber; }
+        if (cvvInput) { cvvInput.value = card.cvv; state.cvv = card.cvv; }
+        const [month, year] = card.expirationDate.split('/');
+        if (monthSelect) monthSelect.value = month;
+        if (yearSelect) yearSelect.value = year;
+        state.expirationDate = card.expirationDate;
+        checkStep3Valid();
+      }
+    });
+  }
+}
+
+  if (completeBtn) {
+  completeBtn.onclick = () => {
+    if (!state.petId) { alert('Please select a pet to donate to.'); return; }
+
+    const payload: DonationPayload = {
+      petId: state.petId,
+      amount: state.amount,
+      name: state.name,
+      email: state.email,
+      cardNumber: state.cardNumber,
+      expirationDate: state.expirationDate,
+      cvv: state.cvv,
+    };
+
+    completeBtn.disabled = true;
+    completeBtn.textContent = 'Processing...';
+
+    postDonation(payload)
+      .then(() => {
+        if (saveCardCheckbox && saveCardCheckbox.checked) {
+          const cards: { cardNumber: string; expirationDate: string; cvv: string }[] =
+            JSON.parse(localStorage.getItem('savedCards') || '[]');
+          cards.push({
+            cardNumber: state.cardNumber,
+            expirationDate: state.expirationDate,
+            cvv: state.cvv,
+          });
+          localStorage.setItem('savedCards', JSON.stringify(cards));
+        }
+        const overlay = document.getElementById('popup-overlay') as HTMLElement;
+        const popupForm = document.getElementById('popup-form') as HTMLElement;
+        popupForm.classList.remove('active');
+        overlay.style.display = 'none';
+        alert('Thank you for your donation!');
+      })
+      .catch(() => {
+        alert('Something went wrong. Please try again.');
+        completeBtn.disabled = false;
+        completeBtn.style.opacity = '1';
+        completeBtn.textContent = 'Complete Donation';
+      });
+  };
+}
 }
 
 export function initDonationForm(): void {
