@@ -231,12 +231,31 @@ function initStep3(): void {
   const cvvInput = document.querySelectorAll('#step-3 .form-input')[1] as HTMLInputElement;
   const monthSelect = document.querySelectorAll('#step-3 .form-select')[0] as HTMLSelectElement;
   const yearSelect = document.querySelectorAll('#step-3 .form-select')[1] as HTMLSelectElement;
+  const completeBtn = document.querySelector('#step-3 .btn-next') as HTMLButtonElement;
 
-  if (cardInput) cardInput.addEventListener('input', () => { state.cardNumber = cardInput.value; });
-  if (cvvInput) cvvInput.addEventListener('input', () => { state.cvv = cvvInput.value; });
+  if (completeBtn) {
+    completeBtn.disabled = true;
+    completeBtn.style.opacity = '0.5';
+    completeBtn.style.cursor = 'not-allowed';
+  }
+
+  const checkStep3Valid = (): void => {
+    const cardValid = /^\d{16}$/.test(cardInput.value.trim());
+    const cvvValid = /^\d{3}$/.test(cvvInput.value.trim());
+    const monthValid = monthSelect.value !== 'Month';
+    const yearValid = yearSelect.value !== 'Year';
+    const valid = cardValid && cvvValid && monthValid && yearValid;
+    completeBtn.disabled = !valid;
+    completeBtn.style.opacity = valid ? '1' : '0.5';
+    completeBtn.style.cursor = valid ? 'pointer' : 'not-allowed';
+  };
+
+  if (cardInput) cardInput.addEventListener('input', () => { state.cardNumber = cardInput.value; checkStep3Valid(); });
+  if (cvvInput) cvvInput.addEventListener('input', () => { state.cvv = cvvInput.value; checkStep3Valid(); });
 
   const updateExpiry = (): void => {
     state.expirationDate = `${monthSelect.value}/${yearSelect.value}`;
+    checkStep3Valid();
   };
   if (monthSelect) monthSelect.addEventListener('change', updateExpiry);
   if (yearSelect) yearSelect.addEventListener('change', updateExpiry);
@@ -244,15 +263,8 @@ function initStep3(): void {
   const backBtn = document.querySelector('#step-3 .btn-back') as HTMLButtonElement;
   if (backBtn) backBtn.onclick = () => goToStep(2);
 
-  const completeBtn = document.querySelector('#step-3 .btn-next') as HTMLButtonElement;
   if (completeBtn) {
     completeBtn.onclick = () => {
-      if (!state.cardNumber.trim()) { alert('Please enter your card number.'); return; }
-      if (!state.cvv.trim()) { alert('Please enter your CVV.'); return; }
-      if (monthSelect.value === 'Month' || yearSelect.value === 'Year') {
-        alert('Please select expiration date.');
-        return;
-      }
       if (!state.petId) { alert('Please select a pet to donate to.'); return; }
 
       const payload: DonationPayload = {
@@ -279,6 +291,7 @@ function initStep3(): void {
         .catch(() => {
           alert('Something went wrong. Please try again.');
           completeBtn.disabled = false;
+          completeBtn.style.opacity = '1';
           completeBtn.textContent = 'Complete Donation';
         });
     };
