@@ -175,6 +175,22 @@ if (nextBtn) {
 function initStep2(): void {
   const nameInput = document.querySelector('#step-2 .form-input[type="text"]') as HTMLInputElement;
   const emailInput = document.querySelector('#step-2 .form-input[type="email"]') as HTMLInputElement;
+  const nextBtn = document.querySelector('#step-2 .btn-next') as HTMLButtonElement;
+
+  const checkStep2Valid = (): void => {
+    const nameValid = /^[a-zA-Z\s]{3,}$/.test(nameInput.value.trim());
+    const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value.trim());
+    const valid = nameValid && emailValid;
+    nextBtn.disabled = !valid;
+    nextBtn.style.opacity = valid ? '1' : '0.5';
+    nextBtn.style.cursor = valid ? 'pointer' : 'not-allowed';
+  };
+
+  if (nextBtn) {
+    nextBtn.disabled = true;
+    nextBtn.style.opacity = '0.5';
+    nextBtn.style.cursor = 'not-allowed';
+  }
 
   const user = getUser();
   if (user) {
@@ -185,19 +201,25 @@ function initStep2(): void {
   }
 
   if (nameInput) {
-    nameInput.addEventListener('input', () => { state.name = nameInput.value; });
+    nameInput.addEventListener('input', () => {
+      state.name = nameInput.value;
+      checkStep2Valid();
+    });
   }
+
   if (emailInput) {
-    emailInput.addEventListener('input', () => { state.email = emailInput.value; });
+    emailInput.addEventListener('input', () => {
+      state.email = emailInput.value;
+      checkStep2Valid();
+    });
   }
 
   const backBtn = document.querySelector('#step-2 .btn-back') as HTMLButtonElement;
   if (backBtn) backBtn.onclick = () => goToStep(1);
 
-  const nextBtn = document.querySelector('#step-2 .btn-next') as HTMLButtonElement;
   if (nextBtn) {
     nextBtn.onclick = () => {
-      if (!state.name.trim()) { alert('Please enter your name.'); return; }
+      if (!/^[a-zA-Z\s]{3,}$/.test(state.name.trim())) { alert('Please enter a valid name.'); return; }
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(state.email)) { alert('Please enter a valid email.'); return; }
       goToStep(3);
     };
