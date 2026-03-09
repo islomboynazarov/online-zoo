@@ -65,8 +65,36 @@ function highlightAmount(amount: number): void {
   });
 }
 
+function initDonationButtons(): void {
+  const overlay = document.getElementById('popup-overlay') as HTMLElement;
+  const popupWelcome = document.getElementById('popup-welcome') as HTMLElement;
+
+  if (!overlay || !popupWelcome) return;
+
+  const openPopup = (): void => {
+    overlay.style.display = 'flex';
+    popupWelcome.classList.add('active');
+  };
+
+  const closePopup = (): void => {
+    overlay.style.display = 'none';
+    popupWelcome.classList.remove('active');
+  };
+
+  ['quick-donate-btn', 'donate-now-btn', 'donate-now-btn-2', 'donate-now-btn-3'].forEach((id) => {
+    const btn = document.getElementById(id);
+    if (btn) btn.addEventListener('click', openPopup);
+  });
+
+  const closeWelcome = document.getElementById('close-welcome');
+  if (closeWelcome) closeWelcome.addEventListener('click', closePopup);
+
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) closePopup();
+  });
+}
+
 function initStep1(): void {
-  // Amount buttons
   document.querySelectorAll('.form-amount-btn').forEach((btn) => {
     btn.addEventListener('click', () => {
       document.querySelectorAll('.form-amount-btn').forEach(b => b.classList.remove('selected'));
@@ -78,7 +106,6 @@ function initStep1(): void {
     });
   });
 
-  // Other amount
   const otherInput = document.querySelector('.other-amount-input') as HTMLInputElement;
   if (otherInput) {
     otherInput.addEventListener('input', () => {
@@ -87,7 +114,6 @@ function initStep1(): void {
     });
   }
 
-  // Pet select - load from API
   const petSelect = document.querySelector('.special-pet-select') as HTMLSelectElement;
   if (petSelect) {
     getPets().then((pets: Pet[]) => {
@@ -105,7 +131,6 @@ function initStep1(): void {
     });
   }
 
-  // Recurring checkbox
   const recurringCheckbox = document.querySelector('.checkbox-row input') as HTMLInputElement;
   if (recurringCheckbox) {
     recurringCheckbox.addEventListener('change', () => {
@@ -113,7 +138,6 @@ function initStep1(): void {
     });
   }
 
-  // Next button
   const nextBtn = document.querySelector('#step-1 .btn-next') as HTMLButtonElement;
   if (nextBtn) {
     nextBtn.onclick = () => {
@@ -130,7 +154,6 @@ function initStep2(): void {
   const nameInput = document.querySelector('#step-2 .form-input[type="text"]') as HTMLInputElement;
   const emailInput = document.querySelector('#step-2 .form-input[type="email"]') as HTMLInputElement;
 
-  // Prefill if logged in
   const user = getUser();
   if (user) {
     if (nameInput) nameInput.value = user.name;
@@ -146,11 +169,9 @@ function initStep2(): void {
     emailInput.addEventListener('input', () => { state.email = emailInput.value; });
   }
 
-  // Back button
   const backBtn = document.querySelector('#step-2 .btn-back') as HTMLButtonElement;
   if (backBtn) backBtn.onclick = () => goToStep(1);
 
-  // Next button
   const nextBtn = document.querySelector('#step-2 .btn-next') as HTMLButtonElement;
   if (nextBtn) {
     nextBtn.onclick = () => {
@@ -176,11 +197,9 @@ function initStep3(): void {
   if (monthSelect) monthSelect.addEventListener('change', updateExpiry);
   if (yearSelect) yearSelect.addEventListener('change', updateExpiry);
 
-  // Back button
   const backBtn = document.querySelector('#step-3 .btn-back') as HTMLButtonElement;
   if (backBtn) backBtn.onclick = () => goToStep(2);
 
-  // Complete donation
   const completeBtn = document.querySelector('#step-3 .btn-next') as HTMLButtonElement;
   if (completeBtn) {
     completeBtn.onclick = () => {
@@ -190,7 +209,6 @@ function initStep3(): void {
         alert('Please select expiration date.');
         return;
       }
-
       if (!state.petId) { alert('Please select a pet to donate to.'); return; }
 
       const payload: DonationPayload = {
@@ -224,7 +242,8 @@ function initStep3(): void {
 }
 
 export function initDonationForm(): void {
-  // Welcome popup amount buttons → open form with selected amount
+  initDonationButtons();
+
   document.querySelectorAll('.amount-btn').forEach((btn) => {
     if (btn.classList.contains('amount-btn--other')) {
       btn.addEventListener('click', () => showPopupForm());
@@ -236,7 +255,6 @@ export function initDonationForm(): void {
     }
   });
 
-  // Close form button
   const closeForm = document.getElementById('close-form') as HTMLElement;
   if (closeForm) {
     closeForm.addEventListener('click', () => {
