@@ -232,18 +232,43 @@ function openMap(lat: number, lng: number, title: string): void {
   }, 500);
 }
 
+  // document.addEventListener('click', (e) => {
+  //   const target = e.target as HTMLElement;
+  //   if (target.classList.contains('view-map')) {
+  //     e.preventDefault();
+  //     const currentPetId = getCurrentPetId();
+  //     getPetById(currentPetId).then((pet) => {
+  //       const lat = pet.latitude ?? 30.0;
+  //       const lng = pet.longitude ?? 100.0;
+  //       openMap(lat, lng, pet.commonName);
+  //     });
+  //   }
+  // });
+
   document.addEventListener('click', (e) => {
-    const target = e.target as HTMLElement;
-    if (target.classList.contains('view-map')) {
-      e.preventDefault();
-      const currentPetId = getCurrentPetId();
-      getPetById(currentPetId).then((pet) => {
-        const lat = pet.latitude ?? 30.0;
-        const lng = pet.longitude ?? 100.0;
-        openMap(lat, lng, pet.commonName);
-      });
-    }
-  });
+  const target = e.target as HTMLElement;
+  if (target.classList.contains('view-map')) {
+    e.preventDefault();
+    const currentPetId = getCurrentPetId();
+    getPetById(currentPetId).then((pet) => {
+      const parseLat = (val: unknown): number => {
+        if (typeof val === 'number') return val;
+        const str = String(val).replace(/[°NnSs\s]/g, '').trim();
+        const num = parseFloat(str);
+        return isNaN(num) ? 30.0 : num;
+      };
+      const parseLng = (val: unknown): number => {
+        if (typeof val === 'number') return val;
+        const str = String(val).replace(/[°EeWw\s]/g, '').trim();
+        const num = parseFloat(str);
+        return isNaN(num) ? 100.0 : num;
+      };
+      const lat = parseLat(pet.latitude);
+      const lng = parseLng(pet.longitude);
+      openMap(lat, lng, pet.commonName);
+    });
+  }
+});
 
   closeBtn.addEventListener('click', () => {
     overlay.classList.remove('active');
