@@ -2,6 +2,13 @@ declare const L: typeof import('leaflet');
 import { getCameras, getPetById } from '../api/api';
 import { Camera, PetDetail } from '../types/interfaces';
 
+const FALLBACK_COORDS: Record<number, [number, number]> = {
+  1: [30.6, 104.0],   // Panda - China
+  2: [-18.9, 47.5],   // Lemur - Madagascar
+  3: [0.3, 25.0],     // Gorilla - Central Africa
+  5: [44.5, -100.0],  // Eagle - USA
+};
+
 const SIDEBAR_ICONS: Record<number, string> = {
   1: 'sidePanel_pandaBig.png',
   2: 'sidePanel_lemurBig.png',
@@ -245,28 +252,34 @@ function openMap(lat: number, lng: number, title: string): void {
   //   }
   // });
 
-  document.addEventListener('click', (e) => {
+ document.addEventListener('click', (e) => {
   const target = e.target as HTMLElement;
   if (target.classList.contains('view-map')) {
     e.preventDefault();
     const currentPetId = getCurrentPetId();
-    getPetById(currentPetId).then((pet) => {
-      const parseLat = (val: unknown): number => {
-        if (typeof val === 'number') return val;
-        const str = String(val).replace(/[°NnSs\s]/g, '').trim();
-        const num = parseFloat(str);
-        return isNaN(num) ? 30.0 : num;
-      };
-      const parseLng = (val: unknown): number => {
-        if (typeof val === 'number') return val;
-        const str = String(val).replace(/[°EeWw\s]/g, '').trim();
-        const num = parseFloat(str);
-        return isNaN(num) ? 100.0 : num;
-      };
-      const lat = parseLat(pet.latitude);
-      const lng = parseLng(pet.longitude);
-      openMap(lat, lng, pet.commonName);
-    });
+    const fallback = FALLBACK_COORDS[currentPetId] ?? [0, 0];
+
+    getPetById(currentPetId)
+      .then((pet) => {
+        const parseLat = (val: unknown): number => {
+          if (typeof val === 'number') return val;
+          const str = String(val).replace(/[°NnSs\s]/g, '').trim();
+          const num = parseFloat(str);
+          return isNaN(num) ? fallback[0] : num;
+        };
+        const parseLng = (val: unknown): number => {
+          if (typeof val === 'number') return val;
+          const str = String(val).replace(/[°EeWw\s]/g, '').trim();
+          const num = parseFloat(str);
+          return isNaN(num) ? fallback[1] : num;
+        };
+        const lat = parseLat(pet.latitude);
+        const lng = parseLng(pet.longitude);
+        openMap(lat, lng, pet.commonName);
+      })
+      .catch(() => {
+        openMap(fallback[0], fallback[1], 'Habitat Range');
+      });
   }
 });
 
