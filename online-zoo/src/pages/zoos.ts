@@ -1,3 +1,4 @@
+declare const L: typeof import('leaflet');
 import { getCameras, getPetById } from '../api/api';
 import { Camera, PetDetail } from '../types/interfaces';
 
@@ -177,4 +178,82 @@ export function initZoosPage(): void {
         animalsContainer.innerHTML = '<p class="error-message" style="color:white; padding:20px;">Something went wrong. Please, refresh the page</p>';
       }
     });
+    initMapModal();
+}
+
+function initMapModal(): void {
+  const overlay = document.getElementById('map-overlay') as HTMLElement;
+  const closeBtn = document.getElementById('map-modal-close') as HTMLElement;
+  let mapInstance: L.Map | null = null;
+
+//   function openMap(lat: number, lng: number, title: string): void {
+//     const titleEl = document.getElementById('map-modal__title') as HTMLElement;
+//     if (titleEl) titleEl.textContent = `${title} — Habitat Range`;
+
+//     overlay.classList.add('active');
+
+//     setTimeout(() => {
+//       if (mapInstance) {
+//         mapInstance.remove();
+//         mapInstance = null;
+//       }
+//       mapInstance = L.map('map-container').setView([lat, lng], 5);
+//       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+//         attribution: '© OpenStreetMap contributors'
+//       }).addTo(mapInstance);
+//       L.marker([lat, lng]).addTo(mapInstance).bindPopup(title).openPopup();
+//     }, 100);
+//   }
+
+function openMap(lat: number, lng: number, title: string): void {
+  const titleEl = document.getElementById('map-modal__title') as HTMLElement;
+  if (titleEl) titleEl.textContent = `${title} — Habitat Range`;
+
+  overlay.classList.add('active');
+
+  setTimeout(() => {
+    if (mapInstance) {
+      mapInstance.remove();
+      mapInstance = null;
+    }
+
+    const container = document.getElementById('map-container') as HTMLElement;
+    container.style.height = '400px';
+
+    mapInstance = L.map('map-container').setView([lat, lng], 5);
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+    attribution: '© OpenStreetMap © CARTO'
+    }).addTo(mapInstance);
+    L.marker([lat, lng]).addTo(mapInstance).bindPopup(title).openPopup();
+
+    setTimeout(() => {
+      if (mapInstance) mapInstance.invalidateSize();
+    }, 200);
+  }, 500);
+}
+
+  document.addEventListener('click', (e) => {
+    const target = e.target as HTMLElement;
+    if (target.classList.contains('view-map')) {
+      e.preventDefault();
+      const currentPetId = getCurrentPetId();
+      getPetById(currentPetId).then((pet) => {
+        const lat = pet.latitude ?? 30.0;
+        const lng = pet.longitude ?? 100.0;
+        openMap(lat, lng, pet.commonName);
+      });
+    }
+  });
+
+  closeBtn.addEventListener('click', () => {
+    overlay.classList.remove('active');
+    if (mapInstance) { mapInstance.remove(); mapInstance = null; }
+  });
+
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) {
+      overlay.classList.remove('active');
+      if (mapInstance) { mapInstance.remove(); mapInstance = null; }
+    }
+  });
 }
