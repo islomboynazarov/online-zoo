@@ -238,8 +238,8 @@ function initStep2(): void {
 function initStep3(): void {
   const cardInput = document.querySelector('#step-3 .form-input') as HTMLInputElement;
   const cvvInput = document.querySelectorAll('#step-3 .form-input')[1] as HTMLInputElement;
-  const monthSelect = document.querySelectorAll('#step-3 .form-select')[0] as HTMLSelectElement;
-  const yearSelect = document.querySelectorAll('#step-3 .form-select')[1] as HTMLSelectElement;
+  const monthSelect = document.getElementById('month-select') as HTMLSelectElement;
+  const yearSelect = document.getElementById('year-select') as HTMLSelectElement;
   const completeBtn = document.querySelector('#step-3 .btn-next') as HTMLButtonElement;
 
   if (completeBtn) {
@@ -249,17 +249,18 @@ function initStep3(): void {
   }
 
   const checkStep3Valid = (): void => {
-    const cardValid = /^\d{16}$/.test(cardInput.value.trim());
-    const cvvValid = /^\d{3}$/.test(cvvInput.value.trim());
-    const monthValid = monthSelect.value !== 'Month';
-    const yearValid = yearSelect.value !== 'Year';
-    const valid = cardValid && cvvValid && monthValid && yearValid;
-    completeBtn.disabled = !valid;
-    completeBtn.style.opacity = valid ? '1' : '0.5';
-    completeBtn.style.cursor = valid ? 'pointer' : 'not-allowed';
-  };
+  const cardDigits = cardInput.value.replace(/\s+/g, '').trim();
+  const cardValid = /^\d{16}$/.test(cardDigits);
+  const cvvValid = /^\d{3}$/.test(cvvInput.value.trim());
+  const monthValid = monthSelect.value !== 'Month' && monthSelect.value !== '';
+  const yearValid = yearSelect.value !== 'Year' && yearSelect.value !== '';
+  const valid = cardValid && cvvValid && monthValid && yearValid;
+  completeBtn.disabled = !valid;
+  completeBtn.style.opacity = valid ? '1' : '0.5';
+  completeBtn.style.cursor = valid ? 'pointer' : 'not-allowed';
+};
 
-  if (cardInput) cardInput.addEventListener('input', () => { state.cardNumber = cardInput.value; checkStep3Valid(); });
+  if (cardInput) cardInput.addEventListener('input', () => { state.cardNumber = cardInput.value.replace(/\s+/g, ''); checkStep3Valid(); });
   if (cvvInput) cvvInput.addEventListener('input', () => { state.cvv = cvvInput.value; checkStep3Valid(); });
 
   const updateExpiry = (): void => {
