@@ -41,14 +41,43 @@ function getCurrentPetId(): number {
 function showPandaInfoLoader(): void {
   const pandaInfo = document.querySelector('.panda-info') as HTMLElement;
   if (!pandaInfo) return;
-  pandaInfo.style.opacity = '0.4';
+  pandaInfo.style.position = 'relative';
+
+  const existing = document.getElementById('panda-info-loader');
+  if (existing) existing.remove();
+
+  const loaderOverlay = document.createElement('div');
+  loaderOverlay.id = 'panda-info-loader';
+  loaderOverlay.style.cssText = `
+    position: absolute;
+    inset: 0;
+    background: rgba(255,255,255,0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+  `;
+  loaderOverlay.innerHTML = `
+    <div style="
+      width: 48px; height: 48px;
+      border: 5px solid #ccc;
+      border-top-color: #00A092;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    "></div>
+    <style>
+      @keyframes spin { to { transform: rotate(360deg); } }
+    </style>
+  `;
+  pandaInfo.appendChild(loaderOverlay);
   pandaInfo.style.pointerEvents = 'none';
 }
 
 function hidePandaInfoLoader(): void {
   const pandaInfo = document.querySelector('.panda-info') as HTMLElement;
   if (!pandaInfo) return;
-  pandaInfo.style.opacity = '1';
+  const loaderOverlay = document.getElementById('panda-info-loader');
+  if (loaderOverlay) loaderOverlay.remove();
   pandaInfo.style.pointerEvents = 'auto';
 }
 
@@ -154,10 +183,7 @@ export function initZoosPage(): void {
   if (animalsContainer) {
     animalsContainer.innerHTML = '<p class="loader" style="color:white; padding:20px;">Loading...</p>';
   }
-  if (pandaInfo) {
-    pandaInfo.style.opacity = '0.4';
-    pandaInfo.style.pointerEvents = 'none';
-  }
+  if (pandaInfo) showPandaInfoLoader();
 
   getCameras()
     .then((cameras) => {
@@ -173,11 +199,7 @@ export function initZoosPage(): void {
           }
         })
         .catch(() => {
-          if (pandaInfo) {
-            pandaInfo.innerHTML = '<p class="error-message">Something went wrong. Please, refresh the page</p>';
-            pandaInfo.style.opacity = '1';
-            pandaInfo.style.pointerEvents = 'auto';
-          }
+          hidePandaInfoLoader();
         });
     })
     .catch(() => {
