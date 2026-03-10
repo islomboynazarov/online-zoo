@@ -4,6 +4,7 @@ import { Pet, DonationPayload } from '../types/interfaces';
 interface DonationState {
   amount: number;
   petId: number | null;
+  petName: string;
   isRecurring: boolean;
   name: string;
   email: string;
@@ -15,6 +16,7 @@ interface DonationState {
 const state: DonationState = {
   amount: 0,
   petId: null,
+  petName: '',
   isRecurring: false,
   name: '',
   email: '',
@@ -160,10 +162,12 @@ function initStep1(): void {
       });
     }).catch(() => {});
 
-    petSelect.addEventListener('change', () => {
-      state.petId = petSelect.value ? parseInt(petSelect.value) : null;
-      checkStep1Valid();
-    });
+  petSelect.addEventListener('change', () => {
+    state.petId = petSelect.value ? parseInt(petSelect.value) : null;
+    const selectedOption = petSelect.options[petSelect.selectedIndex];
+    state.petName = selectedOption ? selectedOption.textContent ?? '' : '';
+    checkStep1Valid();
+  });
   }
 
   const recurringCheckbox = document.querySelector('.checkbox-row input') as HTMLInputElement;
@@ -346,7 +350,7 @@ if (savedCardsRow && savedCardsSelect && user) {
         const popupForm = document.getElementById('popup-form') as HTMLElement;
         popupForm.classList.remove('active');
         overlay.style.display = 'none';
-        alert('Thank you for your donation!');
+        alert(`Thank you for your donation of $${state.amount} to ${state.petName}!`);
       })
       .catch(() => {
         alert('Something went wrong. Please try again.');
