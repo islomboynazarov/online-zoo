@@ -87,3 +87,14 @@ export enum ApiEndpoint {
   Login = '/auth/login',
   Register = '/auth/register',
 }
+
+export interface FavouriteItem {
+  petId: number;
+}
+
+export interface DonationHistoryItem {
+  petId: number;
+  petName: string;
+  amount: number;
+  date: string;
+}
