@@ -1,5 +1,6 @@
 import { getPets, postDonation } from '../api/api';
-import { Pet, DonationPayload } from '../types/interfaces';
+import { Pet, DonationPayload, DonationHistoryItem } from '../types/interfaces';
+
 
 interface DonationState {
   amount: number;
@@ -335,8 +336,21 @@ if (savedCardsRow && savedCardsSelect && user) {
     completeBtn.textContent = 'Processing...';
 
     postDonation(payload)
-      .then(() => {
-        if (saveCardCheckbox && saveCardCheckbox.checked) {
+    .then(() => {
+  // Save donation to history
+  const historyItem: DonationHistoryItem = {
+    petId: state.petId as number,
+    petName: state.petName,
+    amount: state.amount,
+    date: new Date().toISOString().split('T')[0],
+  };
+  const history: DonationHistoryItem[] = JSON.parse(
+    localStorage.getItem('donationHistory') || '[]'
+  );
+  history.unshift(historyItem);
+  localStorage.setItem('donationHistory', JSON.stringify(history));
+
+  if (saveCardCheckbox && saveCardCheckbox.checked) {
           const cards: { cardNumber: string; expirationDate: string; cvv: string }[] =
             JSON.parse(localStorage.getItem('savedCards') || '[]');
           cards.push({
