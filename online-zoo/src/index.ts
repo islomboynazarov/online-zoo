@@ -3,6 +3,7 @@ import { initZoosPage } from './pages/zoos';
 import { initSignIn, initRegistration } from './pages/auth';
 import { initHeader } from './components/header';
 import { initDonationForm } from './pages/donation';
+import { initProfilePage } from './pages/profile';
 
 document.addEventListener('DOMContentLoaded', () => {
   initHeader();
@@ -21,4 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (document.getElementById('reg-btn')) {
     initRegistration();
   }
+  if (document.querySelector('.profile-page')) {
+  initProfilePage();
+}
 });

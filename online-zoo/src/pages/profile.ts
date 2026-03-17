@@ -24,3 +24,39 @@ const PROGRESS_CLASSES: Record<number, string> = {
   3: 'progress-fill--green',
   5: 'progress-fill--purple',
 };
+
+function renderHeader(): void {
+  const userStr = localStorage.getItem('user');
+  if (!userStr) return;
+
+  const user = JSON.parse(userStr);
+
+  const avatar = document.getElementById('db-avatar') as HTMLElement;
+  const name   = document.getElementById('db-name')   as HTMLElement;
+  const email  = document.getElementById('db-email')  as HTMLElement;
+
+  if (avatar) avatar.textContent = user.name.charAt(0).toUpperCase();
+  if (name)   name.textContent   = user.name;
+  if (email)  email.textContent  = user.email;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+export function initProfilePage(): void {
+  const userStr = localStorage.getItem('user');
+  if (!userStr) {
+    window.location.href = '../signin/index.html';
+    return;
+  }
+
+  renderHeader();
+}
