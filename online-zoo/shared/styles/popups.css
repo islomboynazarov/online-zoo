@@ -244,13 +244,29 @@
   white-space: nowrap;
 }
 
-.special-pet-select {
+/* .special-pet-select {
   flex: 1;
   border: 1px solid #ccc;
   border-radius: 6px;
   padding: 10px 14px;
   font-size: 0.9rem;
   font-family: 'Montserrat', sans-serif;
+} */
+
+.special-pet-select {
+  flex: 1;
+  min-width: 280px;
+  max-width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 10px 30px 10px 14px;
+  font-size: 0.9rem;
+  font-family: 'Montserrat', sans-serif;
+  appearance: auto;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 /* ── Checkbox ────────────────────────────────── */

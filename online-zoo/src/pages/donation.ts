@@ -43,6 +43,15 @@ function goToStep(step: number): void {
 }
 
 function showPopupForm(initialAmount?: number): void {
+  state.amount = 0;
+  state.petId = null;
+  state.petName = '';
+  state.name = '';
+  state.email = '';
+  state.cardNumber = '';
+  state.expirationDate = '';
+  state.cvv = '';
+
   const overlay = document.getElementById('popup-overlay') as HTMLElement;
   const popupWelcome = document.getElementById('popup-welcome') as HTMLElement;
   const popupForm = document.getElementById('popup-form') as HTMLElement;
@@ -56,8 +65,39 @@ function showPopupForm(initialAmount?: number): void {
     highlightAmount(initialAmount);
   }
 
+
+  // Reset complete button state
+  const completeBtn = document.querySelector('#step-3 .btn-next') as HTMLButtonElement;
+  if (completeBtn) {
+    completeBtn.disabled = true;
+    completeBtn.style.opacity = '0.5';
+    completeBtn.textContent = 'Complete Donation';
+  }
+
+  // Reset pet select
+  const petSelect = document.querySelector('.special-pet-select') as HTMLSelectElement;
+  if (petSelect) petSelect.value = '';
+
+  // Reset step 1 next button
+const nextBtn1 = document.querySelector('#step-1 .btn-next') as HTMLButtonElement;
+if (nextBtn1) {
+  nextBtn1.disabled = true;
+  nextBtn1.style.opacity = '0.5';
+  nextBtn1.style.cursor = 'not-allowed';
+}
+
+// Reset step 1 amount buttons
+document.querySelectorAll('.form-amount-btn').forEach(btn => {
+  btn.classList.remove('selected');
+});
+
+// Reset other amount input
+const otherInput = document.querySelector('.other-amount-input') as HTMLInputElement;
+if (otherInput) otherInput.value = '';
+
   goToStep(1);
 }
+
 
 function highlightAmount(amount: number): void {
   document.querySelectorAll('.form-amount-btn').forEach((btn) => {
@@ -154,7 +194,7 @@ function initStep1(): void {
   const petSelect = document.querySelector('.special-pet-select') as HTMLSelectElement;
   if (petSelect) {
     const ALLOWED_PET_IDS = [1, 2, 3, 5];
-   getPets().then((pets: Pet[]) => {
+    getPets().then((pets: Pet[]) => {
     petSelect.innerHTML = '<option value="">Choose your favourite</option>';
     pets
       .filter((pet) => ALLOWED_PET_IDS.includes(pet.id))
@@ -210,12 +250,13 @@ function initStep2(): void {
   }
 
   const user = getUser();
-  if (user) {
-    if (nameInput) nameInput.value = user.name;
-    if (emailInput) emailInput.value = user.email;
-    state.name = user.name;
-    state.email = user.email;
-  }
+if (user) {
+  if (nameInput) nameInput.value = user.name;
+  if (emailInput) emailInput.value = user.email;
+  state.name = user.name;
+  state.email = user.email;
+  checkStep2Valid();
+}
 
   if (nameInput) {
     nameInput.addEventListener('input', () => {
@@ -236,11 +277,9 @@ function initStep2(): void {
 
   if (nextBtn) {
     nextBtn.onclick = () => {
-      if (!/^[a-zA-Z\s]{3,}$/.test(state.name.trim())) { alert('Please enter a valid name.'); return; }
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(state.email)) { alert('Please enter a valid email.'); return; }
-      goToStep(3);
-    };
-  }
+    goToStep(3);
+  };
+}
 }
 
 function initStep3(): void {
@@ -306,34 +345,43 @@ if (savedCardsRow && savedCardsSelect && user) {
     });
 
     savedCardsSelect.addEventListener('change', () => {
-      const idx = parseInt(savedCardsSelect.value);
-      if (!isNaN(idx) && savedCards[idx]) {
-        const card = savedCards[idx];
-        if (cardInput) { cardInput.value = card.cardNumber; state.cardNumber = card.cardNumber; }
-        if (cvvInput) { cvvInput.value = card.cvv; state.cvv = card.cvv; }
-        const [month, year] = card.expirationDate.split('/');
-        if (monthSelect) monthSelect.value = month;
-        if (yearSelect) yearSelect.value = year;
-        state.expirationDate = card.expirationDate;
-        checkStep3Valid();
-      }
-    });
+    const idx = parseInt(savedCardsSelect.value);
+    if (!isNaN(idx) && savedCards[idx]) {
+      const card = savedCards[idx];
+      const cleanCard = card.cardNumber.replace(/\s+/g, '');
+      if (cardInput) { cardInput.value = cleanCard; state.cardNumber = cleanCard; }
+      if (cvvInput) { cvvInput.value = card.cvv; state.cvv = card.cvv; }
+      const parts = card.expirationDate.split('/');
+      const month = parts[0]?.padStart(2, '0');
+      const year  = parts[1];
+      if (monthSelect && month) monthSelect.value = month;
+      if (yearSelect && year)   yearSelect.value  = year;
+      state.expirationDate = card.expirationDate;
+      checkStep3Valid();
+    }
+  });
   }
 }
 
   if (completeBtn) {
   completeBtn.onclick = () => {
-    if (!state.petId) { alert('Please select a pet to donate to.'); return; }
+  if (!state.petId) { alert('Please select a pet to donate to.'); return; }
 
-    const payload: DonationPayload = {
-      petId: state.petId,
-      amount: state.amount,
-      name: state.name,
-      email: state.email,
-      cardNumber: state.cardNumber,
-      expirationDate: state.expirationDate,
-      cvv: state.cvv,
-    };
+  // Re-read name and email from inputs
+  const nameInput = document.querySelector('#step-2 .form-input[type="text"]') as HTMLInputElement;
+  const emailInput = document.querySelector('#step-2 .form-input[type="email"]') as HTMLInputElement;
+  if (nameInput) state.name = nameInput.value;
+  if (emailInput) state.email = emailInput.value;
+
+  const payload: DonationPayload = {
+    petId: state.petId,
+    amount: state.amount,
+    name: state.name,
+    email: state.email,
+    cardNumber: state.cardNumber,
+    expirationDate: state.expirationDate,
+    cvv: state.cvv,
+  };
 
     completeBtn.disabled = true;
     completeBtn.textContent = 'Processing...';
