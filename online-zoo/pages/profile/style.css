@@ -152,28 +152,6 @@
   text-overflow: ellipsis;
 }
 
-.db-signout {
-  margin-left: auto;
-  z-index: 1;
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  color: #ffffff;
-  border-radius: 6px;
-  padding: 6px 10px;
-  font-size: 10px;
-  font-weight: 500;
-  cursor: pointer;
-  font-family: 'Montserrat', sans-serif;
-  transition: background 0.2s, border-color 0.2s;
-  white-space: nowrap;
-  flex-shrink: 0;
-}
-
-.db-signout:hover {
-  background: rgba(255, 255, 255, 0.22);
-  border-color: #ffffff;
-}
-
 /* ── Stats Row ───────────────────────────────────────────────── */
 /* Mobile first: stacked single column */
 .stats-row {
@@ -501,12 +479,6 @@
   .db-name  { font-size: 16px; }
   .db-email { font-size: 12px; }
 
-  .db-signout {
-    padding: 7px 14px;
-    font-size: 11px;
-    border-radius: 7px;
-  }
-
   .stats-row {
     gap: 8px;
     margin-bottom: 1rem;
@@ -571,11 +543,6 @@
   .db-name  { font-size: 20px; }
   .db-email { font-size: 13px; }
 
-  .db-signout {
-    padding: 8px 18px;
-    font-size: 12px;
-    border-radius: 8px;
-  }
 
   /* Stats — 3 columns */
   .stats-row {
@@ -654,12 +621,6 @@
 
   .db-name  { font-size: 24px; }
   .db-email { font-size: 15px; }
-
-  .db-signout {
-    padding: 12px 26px;
-    font-size: 15px;
-    border-radius: 8px;
-  }
 
   /* Stats — 3 columns, larger */
   .stats-row {
