@@ -159,7 +159,7 @@
     background: #20113D;
     color: #fff;
     position: absolute;
-    top: 70px;
+    top: 110px;
     left: 0;
     width: 100%;
     z-index: 9999;
@@ -221,6 +221,7 @@
   }
 
   /* profile icon function */
+  
   .header__user {
   /* display: flex; */
   position: absolute !important;
@@ -238,6 +239,11 @@
   .header__socials .header__user {
     display: flex;
   }
+
+  .header__user-popup.active {
+    width: 92%;
+  }
+
 
 }
 
@@ -262,17 +268,25 @@
   .header__nav {
     top: 60px;
   }
+
+  .header__nav.open {
+    top: 110px;
+  }
+  
   .header__burger {
     width: 22px;
-    height: 30px;
+    height: 20px;
+    overflow: visible;
+    margin-right: 25px;
   }
+
 
   .header__burger span {
     background: #000;
     height: 2px;
   }
 
-  .header__user-popup {
+  /* .header__user-popup {
     position: fixed;
     top: 80px;
     left: 5px;
@@ -280,13 +294,33 @@
     width: auto;
     min-width: unset;
     box-sizing: border-box;
+  } */
+
+  .header__user-popup.active {
+    display: none;
+    position: absolute;
+    top: 72px;
+    right: -75px;
+    left: auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    padding: 15px 20px;
+    min-width: 270px;
+    width: 270px;
+    z-index: 1000;
+    flex-direction: column;
+    gap: 10px;
+    width: calc(100% - 10px);
   }
+
 }
 
 
 /* ─── USER ICON ─────────────────────────────────── */
 .header__user {
   position: relative;
+  
 }
 
 .header__user-icon {
@@ -315,8 +349,9 @@
 .header__user-popup {
   display: none;
   position: absolute;
-  top: 110%;
-  right: 0;
+  top: 70px;
+  right: 25px;
+  left: -35px;
   background: white;
   border-radius: 8px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.15);
@@ -325,7 +360,9 @@
   z-index: 9999;
   flex-direction: column;
   gap: 10px;
+  width: calc(100% - 10px);
 }
+
 
 .header__user-popup.active {
   display: flex;
