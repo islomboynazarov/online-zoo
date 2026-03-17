@@ -325,7 +325,8 @@
 .header__user-popup.active {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  align-items: center;
+  gap: 5px;
 }
 
 .user-popup__name,
@@ -334,12 +335,14 @@
   font-weight: 700;
   color: #20113D;
   margin: 0;
+  text-transform: uppercase;
 }
 
 .user-popup__email {
   font-size: 0.85rem;
   color: #888;
   margin: 0;
+  text-transform: none;
 }
 
 .user-popup__signout {
@@ -362,7 +365,7 @@
   background: #D26004;
 }
 
-.user-popup__link {
+/* .user-popup__link {
   color: #20113D;
   text-decoration: none;
   font-weight: 600;
@@ -373,6 +376,34 @@
 
 .user-popup__link:hover {
   color: #F58021;
+} */
+
+.user-popup__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  background: #20113D;
+  border-radius: 6px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: background 0.2s;
+}
+
+.user-popup__link::before {
+  content: '👤';
+  font-size: 14px;
+}
+
+.user-popup__link:hover {
+  background: #00A092;
+  color: white;
 }
 
 hr {
