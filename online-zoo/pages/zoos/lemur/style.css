@@ -210,8 +210,8 @@
 .live__header h1 {
   color: #1f9c8b;
   font-size: 2.5rem;
-  letter-spacing: 0.5em;
-  padding-left: 30%;
+  letter-spacing: 0.3em;
+  /* padding-left: 30%; */
 }
 
 

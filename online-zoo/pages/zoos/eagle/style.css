@@ -211,8 +211,8 @@
 .live__header h1 {
   color: #1f9c8b;
   font-size: 2.5rem;
-  letter-spacing: 0.5em;
-  padding-left: 15%;
+  letter-spacing: 0.3em;
+  /* padding-left: 5%; */
 }
 
 
@@ -233,6 +233,10 @@
   text-transform: uppercase;
   cursor: pointer;
   transition: background 0.2s;
+}
+
+.hero__btn span {
+  white-space: nowrap;
 }
 
 .btn-arrow {

@@ -211,7 +211,7 @@
   color: #1f9c8b;
   font-size: 2.5rem;
   letter-spacing: 0.5em;
-  padding-left: 30%;
+  /* padding-left: 20%; */
 }
 
 
@@ -232,6 +232,10 @@
   text-transform: uppercase;
   cursor: pointer;
   transition: background 0.2s;
+}
+
+.hero__btn span {
+  white-space: nowrap;
 }
 
 .btn-arrow {

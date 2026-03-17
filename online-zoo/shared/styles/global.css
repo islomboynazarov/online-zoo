@@ -199,3 +199,41 @@ body {
     box-sizing: border-box;
   }
 }
+
+
+/* ── Heart Button ────────────────────────────────────────────── */
+.heart-btn {
+  background: rgba(0, 0, 0, 0.06);
+  border: 1.5px solid rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, transform 0.1s;
+  flex-shrink: 0;
+}
+
+.heart-btn:hover {
+  background: rgba(245, 128, 33, 0.15);
+  border-color: #F58021;
+  transform: scale(1.1);
+}
+
+.heart-btn.active {
+  background: rgba(245, 128, 33, 0.2);
+  border-color: #F58021;
+}
+
+.heart-btn.active svg path {
+  fill: #F58021;
+  stroke: #F58021;
+}
+
+.live__header-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
