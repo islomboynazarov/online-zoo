@@ -161,5 +161,6 @@ export function initProfilePage(): void {
   renderHeader();
   renderStats();
   renderFavourites();
+  renderDonationHistory();
 }
 
