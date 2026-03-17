@@ -1,0 +1,707 @@
+/* ============================================================
+   PROFILE PAGE — style.css
+   Mobile First: base = 320px
+   Breakpoints: 640px | 1200px | 1920px
+   ============================================================ */
+
+/* ── Animations ─────────────────────────────────────────────── */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 8px rgba(0, 160, 146, 0.4),
+                inset 0 0 15px rgba(0, 160, 146, 0.08);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(0, 160, 146, 0.7),
+                inset 0 0 25px rgba(0, 160, 146, 0.15);
+  }
+}
+
+@keyframes pulseOrange {
+  0%, 100% { box-shadow: 0 0 8px rgba(245, 128, 33, 0.3); }
+  50%       { box-shadow: 0 0 20px rgba(245, 128, 33, 0.65); }
+}
+
+@keyframes floatDot {
+  0%, 100% { transform: translateY(0px);  opacity: 0.8; }
+  50%       { transform: translateY(-4px); opacity: 1; }
+}
+
+/* ── Page Base ───────────────────────────────────────────────── */
+.profile-page {
+  background: #0e1e35;
+  min-height: 100vh;
+  padding: 1.25rem 0 3rem;
+  position: relative;
+}
+
+.profile-page::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 20%, rgba(0, 160, 146, 0.1) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 80%, rgba(100, 80, 200, 0.08) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.db-wrap {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: 0 0.75rem;
+  box-sizing: border-box;
+}
+
+/* ── Glow Card ───────────────────────────────────────────────── */
+.glow-card {
+  position: relative;
+  border-radius: 10px;
+  margin-bottom: 0.75rem;
+}
+
+.glow-card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 11px;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 160, 146, 0.7),
+    rgba(32, 17, 61, 0.3),
+    rgba(0, 160, 146, 0.15),
+    rgba(245, 128, 33, 0.4)
+  );
+  background-size: 300% 300%;
+  animation: shimmer 4s linear infinite;
+  z-index: 0;
+}
+
+.glow-card-inner {
+  position: relative;
+  z-index: 1;
+  background: #162033;
+  border-radius: 10px;
+  padding: 0.875rem;
+}
+
+/* ── Profile Header ─────────────────────────────────────────── */
+.db-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #1a2f50, #241545);
+  border-radius: 10px;
+  padding: 0.875rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.db-header::after {
+  content: '';
+  position: absolute;
+  right: -30px;
+  top: -30px;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 160, 146, 0.18), transparent 70%);
+}
+
+.db-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #00A092, #005f58);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
+  flex-shrink: 0;
+  animation: pulseGlow 3s ease-in-out infinite;
+  z-index: 1;
+}
+
+.db-info {
+  z-index: 1;
+  min-width: 0;
+}
+
+.db-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff;
+  margin-bottom: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.db-email {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.55);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.db-signout {
+  margin-left: auto;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: #ffffff;
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  transition: background 0.2s, border-color 0.2s;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.db-signout:hover {
+  background: rgba(255, 255, 255, 0.22);
+  border-color: #ffffff;
+}
+
+/* ── Stats Row ───────────────────────────────────────────────── */
+/* Mobile first: stacked single column */
+.stats-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 6px;
+  margin-bottom: 0.75rem;
+}
+
+.stat-glow {
+  position: relative;
+  border-radius: 10px;
+}
+
+.stat-glow::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 11px;
+  z-index: 0;
+  background-size: 300% 300%;
+}
+
+.stat-glow--teal::before {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 160, 146, 0.9),
+    transparent,
+    rgba(0, 160, 146, 0.3)
+  );
+  animation: shimmer 3s linear infinite;
+}
+
+.stat-glow--orange::before {
+  background: linear-gradient(
+    135deg,
+    rgba(245, 128, 33, 0.9),
+    transparent,
+    rgba(245, 128, 33, 0.3)
+  );
+  animation: shimmer 3s linear infinite 1s;
+}
+
+.stat-glow--purple::before {
+  background: linear-gradient(
+    135deg,
+    rgba(130, 100, 230, 0.9),
+    transparent,
+    rgba(130, 100, 230, 0.3)
+  );
+  animation: shimmer 3s linear infinite 2s;
+}
+
+.stat-inner {
+  position: relative;
+  z-index: 1;
+  background: #162033;
+  border-radius: 10px;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.stat-label {
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.stat-value {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.stat-glow--teal   .stat-value { color: #2dd9c8; }
+.stat-glow--orange .stat-value { color: #ffaa55; }
+.stat-glow--purple .stat-value { color: #b8a0ff; }
+
+/* ── Section Head ────────────────────────────────────────────── */
+.section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.625rem;
+}
+
+.section-title {
+  font-size: 9px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.section-badge {
+  font-size: 9px;
+  background: rgba(255, 255, 255, 0.07);
+  color: rgba(255, 255, 255, 0.5);
+  padding: 2px 8px;
+  border-radius: 20px;
+  border: 0.5px solid rgba(255, 255, 255, 0.12);
+}
+
+/* ── Animals Grid ────────────────────────────────────────────── */
+/* Mobile: 2 columns */
+.animals-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px;
+}
+
+.animal-card {
+  border: 0.5px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 10px 6px;
+  text-align: center;
+  position: relative;
+  background: #1c2d45;
+}
+
+.animal-card.fav {
+  border-color: rgba(245, 128, 33, 0.6);
+  animation: pulseOrange 2.5s ease-in-out infinite;
+}
+
+.animal-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.07);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 5px;
+  font-size: 16px;
+}
+
+.animal-card.fav .animal-icon {
+  background: rgba(245, 128, 33, 0.12);
+}
+
+.animal-name {
+  font-size: 10px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2px;
+}
+
+.animal-region {
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.heart-icon {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 9px;
+}
+
+.heart-icon.filled { color: #cc0000; }
+.heart-icon.empty  { color: rgba(255, 255, 255, 0.2); }
+
+/* ── Empty State ─────────────────────────────────────────────── */
+.empty-state {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.35);
+  text-align: center;
+  padding: 1rem 0;
+}
+
+/* ── Donation List ───────────────────────────────────────────── */
+.donation-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.donation-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 6px;
+  border: 0.5px solid rgba(255, 255, 255, 0.07);
+}
+
+.donation-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  animation: floatDot 2s ease-in-out infinite;
+}
+
+.donation-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+
+.donation-pet {
+  font-size: 10px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.88);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.donation-date {
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.donation-amount {
+  margin-left: auto;
+  font-size: 11px;
+  font-weight: 500;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ── Sponsor List ────────────────────────────────────────────── */
+.sponsor-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sponsor-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 5px;
+}
+
+.sponsor-name {
+  font-size: 10px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.sponsor-pct {
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.progress-track {
+  height: 3px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+  animation: shimmer 2s linear infinite;
+  background-size: 200% 100%;
+}
+
+.progress-fill--teal   { background: linear-gradient(90deg, #00A092, #2dd9c8); }
+.progress-fill--orange { background: linear-gradient(90deg, #F58021, #ffaa55); }
+.progress-fill--purple { background: linear-gradient(90deg, #6344c8, #b8a0ff); }
+.progress-fill--green  { background: linear-gradient(90deg, #2a7a2a, #7ec87e); }
+
+.sponsor-amounts {
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.3);
+  margin-top: 3px;
+}
+
+
+/* ============================================================
+   640px — same layout, everything scaled up
+   ============================================================ */
+@media (min-width: 640px) {
+
+  .db-wrap {
+    padding: 0 1.25rem;
+  }
+
+  .glow-card {
+    border-radius: 12px;
+    margin-bottom: 1rem;
+  }
+
+  .glow-card::before { border-radius: 13px; }
+
+  .glow-card-inner {
+    border-radius: 12px;
+    padding: 1.125rem;
+  }
+
+  .db-header {
+    gap: 12px;
+    padding: 1.125rem;
+    border-radius: 12px;
+  }
+
+  .db-avatar {
+    width: 48px;
+    height: 48px;
+    font-size: 20px;
+  }
+
+  .db-name  { font-size: 16px; }
+  .db-email { font-size: 12px; }
+
+  .db-signout {
+    padding: 7px 14px;
+    font-size: 11px;
+    border-radius: 7px;
+  }
+
+  .stats-row {
+    gap: 8px;
+    margin-bottom: 1rem;
+  }
+
+  .stat-inner { padding: 10px 14px; }
+  .stat-label { font-size: 10px; }
+  .stat-value { font-size: 24px; }
+
+  .section-head    { margin-bottom: 0.75rem; }
+  .section-title   { font-size: 10px; }
+  .section-badge   { font-size: 10px; padding: 2px 9px; }
+
+  .animals-grid { gap: 8px; }
+
+  .animal-card  { padding: 12px 8px; border-radius: 10px; }
+  .animal-icon  { width: 38px; height: 38px; font-size: 20px; margin-bottom: 6px; }
+  .animal-name  { font-size: 11px; }
+  .animal-region { font-size: 10px; }
+  .heart-icon   { font-size: 10px; top: 6px; right: 6px; }
+
+  .donation-list  { gap: 7px; }
+  .donation-row   { gap: 10px; padding: 9px 10px; border-radius: 7px; }
+  .donation-dot   { width: 7px; height: 7px; }
+  .donation-pet   { font-size: 12px; }
+  .donation-date  { font-size: 10px; }
+  .donation-amount { font-size: 13px; }
+
+  .sponsor-list   { gap: 12px; }
+  .sponsor-top    { margin-bottom: 6px; }
+  .sponsor-name   { font-size: 12px; }
+  .sponsor-pct    { font-size: 10px; }
+  .sponsor-amounts { font-size: 10px; margin-top: 4px; }
+  .progress-track { height: 4px; }
+}
+
+
+/* ============================================================
+   1200px — 3-col stats, 4-col animals
+   ============================================================ */
+@media (min-width: 1200px) {
+
+  .db-wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .profile-page { padding: 2rem 0 4rem; }
+
+  .db-header {
+    gap: 16px;
+    padding: 1.5rem;
+  }
+
+  .db-avatar {
+    width: 56px;
+    height: 56px;
+    font-size: 22px;
+  }
+
+  .db-name  { font-size: 20px; }
+  .db-email { font-size: 13px; }
+
+  .db-signout {
+    padding: 8px 18px;
+    font-size: 12px;
+    border-radius: 8px;
+  }
+
+  /* Stats — 3 columns */
+  .stats-row {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 1.25rem;
+  }
+
+  /* Stats go back to stacked label/value layout */
+  .stat-inner {
+    display: block;
+    padding: 14px 18px;
+  }
+
+  .stat-label {
+    font-size: 11px;
+    margin-bottom: 8px;
+  }
+
+  .stat-value { font-size: 30px; }
+
+  /* Animals — 4 columns */
+  .animals-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+
+  .animal-card  { padding: 14px 10px; }
+  .animal-icon  { width: 44px; height: 44px; font-size: 24px; margin-bottom: 8px; }
+  .animal-name  { font-size: 12px; }
+  .animal-region { font-size: 11px; }
+  .heart-icon   { font-size: 12px; top: 8px; right: 8px; }
+
+  .glow-card-inner { padding: 1.25rem; }
+  .section-head    { margin-bottom: 1rem; }
+  .section-title   { font-size: 11px; }
+  .section-badge   { font-size: 11px; padding: 3px 10px; }
+
+  .donation-list  { gap: 8px; }
+  .donation-row   { gap: 12px; padding: 10px 12px; border-radius: 8px; }
+  .donation-dot   { width: 8px; height: 8px; }
+  .donation-pet   { font-size: 13px; }
+  .donation-date  { font-size: 11px; }
+  .donation-amount { font-size: 14px; }
+
+  .sponsor-list   { gap: 14px; }
+  .sponsor-name   { font-size: 13px; }
+  .sponsor-pct    { font-size: 11px; }
+  .sponsor-amounts { font-size: 11px; margin-top: 5px; }
+  .progress-track { height: 5px; }
+}
+
+
+/* ============================================================
+   1920px — same layout as 1200, scaled up
+   ============================================================ */
+@media (min-width: 1920px) {
+
+  .db-wrap {
+    max-width: 1400px;
+    padding: 0 3rem;
+  }
+
+  .profile-page { padding: 3rem 0 5rem; }
+
+  .db-header {
+    gap: 20px;
+    padding: 2rem;
+  }
+
+  .db-avatar {
+    width: 68px;
+    height: 68px;
+    font-size: 28px;
+  }
+
+  .db-name  { font-size: 24px; }
+  .db-email { font-size: 15px; }
+
+  .db-signout {
+    padding: 12px 26px;
+    font-size: 15px;
+    border-radius: 8px;
+  }
+
+  /* Stats — 3 columns, larger */
+  .stats-row {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 1.5rem;
+  }
+
+  .stat-inner  { padding: 18px 24px; }
+  .stat-label  { font-size: 13px; margin-bottom: 10px; }
+  .stat-value  { font-size: 38px; }
+
+  /* Animals — 4 columns, larger */
+  .animals-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+
+  .animal-card  { padding: 20px 14px; border-radius: 14px; }
+  .animal-icon  { width: 58px; height: 58px; font-size: 30px; margin-bottom: 10px; }
+  .animal-name  { font-size: 15px; }
+  .animal-region { font-size: 13px; }
+  .heart-icon   { font-size: 14px; top: 10px; right: 10px; }
+
+  .glow-card        { margin-bottom: 1.5rem; border-radius: 14px; }
+  .glow-card::before { border-radius: 15px; }
+  .glow-card-inner  { border-radius: 14px; padding: 1.75rem; }
+  .section-head     { margin-bottom: 1.25rem; }
+  .section-title    { font-size: 13px; }
+  .section-badge    { font-size: 12px; padding: 4px 14px; }
+
+  .donation-list  { gap: 12px; }
+  .donation-row   { gap: 16px; padding: 14px 18px; border-radius: 10px; }
+  .donation-dot   { width: 10px; height: 10px; }
+  .donation-pet   { font-size: 16px; }
+  .donation-date  { font-size: 13px; }
+  .donation-amount { font-size: 17px; }
+
+  .sponsor-list   { gap: 18px; }
+  .sponsor-top    { margin-bottom: 8px; }
+  .sponsor-name   { font-size: 16px; }
+  .sponsor-pct    { font-size: 13px; }
+  .sponsor-amounts { font-size: 13px; margin-top: 6px; }
+  .progress-track { height: 6px; }
+}
