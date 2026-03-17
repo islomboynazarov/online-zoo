@@ -153,15 +153,18 @@ function initStep1(): void {
 
   const petSelect = document.querySelector('.special-pet-select') as HTMLSelectElement;
   if (petSelect) {
-    getPets().then((pets: Pet[]) => {
-      petSelect.innerHTML = '<option value="">Choose your favourite</option>';
-      pets.forEach((pet) => {
+    const ALLOWED_PET_IDS = [1, 2, 3, 5];
+   getPets().then((pets: Pet[]) => {
+    petSelect.innerHTML = '<option value="">Choose your favourite</option>';
+    pets
+      .filter((pet) => ALLOWED_PET_IDS.includes(pet.id))
+      .forEach((pet) => {
         const option = document.createElement('option');
         option.value = String(pet.id);
         option.textContent = `${pet.name} the ${pet.commonName}`;
         petSelect.appendChild(option);
       });
-    }).catch(() => {});
+  }).catch(() => {});
 
   petSelect.addEventListener('change', () => {
     state.petId = petSelect.value ? parseInt(petSelect.value) : null;

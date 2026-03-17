@@ -142,6 +142,63 @@ function renderDonationHistory(): void {
   });
 }
 
+function renderSponsoredAnimals(): void {
+  const history: DonationHistoryItem[] = JSON.parse(
+    localStorage.getItem('donationHistory') || '[]'
+  );
+
+  const list  = document.getElementById('sponsor-list')  as HTMLElement;
+  const badge = document.getElementById('sponsor-badge') as HTMLElement;
+
+  if (!list) return;
+
+  if (history.length === 0) {
+    list.innerHTML = '<p class="empty-state">You haven\'t sponsored any animals yet</p>';
+    if (badge) badge.textContent = '0 animals';
+    return;
+  }
+
+  // Group donations by petId and sum amounts
+  const totals: Record<number, number> = {};
+  history.forEach((item) => {
+    if (totals[item.petId]) {
+      totals[item.petId] += item.amount;
+    } else {
+      totals[item.petId] = item.amount;
+    }
+  });
+
+  const sponsoredIds = Object.keys(totals).map(Number);
+  if (badge) badge.textContent = `${sponsoredIds.length} animal${sponsoredIds.length !== 1 ? 's' : ''}`;
+
+  list.innerHTML = '';
+
+  sponsoredIds.forEach((petId) => {
+    const animal    = ANIMALS[petId];
+    const total     = totals[petId];
+    const goal      = GOALS[petId] ?? 100;
+    const pct       = Math.min(Math.round((total / goal) * 100), 100);
+    const fillClass = PROGRESS_CLASSES[petId] ?? 'progress-fill--teal';
+
+    if (!animal) return;
+
+    const item = document.createElement('div');
+    item.className = 'sponsor-item';
+    item.innerHTML = `
+      <div class="sponsor-top">
+        <div class="sponsor-name">${animal.name} the ${animal.commonName}</div>
+        <div class="sponsor-pct">${pct}%</div>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill ${fillClass}" style="width: ${pct}%"></div>
+      </div>
+      <div class="sponsor-amounts">$${total} raised of $${goal} goal</div>
+    `;
+
+    list.appendChild(item);
+  });
+}
+
 
 
 
@@ -162,5 +219,6 @@ export function initProfilePage(): void {
   renderStats();
   renderFavourites();
   renderDonationHistory();
+  renderSponsoredAnimals();
 }
 
