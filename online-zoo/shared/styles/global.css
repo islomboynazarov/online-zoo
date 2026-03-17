@@ -223,13 +223,13 @@ body {
 }
 
 .heart-btn.active {
-  background: rgba(245, 128, 33, 0.2);
-  border-color: #F58021;
+  background: transparent;
+  border-color: transparent;
 }
 
 .heart-btn.active svg path {
-  fill: #F58021;
-  stroke: #F58021;
+  fill: #cc0000;
+  stroke: #cc0000;
 }
 
 .live__header-actions {

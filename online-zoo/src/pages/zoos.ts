@@ -176,6 +176,41 @@ function generateSidebar(cameras: Camera[]): void {
 //     });
 // }
 
+function initHeartButton(): void {
+  const btn = document.getElementById('heart-btn') as HTMLButtonElement;
+  if (!btn) return;
+
+  const petId = getCurrentPetId();
+
+  // Step 1 — read current favourites from localStorage
+  const getFavourites = (): number[] => {
+    return JSON.parse(localStorage.getItem('favourites') || '[]');
+  };
+
+  // Step 2 — set initial visual state on page load
+  if (getFavourites().includes(petId)) {
+    btn.classList.add('active');
+  }
+
+  // Step 3 — toggle on click
+  btn.addEventListener('click', () => {
+    const favs = getFavourites();
+    const idx = favs.indexOf(petId);
+
+    if (idx === -1) {
+      // not in favourites — add it
+      favs.push(petId);
+      btn.classList.add('active');
+    } else {
+      // already in favourites — remove it
+      favs.splice(idx, 1);
+      btn.classList.remove('active');
+    }
+
+    localStorage.setItem('favourites', JSON.stringify(favs));
+  });
+}
+
 export function initZoosPage(): void {
   const animalsContainer = document.querySelector('.live__animals') as HTMLElement;
   const pandaInfo = document.querySelector('.panda-info') as HTMLElement;
@@ -208,6 +243,7 @@ export function initZoosPage(): void {
       }
     });
     initMapModal();
+    initHeartButton();
 }
 
 function initMapModal(): void {
