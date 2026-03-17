@@ -310,9 +310,9 @@
 
 .heart-icon {
   position: absolute;
-  top: 5px;
-  right: 5px;
-  font-size: 9px;
+  top: 7px;
+  right: 7px;
+  font-size: 15px;
 }
 
 .heart-icon.filled { color: #cc0000; }
@@ -498,7 +498,7 @@
   .animal-icon  { width: 38px; height: 38px; font-size: 20px; margin-bottom: 6px; }
   .animal-name  { font-size: 11px; }
   .animal-region { font-size: 10px; }
-  .heart-icon   { font-size: 10px; top: 6px; right: 6px; }
+  .heart-icon   { font-size: 18px; top: 10px; right: 10px; }
 
   .donation-list  { gap: 7px; }
   .donation-row   { gap: 10px; padding: 9px 10px; border-radius: 7px; }
@@ -574,7 +574,7 @@
   .animal-icon  { width: 44px; height: 44px; font-size: 24px; margin-bottom: 8px; }
   .animal-name  { font-size: 12px; }
   .animal-region { font-size: 11px; }
-  .heart-icon   { font-size: 12px; top: 8px; right: 8px; }
+  .heart-icon   { font-size: 22px; top: 12px; right: 12px; }
 
   .glow-card-inner { padding: 1.25rem; }
   .section-head    { margin-bottom: 1rem; }
@@ -643,7 +643,7 @@
   .animal-icon  { width: 58px; height: 58px; font-size: 30px; margin-bottom: 10px; }
   .animal-name  { font-size: 15px; }
   .animal-region { font-size: 13px; }
-  .heart-icon   { font-size: 14px; top: 10px; right: 10px; }
+  .heart-icon   { font-size: 25px; top: 14px; right: 14px; }
 
   .glow-card        { margin-bottom: 1.5rem; border-radius: 14px; }
   .glow-card::before { border-radius: 15px; }
