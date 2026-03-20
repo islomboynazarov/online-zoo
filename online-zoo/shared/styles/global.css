@@ -282,3 +282,15 @@ body {
 .toast.error {
   border-left: 4px solid #cc0000;
 }
+
+/* ── Confetti ─────────────────────────────────────────────── */
+@keyframes confettiFall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0;
+  }
+}

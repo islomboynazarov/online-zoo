@@ -108,6 +108,46 @@ function highlightAmount(amount: number): void {
   });
 }
 
+function showConfetti(): void {
+  const colors = ['#00A092', '#F58021', '#20113D', '#2dd9c8', '#ffaa55', '#b8a0ff', '#ffffff'];
+  const container = document.createElement('div');
+  container.style.cssText = `
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 99998;
+    overflow: hidden;
+  `;
+  document.body.appendChild(container);
+
+  for (let i = 0; i < 80; i++) {
+    const piece = document.createElement('div');
+    const color = colors[Math.floor(Math.random() * colors.length)];
+    const left = Math.random() * 100;
+    const delay = Math.random() * 0.8;
+    const duration = 1.5 + Math.random() * 1.5;
+    const size = 6 + Math.random() * 8;
+    const rotation = Math.random() * 360;
+    const isRect = Math.random() > 0.5;
+
+    piece.style.cssText = `
+      position: absolute;
+      top: -20px;
+      left: ${left}%;
+      width: ${isRect ? size * 1.5 : size}px;
+      height: ${size}px;
+      background: ${color};
+      border-radius: ${isRect ? '2px' : '50%'};
+      animation: confettiFall ${duration}s ease-in ${delay}s forwards;
+      transform: rotate(${rotation}deg);
+      opacity: 1;
+    `;
+    container.appendChild(piece);
+  }
+
+  setTimeout(() => container.remove(), 3500);
+}
+
 function showToast(message: string, type: 'success' | 'error' = 'success'): void {
   const container = document.getElementById('toast-container') as HTMLElement;
   if (!container) return;
@@ -432,7 +472,8 @@ if (savedCardsRow && savedCardsSelect && user) {
         const popupForm = document.getElementById('popup-form') as HTMLElement;
         popupForm.classList.remove('active');
         overlay.style.display = 'none';
-        showToast(`Thank you for your donation of $${state.amount} to ${state.petName}!`, 'success');
+        showConfetti();
+showToast(`Thank you for your donation of $${state.amount} to ${state.petName}!`, 'success');
       })
       .catch(() => {
         showToast('Something went wrong. Please try again.', 'error');
