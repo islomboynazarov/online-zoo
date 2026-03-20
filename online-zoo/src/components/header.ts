@@ -7,6 +7,7 @@ function getProfilePath(): string {
   return '../profile/index.html';
 }
 
+
 function getUser(): User | null {
   const userStr = localStorage.getItem('user');
   if (!userStr) return null;
