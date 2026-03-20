@@ -1,10 +1,17 @@
 import { User } from '../types/interfaces';
 
+// function getProfilePath(): string {
+//   const path = window.location.pathname;
+//   if (path.includes('/zoos/')) {
+//     return '../../profile/index.html';
+//   }
+//   return '../profile/index.html';
+// }
+
 function getProfilePath(): string {
   const path = window.location.pathname;
-  if (path.includes('/zoos/')) {
-    return '../../profile/index.html';
-  }
+  if (path.includes('/zoos/')) return '../../profile/index.html';
+  if (path.includes('/map/') || path.includes('/contact/')) return '../pages/profile/index.html';
   return '../profile/index.html';
 }
 
