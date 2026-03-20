@@ -108,6 +108,23 @@ function highlightAmount(amount: number): void {
   });
 }
 
+function showToast(message: string, type: 'success' | 'error' = 'success'): void {
+  const container = document.getElementById('toast-container') as HTMLElement;
+  if (!container) return;
+
+  const toast = document.createElement('div');
+  toast.className = `toast ${type}`;
+  toast.textContent = message;
+  container.appendChild(toast);
+
+  setTimeout(() => toast.classList.add('show'), 10);
+
+  setTimeout(() => {
+    toast.classList.remove('show');
+    setTimeout(() => toast.remove(), 300);
+  }, 3500);
+}
+
 function initDonationButtons(): void {
   const overlay = document.getElementById('popup-overlay') as HTMLElement;
   const popupWelcome = document.getElementById('popup-welcome') as HTMLElement;
@@ -365,7 +382,7 @@ if (savedCardsRow && savedCardsSelect && user) {
 
   if (completeBtn) {
   completeBtn.onclick = () => {
-  if (!state.petId) { alert('Please select a pet to donate to.'); return; }
+  if (!state.petId) { showToast('Please select a pet to donate to.', 'error'); return; }
 
   // Re-read name and email from inputs
   const nameInput = document.querySelector('#step-2 .form-input[type="text"]') as HTMLInputElement;
@@ -415,10 +432,10 @@ if (savedCardsRow && savedCardsSelect && user) {
         const popupForm = document.getElementById('popup-form') as HTMLElement;
         popupForm.classList.remove('active');
         overlay.style.display = 'none';
-        alert(`Thank you for your donation of $${state.amount} to ${state.petName}!`);
+        showToast(`Thank you for your donation of $${state.amount} to ${state.petName}!`, 'success');
       })
       .catch(() => {
-        alert('Something went wrong. Please try again.');
+        showToast('Something went wrong. Please try again.', 'error');
         completeBtn.disabled = false;
         completeBtn.style.opacity = '1';
         completeBtn.textContent = 'Complete Donation';
