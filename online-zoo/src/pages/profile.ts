@@ -40,6 +40,23 @@ function renderHeader(): void {
   if (email)  email.textContent  = user.email;
 }
 
+function animateCount(element: HTMLElement, target: number, prefix: string = ''): void {
+  const duration = 1000;
+  const steps = 40;
+  const stepTime = duration / steps;
+  let current = 0;
+  const increment = target / steps;
+
+  const timer = setInterval(() => {
+    current += increment;
+    if (current >= target) {
+      current = target;
+      clearInterval(timer);
+    }
+    element.textContent = `${prefix}${Math.round(current)}`;
+  }, stepTime);
+}
+
 function renderStats(): void {
   const history: DonationHistoryItem[] = JSON.parse(
     localStorage.getItem('donationHistory') || '[]'
@@ -56,9 +73,9 @@ function renderStats(): void {
   const statCount = document.getElementById('stat-count') as HTMLElement;
   const statFavs  = document.getElementById('stat-favs')  as HTMLElement;
 
-  if (statTotal) statTotal.textContent = `$${total}`;
-  if (statCount) statCount.textContent = String(count);
-  if (statFavs)  statFavs.textContent  = String(favCount);
+  if (statTotal) animateCount(statTotal, total, '$');
+  if (statCount) animateCount(statCount, count);
+  if (statFavs)  animateCount(statFavs, favCount);
 }
 
 function renderFavourites(): void {
