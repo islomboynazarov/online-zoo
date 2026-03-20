@@ -235,6 +235,9 @@ export function initZoosPage(): void {
         })
         .catch(() => {
           hidePandaInfoLoader();
+          if (pandaInfo) {
+          pandaInfo.innerHTML = '<p class="error-message">Something went wrong. Please, refresh the page</p>';
+    }
         });
     })
     .catch(() => {

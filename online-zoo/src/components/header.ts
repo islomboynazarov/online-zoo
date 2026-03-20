@@ -29,21 +29,6 @@ function createUserIcon(): void {
   userWrapper.className = 'header__user';
 
   if (user) {
-    // userWrapper.innerHTML = `
-    //   <div class="header__user-icon" id="user-icon">
-    //     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-    //       <circle cx="12" cy="8" r="4"/>
-    //       <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
-    //     </svg>
-    //     <span class="header__user-name">${user.name}</span>
-    //   </div>
-    //   <div class="header__user-popup" id="user-popup">
-    //     <p class="user-popup__name">${user.name}</p>
-    //     <p class="user-popup__email">${user.email}</p>
-    //     <hr>
-    //     <button class="user-popup__signout" id="signout-btn">Sign Out</button>
-    //   </div>
-    // `;
     userWrapper.innerHTML = `
       <div class="header__user-icon" id="user-icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -62,6 +47,8 @@ function createUserIcon(): void {
       </div>
     `;
   } else {
+    const authPath = window.location.pathname.includes('/zoos/') ? '../../' : '../';
+
     userWrapper.innerHTML = `
       <div class="header__user-icon" id="user-icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -70,8 +57,8 @@ function createUserIcon(): void {
         </svg>
       </div>
       <div class="header__user-popup" id="user-popup">
-        <a href="../signin/index.html" class="user-popup__link">Sign In</a>
-        <a href="../registration/index.html" class="user-popup__link">Registration</a>
+        <a href="${authPath}signin/index.html" class="user-popup__link">Sign In</a>
+        <a href="${authPath}registration/index.html" class="user-popup__link">Registration</a>
       </div>
     `;
   }
