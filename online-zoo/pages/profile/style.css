@@ -39,6 +39,17 @@
   position: relative;
 }
 
+/* .profile-page::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 20%, rgba(0, 160, 146, 0.1) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 80%, rgba(100, 80, 200, 0.08) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+} */
+
 .profile-page::before {
   content: '';
   position: fixed;
@@ -50,6 +61,11 @@
   z-index: 0;
 }
 
+.profile-page .header {
+  position: relative;
+  z-index: 9999;
+}
+
 .db-wrap {
   position: relative;
   z-index: 1;
@@ -57,6 +73,8 @@
   padding: 0 0.75rem;
   box-sizing: border-box;
 }
+
+
 
 /* ── Glow Card ───────────────────────────────────────────────── */
 .glow-card {
