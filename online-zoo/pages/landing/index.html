@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Online Zoo</title>
+
+  <link rel="stylesheet" href="../../shared/styles/normalize.css">
+  <link rel="stylesheet" href="../../shared/styles/global.css">
+  <link rel="stylesheet" href="../../shared/styles/header.css">
+  <link rel="stylesheet" href="../../shared/styles/footer.css">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="icon" href="../../favicon.ico">
+</head>
+
+<body>
+
+  <header class="header">
+  <div class="container header__container">
+    <div class="header__logo">
+      <a href="../landing/index.html"><img src="../../assets/icons/ui/logo_zoo.png" alt="logo_zoo"></a>
+    </div>
+    <nav class="header__nav">
+      <ul class="nav__list">
+        <li><a href="../landing/index.html" class="nav__link">About</a></li>
+        <li><a href="../map/index.html" class="nav__link">Map</a></li>
+        <li><a href="../zoos/panda/index.html" class="nav__link">Zoos</a></li>
+        <li><a href="../contact/index.html" class="nav__link">Contact Us</a></li>
+        <li><a href="https://www.figma.com/design/lnK11foY8Aoa6oOlDXovVN/Online-ZOO-Project?node-id=0-1&p=f&t=uyyN8wxoAusOrWFn-0" class="nav__link">Design</a></li>
+      </ul>
+    </nav>
+    <div class="header__socials">
+      <a href="#"><img src="../../assets/icons/social/youtube.png" alt="YouTube"></a>
+      <a href="#"><img src="../../assets/icons/social/instagram.png" alt="Instagram"></a>
+      <a href="#"><img src="../../assets/icons/social/facebook.png" alt="Facebook"></a>
+    </div>
+    <button class="header__burger" id="burger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+  </header>
+
+  <main class="main">
+  <section class="hero">
+    <div class="container hero__container">
+        <h1 class="hero__title">
+          Watch your favorite animal online
+        </h1>
+        <div class="section1__paragraph">
+        <p>Explore the exciting and mysterious world of wild animals in a natural setting without leaving your home.</p>
+        </div>
+        <button class="btn hero__btn">
+          <span>View live cams</span>
+            <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <line x1="0" y1="12" x2="18" y2="12" stroke="white" stroke-width="4"/>
+            <polyline points="12,4 20,12 12,20" fill="none" stroke="white" stroke-width="4"/>
+            </svg>
+        </button>
+    </div>
+  </section>
+
+  <section class="welcome">
+
+    <div class="container welcome__container">
+        <div class="welcome__text">
+            <h1 class="welcome__title">Welcome to the Online Zoo</h1>
+            <p class="welcome__subtitle">
+              On our website, using live webcams, fans of all ages can observe various animals. Among them, are Giant pandas, eagles, alligators, forest gorillas, African lions, and others. It is the whole natural world in real-time in front of our cameras. We hope you will enjoy watching closely and explore animals’ behavior and habitats! Note: animals are not always on view on cameras, so please check back if you don't see anything.
+            </p>
+        </div>
+        <div class="welcome__image">
+            <img src="../../assets/images/backgrounds/landingPage_welcome.png" alt="landingPage_welcome">
+        </div>
+    </div>
+
+    <div class="container wework__container">
+        <div class="wework__image">
+            <img src="../../assets/images/animals/landingPage_eagles.png" alt="landingPage_eagles">
+        </div>
+     
+        <div class="wework__text">
+            <h1 class="wework__title">How we work</h1>
+            <p class="wework__subtitle">
+              Online Zoo is a nonprofit committed to inspiring awareness and preservation of nature and wild animals in our zoo and worldwide. Every day, our experts work to safeguard the health and wellness of the animals. To continue these efforts, we need your help. We're so grateful to our numerous supporters. All donations, large and small, go a long way to the conservation efforts of our pets.
+            </p>
+        </div>
+    </div>
+
+  </section>
+
+  <section class="donation__container">
+    <div class="container donation__purple">
+          
+          <div class="donation__title">
+              <h1>Your donation makes a difference! </h1>
+              <p class="donation__paragraph">The Online Zoo's animal webcams are some of the most famous on the internet. Tune in to watch your favourite animals — live, 24/7!</p>
+          </div>
+
+          <div class="donation__form">
+              <h2>Quick Donate</h2>
+               <button class="btn-split" id="quick-donate-btn">
+                  <span class="btn-split__text">$ Donation Amount</span>
+                  <span class="btn-split__arrow">
+                    <svg class="btn-arrow" viewBox="0 0 24 24" fill="none"><line x1="2" y1="12" x2="19" y2="12" stroke="white" stroke-width="2.5" stroke-linecap="round"/><polyline points="13,5 21,12 13,19" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </span>
+                </button>
+          </div>
+
+     </div>
+  </section>
+
+  <section class="pets">
+    <div class="container">
+
+      <div class="pets__header">
+        <h2 class="pets__title">Meet Some Our Pets</h2>
+        <p class="pets__text">
+          Do you have a special place in your heart for animals? Who are your favorites?
+          Perhaps you'd like to donate to special ones or all our pets?
+          We think it's important for you to choose how your donation is used.
+        </p>
+      </div>
+    <div class="pets__slider">
+        <div class="pets__controls">
+              <svg id="petsPrev" style="transform: rotate(180deg)" class="pets__arrow" viewBox="0 0 24 24" fill="none">
+                <line x1="2" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                <polyline points="13,5 21,12 13,19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+
+              <svg id="petsNext" class="pets__arrow" viewBox="0 0 24 24" fill="none">
+                <line x1="2" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                <polyline points="13,5 21,12 13,19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+        </div>
+
+    </div>
+    <div class="pets__viewport">
+    <div class="pets__track">
+<!-- START HERE -->
+<!-- Panda card -->
+ <!-- <a href="../../pages/zoos/panda/index.html"> -->
+      <div class="pet-card" onclick="window.location='../zoos/panda/index.html'" style="cursor:pointer">
+        <div class="pet-card__image">
+          <img src="../../assets/images/pet-sliders/slider_panda.png" alt="Panda">
+          <span class="pet-card__name">Lucas</span>
+        </div>
+
+        <div class="pet-card__content">
+          <h3>Giant Panda</h3>
+          <p>
+            Native to central China, giant pandas have come to symbolize vulnerable species.
+          </p>
+          <a href="#" class="pet-card__link">View Live Cam <svg class="slidecard_arrow" viewBox="0 0 24 24" fill="none"><line x1="2" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="13,5 21,12 13,19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+    <!-- </a> -->
+
+<!-- Lemur card -->
+<!-- <a href="../../pages/zoos/lemur/index.html"> -->
+       <div class="pet-card" onclick="window.location='../zoos/lemur/index.html'" style="cursor:pointer">
+        <div class="pet-card__image">
+          <img src="../../assets/images/pet-sliders/slider_lemur.png" alt="Lemur">
+          <span class="pet-card__name">Lemmy</span>
+        </div>
+
+        <div class="pet-card__content">
+          <h3>Lemur</h3>
+          <p>
+            Native to central China, giant pandas have come to symbolize vulnerable species.
+          </p>
+         <a href="#" class="pet-card__link">View Live Cam <svg class="slidecard_arrow" viewBox="0 0 24 24" fill="none"><line x1="2" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="13,5 21,12 13,19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+    <!-- </a> -->
+
+<!-- Gorilla card -->
+<!-- <a href="../../pages/zoos/gorilla/index.html"> -->
+       <div class="pet-card" onclick="window.location='../zoos/gorilla/index.html'" style="cursor:pointer">
+        <div class="pet-card__image">
+          <img src="../../assets/images/pet-sliders/slider_gorilla.png" alt="Gorilla">
+          <span class="pet-card__name">Gorilla</span>
+        </div>
+
+        <div class="pet-card__content">
+          <h3>Gorilla</h3>
+          <p>
+            Native to central China, giant pandas have come to symbolize vulnerable species.
+          </p>
+          <a href="#" class="pet-card__link">View Live Cam <svg class="slidecard_arrow" viewBox="0 0 24 24" fill="none"><line x1="2" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="13,5 21,12 13,19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+<!-- </a> -->
+<!-- Alligator card -->
+<!-- <a href="../../pages/zoos/lemur/index.html"> -->
+       <div class="pet-card" onclick="window.location='../zoos/panda/index.html'" style="cursor:pointer">
+        <div class="pet-card__image">
+          <img src="../../assets/images/pet-sliders/slider_alligator.png" alt="Alligator">
+          <span class="pet-card__name">Alligator</span>
+        </div>
+
+        <div class="pet-card__content">
+          <h3>Alligator</h3>
+          <p>
+            Native to central China, giant pandas have come to symbolize vulnerable species.
+          </p>
+          <a href="#" class="pet-card__link">View Live Cam <svg class="slidecard_arrow" viewBox="0 0 24 24" fill="none"><line x1="2" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="13,5 21,12 13,19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+<!-- </a> -->
+
+<!-- Eagles card -->
+<!-- <a href="../../pages/zoos/eagle/index.html"> -->
+       <div class="pet-card" onclick="window.location='../zoos/eagle/index.html'" style="cursor:pointer">
+        <div class="pet-card__image">
+          <img src="../../assets/images/pet-sliders/slider_eagles.png" alt="Eagle">
+          <span class="pet-card__name">Eagle</span>
+        </div>
+
+        <div class="pet-card__content">
+          <h3>Eagle</h3>
+          <p>
+            Native to central China, giant pandas have come to symbolize vulnerable species.
+          </p>
+          <a href="#" class="pet-card__link">View Live Cam <svg class="slidecard_arrow" viewBox="0 0 24 24" fill="none"><line x1="2" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="13,5 21,12 13,19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+<!-- </a> -->
+<!-- Lion card -->
+<!-- <a href="../../pages/zoos/lemur/index.html"> -->
+       <div class="pet-card" onclick="window.location='../zoos/panda/index.html'" style="cursor:pointer">
+        <div class="pet-card__image">
+          <img src="../../assets/images/pet-sliders/slider_lion.png" alt="Lion">
+          <span class="pet-card__name">Lion</span>
+        </div>
+
+        <div class="pet-card__content">
+          <h3>Lion</h3>
+          <p>
+            Native to central China, giant pandas have come to symbolize vulnerable species.
+          </p>
+          <a href="#" class="pet-card__link">View Live Cam <svg class="slidecard_arrow" viewBox="0 0 24 24" fill="none"><line x1="2" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="13,5 21,12 13,19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+<!-- </a> -->
+<!-- Tiger card -->
+<!-- <a href="../../pages/zoos/lemur/index.html"> -->
+       <div class="pet-card" onclick="window.location='../zoos/panda/index.html'" style="cursor:pointer">
+        <div class="pet-card__image">
+          <img src="../../assets/images/pet-sliders/slider_tiger.png" alt="Tiger">
+          <span class="pet-card__name">Tiger</span>
+        </div>
+
+        <div class="pet-card__content">
+          <h3>Tiger</h3>
+          <p>
+            Native to central China, giant pandas have come to symbolize vulnerable species.
+          </p>
+          <a href="#" class="pet-card__link">View Live Cam <svg class="slidecard_arrow" viewBox="0 0 24 24" fill="none"><line x1="2" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="13,5 21,12 13,19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+<!-- </a> -->
+<!-- Panda card -->
+
+<!-- <a href="../../pages/zoos/panda/index.html"></a> -->
+      <div class="pet-card" onclick="window.location='../zoos/panda/index.html'" style="cursor:pointer">
+        <div class="pet-card__image">
+          <img src="../../assets/images/pet-sliders/slider_panda.png" alt="Panda">
+          <span class="pet-card__name">Lucas</span>
+        </div>
+
+        <div class="pet-card__content">
+          <h3>Giant Panda</h3>
+          <p>
+            Native to central China, giant pandas have come to symbolize vulnerable species.
+          </p>
+          <a href="#" class="pet-card__link">View Live Cam <svg class="slidecard_arrow" viewBox="0 0 24 24" fill="none"><line x1="2" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="13,5 21,12 13,19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+
+<!-- Lemur card -->
+<!-- <a href="../../pages/zoos/lemur/index.html"></a> -->
+       <div class="pet-card" onclick="window.location='../zoos/lemur/index.html'" style="cursor:pointer">
+        <div class="pet-card__image">
+          <img src="../../assets/images/pet-sliders/slider_lemur.png" alt="Lemur">
+          <span class="pet-card__name">Lemmy</span>
+        </div>
+
+        <div class="pet-card__content">
+          <h3>Lemur</h3>
+          <p>
+            Native to central China, giant pandas have come to symbolize vulnerable species.
+          </p>
+         <a href="#" class="pet-card__link">View Live Cam <svg class="slidecard_arrow" viewBox="0 0 24 24" fill="none"><line x1="2" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="13,5 21,12 13,19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+
+<!-- Gorilla card -->
+<!-- <a href="../../pages/zoos/gorilla/index.html"> -->
+       <div class="pet-card" onclick="window.location='../zoos/panda/index.html'" style="cursor:pointer">
+        <div class="pet-card__image">
+          <img src="../../assets/images/pet-sliders/slider_gorilla.png" alt="Gorilla">
+          <span class="pet-card__name">Gorilla</span>
+        </div>
+
+        <div class="pet-card__content">
+          <h3>Gorilla</h3>
+          <p>
+            Native to central China, giant pandas have come to symbolize vulnerable species.
+          </p>
+          <a href="#" class="pet-card__link">View Live Cam <svg class="slidecard_arrow" viewBox="0 0 24 24" fill="none"><line x1="2" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="13,5 21,12 13,19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+<!-- </a> -->
+
+<!-- Eagles card -->
+<!-- <a href="../../pages/zoos/eagle/index.html"> -->
+       <div class="pet-card" onclick="window.location='../zoos/eagle/index.html'" style="cursor:pointer">
+        <div class="pet-card__image">
+          <img src="../../assets/images/pet-sliders/slider_eagles.png" alt="Eagle">
+          <span class="pet-card__name">Eagle</span>
+        </div>
+
+        <div class="pet-card__content">
+          <h3>Eagle</h3>
+          <p>
+            Native to central China, giant pandas have come to symbolize vulnerable species.
+          </p>
+          <a href="#" class="pet-card__link">View Live Cam <svg class="slidecard_arrow" viewBox="0 0 24 24" fill="none"><line x1="2" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="13,5 21,12 13,19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+<!-- </a> -->
+<!-- Coala card -->
+<!-- <a href="../../pages/zoos/panda/index.html"> -->
+       <div class="pet-card" onclick="window.location='../zoos/panda/index.html'" style="cursor:pointer">
+        <div class="pet-card__image">
+          <img src="../../assets/images/pet-sliders/slider_coala.png" alt="Coala">
+          <span class="pet-card__name">Coala</span>
+        </div>
+
+        <div class="pet-card__content">
+          <h3>Coala</h3>
+          <p>
+            Native to central China, giant pandas have come to symbolize vulnerable species.
+          </p>
+          <a href="#" class="pet-card__link">View Live Cam <svg class="slidecard_arrow" viewBox="0 0 24 24" fill="none"><line x1="2" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="13,5 21,12 13,19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+<!-- </a> -->
+<!-- END HERE -->
+    </div>
+    </div>
+  </div>
+
+
+     <div class="pets__cta">
+      <button class="favorite__btn">
+            Choose your favourite
+            <svg class="favorite__btn__arrow" viewBox="0 0 24 24" fill="none"><line x1="2" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="13,5 21,12 13,19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <!-- <span class="favourite__arrow">→</span> -->
+            <!-- <img src="../../assets/icons/arrows/arrowRight.png" alt="arrowRight" class="btn-icon"> -->
+      </button>
+      </div>
+  </section>
+
+<!-- Here starts PAY AND FEED part -->
+  
+ <section class="pay-feed">
+  <div class="container">
+
+    <h2 class="pay-feed__title">Pay and Feed</h2>
+
+    <!-- Part 01 -->
+    <div class="pay-feed__item">
+       <div class="numandline">
+          <div class="pay-feed__number">01</div>
+          <div class="pay-feed__line">-</div>
+        </div>
+      <div class="pay-feed__row">
+        <div class="pay-feed__image">
+          <img src="../../assets/images/animals/feedPage_gorilla.png" alt="feedPage_gorilla">
+        </div>
+
+        <div class="pay-feed__content">
+          <div class="pay-feed__icon"><img src="../../assets/icons/ui/landingFeed_heart.svg" alt="heart"></div>
+          <h3>Your donation has an impact</h3>
+          <p>
+            Providing our animals with high-quality nutritious diets is just one
+            element of animal care at our Zoo. We do all the best so that our
+            animals can eat food similar to what they might find in their natural habitats.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Part 02 -->
+    <div class="pay-feed__item">
+       <div class="numandline">
+          <div class="pay-feed__number">02</div>
+          <div class="pay-feed__line">-</div>
+        </div>
+      <div class="pay-feed__row">
+        <div class="pay-feed__image">
+          <img src="../../assets/images/backgrounds/feedPage_banana.png" alt="feedPage_Banana">
+        </div>
+
+        <div class="pay-feed__content">
+          <div class="pay-feed__icon"><img src="../../assets/icons/ui/landingFeed_card.svg" alt="card"></div>
+          <h3>Make a donation</h3>
+          <p>
+            You can donate through your credit card without any fees.
+            Choose an amount to give and the pet's name if needed.
+            Regular donations make the biggest impact.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Part 03 -->
+      <div class="pay-feed__item">
+        <div class="numandline">
+          <div class="pay-feed__number">03</div>
+          <div class="pay-feed__line">-</div>
+        </div>
+      <div class="pay-feed__row">
+        <div class="pay-feed__image">
+          <img src="../../assets/images/animals/feedPage_gorillaEatingBanana.png" alt="feedPage_gorillaEatingBanana">
+        </div>
+
+        <div class="pay-feed__content">
+          <div class="pay-feed__icon"><img src="../../assets/icons/ui/landingFeed_food.svg" alt="food"></div>
+          <h3>Bring your food charity — straight to your favorites pets</h3>
+          <p>
+            After your donation, the animal receives its favorite foods.
+            You can support your favorite animal and make a real personal impact.
+          </p>
+          <button class="btn hero__btn payfeed__btn" id="donate-now-btn">
+            <span>Donate now</span>
+            <!-- <a href="#" class="btn__arrowRight"> -->
+              <svg class="arrow-icon btn__arrowRight" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <line x1="0" y1="12" x2="18" y2="12" stroke="white" stroke-width="4"/>
+              <polyline points="12,4 20,12 12,20" fill="none" stroke="white" stroke-width="4"/>
+              </svg>
+            <!-- </a> -->
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Here starts TESTIMONIALS and CARE section -->
+
+  <section class="testimonials">
+
+  <div class="container testimonials__container">
+
+    <div class="testimonials__left">
+      <h2 class="testimonials__title">
+        What Our <br> Users Think
+      </h2>
+      <p class="testimonials__text">
+        We are continuously striving to improve the experiences of our future guests.
+        Below you can leave your own feedback, or simply view feedback from past clients.
+      </p>
+      <button class="feedback__btn">
+        <span>Leave feedback</span>
+        <svg class="feedback__btn__arrow" viewBox="0 0 24 24" fill="none"><line x1="2" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="13,5 21,12 13,19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+
+    <div class="testimonials__right">
+
+      <div class="testimonials__grid">
+        <div class="testimonial-card">
+          <img src="../../assets/images/testimonials/testimonial_karen.png" alt="testimonial_karen" class="testimonial-card__img">
+        </div>
+        <div class="testimonial-card">
+          <img src="../../assets/images/testimonials/testimonial_carol.png" alt="testimonial_carol" class="testimonial-card__img">
+        </div>
+        <div class="testimonial-card">
+          <img src="../../assets/images/testimonials/testimonial_stockman.png" alt="testimonial_stockman" class="testimonial-card__img">
+        </div>
+        <div class="testimonial-card">
+          <img src="../../assets/images/testimonials/testimonial_tomas.png" alt="testimonial_tomas" class="testimonial-card__img">
+        </div>
+        <div class="testimonials__controls">
+          <svg style="transform: rotate(180deg)" class="testimonial__btn__arrow" viewBox="0 0 24 24" fill="none"><line x1="2" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="13,5 21,12 13,19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg class="testimonial__btn__arrow" viewBox="0 0 24 24" fill="none"><line x1="2" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="13,5 21,12 13,19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </div>
+
+      <div class="testimonial__dots">
+        <span class="testimonial__dot active"></span>
+        <span class="testimonial__dot"></span>
+        <span class="testimonial__dot"></span>
+        <span class="testimonial__dot"></span>
+      </div>
+
+    </div>
+
+  </div> 
+
+</section>
+
+<!-- Here starts CARE section -->
+
+  <section class="care">
+  <div class="container care__container">
+
+    <div class="care__header">
+      <h2 class="care__title">CARE FOR THE<br>ANIMALS YOU LOVE</h2>
+      <p class="care__subtitle">
+        You can help to look after the animals<br>
+        you love with your gift today
+      </p>
+    </div>
+
+    <div class="care__grid">
+
+      <!-- Large Koala -->
+      <div class="care__card--large">
+        <img src="../../assets/images/animals/carePage_coala.png" alt="carePage_coala">
+      </div>
+
+      <!-- Panda -->
+      <div class="care__card">
+        <img src="../../assets/images/animals/carePage_pandaEating.png" alt="carePage_pandaEating">
+        <div class="care__card-body">
+          <p>Your $30 could give Lucas a slice of panda cake, made with our secret recipe.</p>
+          <a href="#" class="pet-card__link">Feed <svg class="slidecard_arrow" viewBox="0 0 24 24" fill="none"><line x1="2" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="13,5 21,12 13,19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+
+      <!-- Tiger -->
+      <div class="care__card">
+        <img src="../../assets/images/animals/carePage_tiger.png" alt="carePage_tiger">
+        <div class="care__card-body">
+          <p>Your $150 will help to care for Senja, a Sumatran tiger, for three weeks.</p>
+          <a href="#" class="pet-card__link">Feed <svg class="slidecard_arrow" viewBox="0 0 24 24" fill="none"><line x1="2" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="13,5 21,12 13,19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+
+      <!-- Lemur -->
+      <div class="care__card">
+        <img src="../../assets/images/animals/carePage_lemur.png" alt="carePage_lemur">
+        <div class="care__card-body">
+          <p>With your support, we can give Andy his favorite fruits.</p>
+          <a href="#" class="pet-card__link">Feed <svg class="slidecard_arrow" viewBox="0 0 24 24" fill="none"><line x1="2" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="13,5 21,12 13,19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+
+      <!-- Eagles -->
+      <div class="care__card">
+        <img src="../../assets/images/animals/carePage_eagles.png" alt="carePage_eagles">
+        <div class="care__card-body">
+          <p>Sam & Lara have hatched and raised numerous young.</p>
+          <a href="#" class="pet-card__link">Feed <svg class="slidecard_arrow" viewBox="0 0 24 24" fill="none"><line x1="2" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="13,5 21,12 13,19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+
+    </div>
+    <div class="care__dots">
+      <span class="care__dot active"></span>
+      <span class="care__dot"></span>
+      <span class="care__dot"></span>
+      <span class="care__dot"></span>
+    </div>
+    <div class="pets__cta">
+      <button class="favorite__btn">
+            Choose your favourite
+            <svg class="favorite__btn__arrow" viewBox="0 0 24 24" fill="none"><line x1="2" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="13,5 21,12 13,19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+    </div>
+
+
+    <div class="care__video">
+      <img src="../../assets/images/backgrounds/carePage_screen.png" alt="carePage_screen">
+    </div>
+
+  </div>
+</section>
+
+<!-- POPUP WINDOWS START HERE  -->
+
+<div class="popup-overlay" id="popup-overlay">
+
+  <!-- POPUP 1: Welcome / Scroll trigger -->
+  <div class="popup active" id="popup-welcome">
+    <button class="popup__close" id="close-welcome">✕</button>
+
+    <img
+      src="../../assets/images/backgrounds/popup_handshake.png"
+      alt="Together we care"
+      class="popup-welcome__image"
+    >
+
+    <div class="popup-welcome__body">
+      <h2 class="popup-welcome__title">Together We Care,<br>Save and Protect!</h2>
+      <p class="popup-welcome__text">
+        Your most generous gift not only cares for countless animals,
+        but it also offers hope and a vital lifeline to the world's most
+        endangered wildlife relying on us to survive.
+      </p>
+      <div class="popup-welcome__amounts">
+        <button class="amount-btn" onclick="selectAmount('$20')">$20</button>
+        <button class="amount-btn" onclick="selectAmount('$30')">$30</button>
+        <button class="amount-btn" onclick="selectAmount('$50')">$50</button>
+        <button class="amount-btn" onclick="selectAmount('$80')">$80</button>
+        <button class="amount-btn" onclick="selectAmount('$100')">$100</button>
+        <button class="amount-btn amount-btn--other" onclick="openDonationForm()">Other Amount</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- POPUP 2: Multi-step Donation Form -->
+  <div class="popup" id="popup-form">
+
+    <div class="popup-form__header">
+      <h2>Make Your Donation</h2>
+      <button class="popup__close" id="close-form">✕</button>
+    </div>
+
+    <div class="popup-form__body">
+
+      <!-- STEP 1: Donation Info -->
+      <div class="form-step active" id="step-1">
+        <p class="form-step__section-title">Donation Information:</p>
+        <hr class="form-step__divider">
+
+        <span class="form-step__label">* Choose your donation amount:</span>
+        <div class="form-amounts">
+          <button class="form-amount-btn">$10</button>
+          <button class="form-amount-btn">$20</button>
+          <button class="form-amount-btn">$30</button>
+          <button class="form-amount-btn">$50</button>
+          <button class="form-amount-btn">$80</button>
+          <button class="form-amount-btn">$100</button>
+        </div>
+
+        <div class="other-amount-row">
+          <button class="btn-other-amount">Other Amount</button>
+          <input type="number" class="other-amount-input" placeholder="">
+        </div>
+
+        <div class="special-pet-row">
+          <button class="btn-special-pet">For Special Pet</button>
+          <select class="special-pet-select">
+            <option value="">Choose your favourite</option>
+            <option>Lukas the Panda</option>
+            <option>Andy the Lemur</option>
+            <option>Glen the Gorilla</option>
+            <option>Mike the Alligator</option>
+            <option>Sam &amp; Lora the eagles family</option>
+            <option>Liz the Koala</option>
+            <option>Shake the Lion</option>
+            <option>Senja the Tiger</option>
+          </select>
+        </div>
+
+        <label class="checkbox-row">
+          <input type="checkbox">
+          Make this a monthly recurring gift
+        </label>
+
+        <div class="form-step__footer">
+          <div class="step-dots">
+            <div class="step-dot active"></div>
+            <div class="step-dot"></div>
+            <div class="step-dot"></div>
+          </div>
+          <button class="btn-next" onclick="goToStep(2)">
+            Next
+            <svg viewBox="0 0 24 24" fill="none">
+              <line x1="2" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+              <polyline points="13,5 21,12 13,19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- STEP 2: Billing Info -->
+      <div class="form-step" id="step-2">
+        <p class="form-step__section-title">Billing Information:</p>
+        <hr class="form-step__divider">
+
+        <span class="form-step__label">* Your Name</span>
+        <input type="text" class="form-input" placeholder="First and last name">
+
+        <span class="form-step__label">* Your Email Address</span>
+        <input type="email" class="form-input" placeholder="Enter your email">
+        <p class="form-hint">
+          You will receive emails from the Online Zoo, including updates and news
+          on the latest discoveries and translations. You can unsubscribe at any time.
+        </p>
+
+        <div class="form-step__footer">
+          <div class="step-dots">
+            <div class="step-dot active"></div>
+            <div class="step-dot active"></div>
+            <div class="step-dot"></div>
+          </div>
+          <div style="display:flex; align-items:center; gap:20px;">
+            <button class="btn-back" onclick="goToStep(1)">Back</button>
+            <button class="btn-next" onclick="goToStep(3)">
+              Next
+              <svg viewBox="0 0 24 24" fill="none">
+                <line x1="2" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                <polyline points="13,5 21,12 13,19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 3: Payment Info -->
+      <div class="form-step" id="step-3">
+        <div id="saved-cards-row" style="display:none;">
+          <span class="form-step__label">Saved cards:</span>
+          <select class="form-select" id="saved-cards-select">
+            <option value="">Select a saved card</option>
+          </select>
+        </div>
+        <p class="form-step__section-title">Payment Information:</p>
+        <hr class="form-step__divider">
+
+        <div class="form-input-group">
+          <div>
+            <span class="form-step__label">* Credit Card Number</span>
+            <input type="text" class="form-input" placeholder="">
+          </div>
+          <div>
+            <span class="form-step__label">* CVV Number</span>
+            <input type="text" class="form-input" placeholder="">
+          </div>
+        </div>
+
+        <span class="form-step__label">* Expiration Date</span>
+        <div class="form-select-group">
+          <select class="form-select" id="month-select">
+            <option>Month</option>
+            <option>01</option><option>02</option><option>03</option>
+            <option>04</option><option>05</option><option>06</option>
+            <option>07</option><option>08</option><option>09</option>
+            <option>10</option><option>11</option><option>12</option>
+          </select>
+          <select class="form-select" id="year-select">
+            <option>Year</option>
+            <option>2025</option><option>2026</option><option>2027</option>
+            <option>2028</option><option>2029</option><option>2030</option>
+          </select>
+        </div>
+
+        <div id="save-card-row" style="display:none;">
+          <label class="checkbox-row">
+            <input type="checkbox" id="save-card-checkbox">
+            Save card info for future donations
+          </label>
+        </div>
+
+        <div class="form-step__footer">
+          <div class="step-dots">
+            <div class="step-dot active"></div>
+            <div class="step-dot active"></div>
+            <div class="step-dot active"></div>
+          </div>
+          <div style="display:flex; align-items:center; gap:20px;">
+            <button class="btn-back" onclick="goToStep(2)">Back</button>
+            <button class="btn-next" onclick="completeDonation()">
+              Complete Donation
+              <svg viewBox="0 0 24 24" fill="none">
+                <line x1="2" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                <polyline points="13,5 21,12 13,19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+
+
+
+<!-- POPUP WINDOWS START HERE  -->
+
+</main>
+
+<!-- Here starts FOOTER section -->
+
+  <footer class="footer">
+  <div class="container footer__container">
+
+    <div class="footer_top">
+        <div class="footer__logo">
+            <a href="../landing/index.html"><img src="../../assets/icons/ui/logo_zoo_white.png" alt="logo_zoo"></a>
+            <a href="../landing/index.html"><img src="../../assets/icons/social/logo_yemdigital.png" alt="logo_yemdigital"></a>
+            <a href="https://rs.school/"><img src="../../assets/icons/social/logo_rsschool.svg" alt="logo_rsschool"></a>
+        </div>
+        <div class="footer__list">
+            <a href="../landing/index.html">About</a>
+            <a href="../map/index.html">Map</a>
+            <a href="../zoos/panda/index.html">Zoos</a>
+            <a href="../contact/index.html">Contact Us</a>
+        </div>
+        <div class="donate">
+        <button class="donate__btn">
+            Donate for volunteers
+            <svg class="btn-arrow" viewBox="0 0 24 24" fill="none"><line x1="2" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="13,5 21,12 13,19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        </div>
+        <div class="footer__socials--mobile">
+          <a href="https://www.youtube.com/@RollingScopesSchool"><img src="../../assets/icons/social/youtube.png" alt="youtube"></a>
+          <a href="https://www.instagram.com/p/CyLSf57IRIe/"><img src="../../assets/icons/social/instagram.png" alt="instagram"></a>
+          <a href="https://www.facebook.com/RollingScopesSchool"><img src="../../assets/icons/social/facebook.png" alt="facebook"></a>
+        </div>
+    </div>
+
+  <hr class="footer_divider">
+
+    <div class="footer__bottom">
+        <div class="footer__copyright">
+            <ul>
+                <li>© 2021 Dinak</li>
+                <li>© Yem Digital</li>
+                <li>© Rsschool</li>
+            </ul> 
+        </div>
+        <div class="footer__socials">
+            <a href="https://www.youtube.com/@RollingScopesSchool"><img src="../../assets/icons/social/youtube.png" alt="youtube"></a>
+            <a href="https://www.instagram.com/p/CyLSf57IRIe/"><img src="../../assets/icons/social/instagram.png" alt="instagram"></a>
+            <a href="https://www.facebook.com/RollingScopesSchool"><img src="../../assets/icons/social/facebook.png" alt="facebook"></a>
+        </div>
+    </div>
+  </div>
+  </footer>
+
+  <div id="toast-container"></div>
+  
+  <script src="../../shared/scripts/navigation.js"></script>
+  <script src="./script.js"></script>
+  <script src="../../dist/bundle.js"></script>
+</body>
+</html>

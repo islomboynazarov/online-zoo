@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Online Zoo</title>
+
+  <link rel="stylesheet" href="../../../shared/styles/normalize.css">
+  <link rel="stylesheet" href="../../../shared/styles/global.css">
+  <link rel="stylesheet" href="../../../shared/styles/header.css">
+  <link rel="stylesheet" href="../../../shared/styles/footer.css">
+  <link rel="stylesheet" href="../../../shared/styles/popups.css">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="icon" href="../../../favicon.ico">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+</head>
+
+<body>
+
+  <header class="header">
+  <div class="container header__container">
+    <div class="header__logo">
+      <a href="../../../landing/index.html"><img src="../../../assets/icons/ui/logo_zoo.png" alt="logo_zoo"></a>
+    </div>
+    <nav class="header__nav">
+      <ul class="nav__list">
+        <li><a href="../../landing/index.html" class="nav__link">About</a></li>
+        <li><a href="../../map/index.html" class="nav__link">Map</a></li>
+        <li><a href="../panda/index.html" class="nav__link">Zoos</a></li>
+        <li><a href="../../contact/index.html" class="nav__link">Contact Us</a></li>
+        <li><a href="https://www.figma.com/design/lnK11foY8Aoa6oOlDXovVN/Online-ZOO-Project?node-id=0-1&p=f&t=uyyN8wxoAusOrWFn-0" class="nav__link">Design</a></li>
+      </ul>
+    </nav>
+    <div class="header__socials">
+      <a href="#"><img src="../../../assets/icons/social/youtube.png" alt="YouTube"></a>
+      <a href="#"><img src="../../../assets/icons/social/instagram.png" alt="Instagram"></a>
+      <a href="#"><img src="../../../assets/icons/social/facebook.png" alt="Facebook"></a>
+    </div>
+    <button class="header__burger" id="burger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+  </header>
+
+  
+<section class="live container">
+  <!-- SidePanel is here -->
+  <aside class="live__sidebar">
+    <div class="live__logo">
+      <img src="../../../assets/icons/ui/liveBadge.png" id="liveBadge" alt="Live Badge">
+      <span class="live__collapse">>></span>
+    </div>
+    <div class="live__animals">
+      <a href="../panda/index.html">
+        <div class="sidebar__boxes active">
+          <img src="../../../assets/icons/navigation/sidePanel_pandaBig.png" alt="sidePanel_pandaBig">
+          <span class="animal-label">Watch live from China's Panda Center</span>
+        </div>
+      </a>
+      <a href="../eagle/index.html">
+        <div class="sidebar__boxes">
+          <img src="../../../assets/icons/navigation/sidePanel_eagleBig.png" alt="sidePanel_eagleBig">
+          <span class="animal-label">Watch The Bald Eagles Nest from West End cam</span>
+        </div>
+      </a>
+      <a href="../gorilla/index.html">
+        <div class="sidebar__boxes">
+          <img src="../../../assets/icons/navigation/sidePanel_gorillaBig.png" alt="sidePanel_gorilla">
+          <span class="animal-label">Livestream from Gorilla Forest Corridor habitat cam</span>
+        </div>
+      </a>
+      <a href="../lemur/index.html">
+        <div class="sidebar__boxes">
+          <img src="../../../assets/icons/navigation/sidePanel_lemurBig.png" alt="sidePanel_lemur" id="lemur-open">
+          <span class="animal-label">The ring-tailed lemurs play in Madagascar, Lemuria Land</span>
+        </div>
+      </a>
+      <div class="sidebar__boxes live__arrow-down">&#8964;</div>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <div class="live__content">
+    <div class="content__container">
+
+      <div class="live__header">
+        <h1>GORILLA CAMS</h1>
+         <div class="live__header-actions">
+         <button class="heart-btn" id="heart-btn" aria-label="Favourite this animal">
+            <svg viewBox="0 0 24 24" width="34" height="34" fill="none">
+              <path d="M12 21C12 21 3 14 3 8a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 6-9 13-9 13z"
+                stroke="#333333" stroke-width="2" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        <button class="btn hero__btn" id="donate-now-btn">
+          <span>Donate now</span>
+          <!-- <a href="#" class="btn__arrowRight"> -->
+            <svg class="btn-arrow" viewBox="0 0 24 24" fill="none"><line x1="2" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="13,5 21,12 13,19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <!-- </a> -->
+        </button>
+        </div>
+      </div>
+
+      <div class="live__video">
+        <a href="https://www.youtube.com/watch?v=23um2h4YUwU&pp=ygUUZ29yaWxsYSBzY2FyeSB2aWRlb3M%3D">
+          <img src="../../../assets/images/animals/zooPageGorilla_main.png" alt="Main Gorilla Cam">
+          <div class="play-btn">▶</div>
+        </a>
+        <button class="btn hero__btn__down" id="donate-now-btn-2">
+          <span>Donate now</span>
+          <!-- <a href="#" class="btn__arrowRight"> -->
+            <svg class="btn-arrow" viewBox="0 0 24 24" fill="none"><line x1="2" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="13,5 21,12 13,19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <!-- </a> -->
+        </button>
+      </div>
+
+      <div class="live__more">
+        <h2>MORE LIVE VIEWS</h2>
+        <div class="live__slider">
+          <button class="arrow prev">
+            <svg style="transform: rotate(180deg)" class="testimonial__btn__arrow" viewBox="0 0 24 24" fill="none"><line x1="2" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="13,5 21,12 13,19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="slider__viewport">
+            <div class="slider__track">
+              <div class="thumb active">
+                <a href="https://www.youtube.com/watch?v=MkH6UAFt35Q&pp=ygUUZ29yaWxsYSBzY2FyeSB2aWRlb3M%3D">
+                  <img src="../../../assets/images/animals/zooPageGorilla_cam1.png" alt="Cam 1">
+                </a>
+              </div>
+              <div class="thumb">
+                <a href="https://www.youtube.com/watch?v=LUOFUNRzUB8&pp=ygUUZ29yaWxsYSBzY2FyeSB2aWRlb3PSBwkJvgoBhyohjO8%3D">
+                  <img src="../../../assets/images/animals/zooPageGorilla_cam2.png" alt="Cam 2">
+                </a>
+              </div>
+              <div class="thumb">
+                <a href="https://www.youtube.com/watch?v=4BFmfV0ZrLQ&pp=ygUUZ29yaWxsYSBzY2FyeSB2aWRlb3M%3D">
+                  <img src="../../../assets/images/animals/zooPageGorilla_cam3.png" alt="Cam 3">
+                </a>
+              </div>
+              <div class="thumb">
+                <a href="https://www.youtube.com/watch?v=MkH6UAFt35Q&pp=ygUUZ29yaWxsYSBzY2FyeSB2aWRlb3M%3D">
+                  <img src="../../../assets/images/animals/zooPageGorilla_cam1.png" alt="Cam 1">
+                </a>
+              </div>
+              <div class="thumb">
+                <a href="https://www.youtube.com/watch?v=LUOFUNRzUB8&pp=ygUUZ29yaWxsYSBzY2FyeSB2aWRlb3PSBwkJvgoBhyohjO8%3D">
+                  <img src="../../../assets/images/animals/zooPageGorilla_cam2.png" alt="Cam 2">
+                </a>
+              </div>
+              <div class="thumb">
+                <a href="https://www.youtube.com/watch?v=4BFmfV0ZrLQ&pp=ygUUZ29yaWxsYSBzY2FyeSB2aWRlb3M%3D">
+                  <img src="../../../assets/images/animals/zooPageGorilla_cam3.png" alt="Cam 3">
+                </a>
+              </div>
+            </div>
+          </div>
+          <button class="arrow next">
+            <svg class="testimonial__btn__arrow" viewBox="0 0 24 24" fill="none"><line x1="2" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="13,5 21,12 13,19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+          <button class="btn hero__btn__320" id="donate-now-btn-3">
+            <span>Donate now</span>
+            <!-- <a href="#" class="btn__arrowRight"> -->
+              <svg class="btn-arrow" viewBox="0 0 24 24" fill="none"><line x1="2" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="13,5 21,12 13,19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <!-- </a> -->
+          </button>
+        <!-- 320 button should come here but I dont know how -->
+      </div>
+
+    </div> <!-- closes container -->
+  </div> <!-- closes live__content -->
+
+</section> <!-- closes live -->
+
+<!-- Purple Stripe part -->
+<section class="donation__container">
+  <div class="container donation__purple">
+    <div class="donation__title">
+      <h1>make a difference for the gorillas!</h1>
+      <p class="donation__paragraph"> It is our goal to ensure the conservation and restoration of the gorilla population and their habitat in Central Africa. To do this, we need your help! Bring your food charity straight to Glen and his family.</p>
+    </div>
+    <div class="donation__form">
+      <h2>Quick Donate</h2>
+      <button class="btn-split" id="quick-donate-btn">
+        <span class="btn-split__text">$ Donation Amount</span>
+        <span class="btn-split__arrow">
+          <svg class="btn-arrow" viewBox="0 0 24 24" fill="none"><line x1="2" y1="12" x2="19" y2="12" stroke="white" stroke-width="2.5" stroke-linecap="round"/><polyline points="13,5 21,12 13,19" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<section class="panda-info container">
+  <div class="panda-fact">
+    <h3>DID YOU KNOW?</h3>
+    <p>
+    In addition to having distinctive fingerprints like humans do, gorillas also have unique nose prints.
+    Gorillas are the largest of the great apes, but the western lowland gorilla is the smallest of the subspecies.
+    </p>
+  </div>
+  <div class="panda-content">
+    <div class="panda-details">
+      <p><span>Common name:</span> Western lowland gorillas</p>
+      <p><span>Scientific name:</span> Gorilla gorilla gorilla</p>
+      <p><span>Type:</span> Mammals</p>
+      <p><span>Size:</span> Standing height, four to six feet</p>
+      <p><span>Diet:</span> Omnivore</p>
+      <p><span>Habitat:</span> Rainforests</p>
+      <p><span>Range:</span> Western Africa <a href="#" class="view-map">VIEW MAP →</a></p>
+    </div>
+    <div class="panda-image">
+      <img src="../../../assets/images/animals/zooPageGorilla_mini.png" alt="Gorilla Mini">
+    </div>
+  </div>
+  <div class="panda-description">
+    <p>
+      Western lowland gorillas are the smallest of the four subspecies. They live in thick tropical rainforests, where they find plenty of food for their vegetarian diet. They eat roots, shoots, fruit, wild celery, and tree bark and pulp. Gorillas can climb trees, but they’re usually found on the ground in communities—known as troops. Troops are led by one dominant, older adult male, often called a silverback because of the swath of silver hair that adorns his otherwise dark fur. Troops also include several other young males, some females, and their offspring. The leader organizes troop activities, such as eating, nesting in leaves, and moving about the group's home range. Gorillas prefer traveling on all fours, pushing themselves forward with their knuckles and soles of their feet. Female gorillas give birth to one infant after a pregnancy of nearly nine months. These infants ride on their mothers’ backs from the age of four months through the first two or three years of their lives.
+    </p>
+  </div>
+</section>
+
+<!-- DONATION POPUP -->
+<div class="popup-overlay" id="popup-overlay">
+
+  <!-- POPUP 1: Welcome -->
+  <div class="popup active" id="popup-welcome">
+    <button class="popup__close" id="close-welcome">✕</button>
+    <img src="../../../assets/images/backgrounds/popup_handshake.png" alt="Together we care" class="popup-welcome__image">
+    <div class="popup-welcome__body">
+      <h2 class="popup-welcome__title">Together We Care,<br>Save and Protect!</h2>
+      <p class="popup-welcome__text">
+        Your most generous gift not only cares for countless animals,
+        but it also offers hope and a vital lifeline to the world's most
+        endangered wildlife relying on us to survive.
+      </p>
+      <div class="popup-welcome__amounts">
+        <button class="amount-btn">$20</button>
+        <button class="amount-btn">$30</button>
+        <button class="amount-btn">$50</button>
+        <button class="amount-btn">$80</button>
+        <button class="amount-btn">$100</button>
+        <button class="amount-btn amount-btn--other">Other Amount</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- POPUP 2: Multi-step Donation Form -->
+  <div class="popup" id="popup-form">
+    <div class="popup-form__header">
+      <h2>Make Your Donation</h2>
+      <button class="popup__close" id="close-form">✕</button>
+    </div>
+    <div class="popup-form__body">
+
+      <!-- STEP 1 -->
+      <div class="form-step active" id="step-1">
+        <p class="form-step__section-title">Donation Information:</p>
+        <hr class="form-step__divider">
+        <span class="form-step__label">* Choose your donation amount:</span>
+        <div class="form-amounts">
+          <button class="form-amount-btn">$10</button>
+          <button class="form-amount-btn">$20</button>
+          <button class="form-amount-btn">$30</button>
+          <button class="form-amount-btn">$50</button>
+          <button class="form-amount-btn">$80</button>
+          <button class="form-amount-btn">$100</button>
+        </div>
+        <div class="other-amount-row">
+          <button class="btn-other-amount">Other Amount</button>
+          <input type="number" class="other-amount-input" placeholder="">
+        </div>
+        <div class="special-pet-row">
+          <button class="btn-special-pet">For Special Pet</button>
+          <select class="special-pet-select">
+            <option value="">Choose your favourite</option>
+          </select>
+        </div>
+        <label class="checkbox-row">
+          <input type="checkbox">
+          Make this a monthly recurring gift
+        </label>
+        <div class="form-step__footer">
+          <div class="step-dots">
+            <div class="step-dot active"></div>
+            <div class="step-dot"></div>
+            <div class="step-dot"></div>
+          </div>
+          <button class="btn-next">
+            Next
+            <svg viewBox="0 0 24 24" fill="none">
+              <line x1="2" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+              <polyline points="13,5 21,12 13,19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- STEP 2 -->
+      <div class="form-step" id="step-2">
+        <p class="form-step__section-title">Billing Information:</p>
+        <hr class="form-step__divider">
+        <span class="form-step__label">* Your Name</span>
+        <input type="text" class="form-input" placeholder="First and last name">
+        <span class="form-step__label">* Your Email Address</span>
+        <input type="email" class="form-input" placeholder="Enter your email">
+        <p class="form-hint">
+          You will receive emails from the Online Zoo, including updates and news
+          on the latest discoveries and translations. You can unsubscribe at any time.
+        </p>
+        <div class="form-step__footer">
+          <div class="step-dots">
+            <div class="step-dot active"></div>
+            <div class="step-dot active"></div>
+            <div class="step-dot"></div>
+          </div>
+          <div style="display:flex; align-items:center; gap:20px;">
+            <button class="btn-back">Back</button>
+            <button class="btn-next">
+              Next
+              <svg viewBox="0 0 24 24" fill="none">
+                <line x1="2" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                <polyline points="13,5 21,12 13,19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 3 -->
+      <div class="form-step" id="step-3">
+        <div id="saved-cards-row" style="display:none;">
+          <span class="form-step__label">Saved cards:</span>
+          <select class="form-select" id="saved-cards-select">
+            <option value="">Select a saved card</option>
+          </select>
+        </div>
+        <p class="form-step__section-title">Payment Information:</p>
+        <hr class="form-step__divider">
+        <div class="form-input-group">
+          <div>
+            <span class="form-step__label">* Credit Card Number</span>
+            <input type="text" class="form-input" placeholder="">
+          </div>
+          <div>
+            <span class="form-step__label">* CVV Number</span>
+            <input type="text" class="form-input" placeholder="">
+          </div>
+        </div>
+        <span class="form-step__label">* Expiration Date</span>
+        <div class="form-select-group">
+          <select class="form-select" id="month-select">
+            <option>Month</option>
+            <option>01</option><option>02</option><option>03</option>
+            <option>04</option><option>05</option><option>06</option>
+            <option>07</option><option>08</option><option>09</option>
+            <option>10</option><option>11</option><option>12</option>
+          </select>
+          <select class="form-select" id="year-select">
+            <option>Year</option>
+            <option>2025</option><option>2026</option><option>2027</option>
+            <option>2028</option><option>2029</option><option>2030</option>
+          </select>
+        </div>
+
+        <div id="save-card-row" style="display:none;">
+          <label class="checkbox-row">
+            <input type="checkbox" id="save-card-checkbox">
+            Save card info for future donations
+          </label>
+        </div>
+
+        <div class="form-step__footer">
+          <div class="step-dots">
+            <div class="step-dot active"></div>
+            <div class="step-dot active"></div>
+            <div class="step-dot active"></div>
+          </div>
+          <div style="display:flex; align-items:center; gap:20px;">
+            <button class="btn-back">Back</button>
+            <button class="btn-next">
+              Complete Donation
+              <svg viewBox="0 0 24 24" fill="none">
+                <line x1="2" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                <polyline points="13,5 21,12 13,19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- MAP MODAL -->
+<div class="map-overlay" id="map-overlay">
+  <div class="map-modal" id="map-modal">
+    <div class="map-modal__header">
+      <h3 id="map-modal__title">Habitat Range</h3>
+      <button class="map-modal__close" id="map-modal-close">✕</button>
+    </div>
+    <div id="map-container" style="width:100%; height:400px;"></div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container footer__container">
+
+    <div class="footer_top">
+        <div class="footer__logo">
+            <a href="../../landing/index.html"><img src="../../../assets/icons/ui/logo_zoo_white.png" alt="logo_zoo"></a>
+            <a href="../../landing/index.html"><img src="../../../assets/icons/social/logo_yemdigital.png" alt="logo_yemdigital"></a>
+            <a href="https://rs.school/"><img src="../../../assets/icons/social/logo_rsschool.svg" alt="logo_rsschool"></a>
+        </div>
+        <div class="footer__list">
+            <a href="../../landing/index.html">About</a>
+            <a href="../../map/index.html">Map</a>
+            <a href="../../zoos/panda/index.html">Zoos</a>
+            <a href="../../contact/index.html">Contact Us</a>
+        </div>
+        <div class="donate">
+          <button class="donate__btn">
+              Donate for volunteers
+              <svg class="btn-arrow" viewBox="0 0 24 24" fill="none"><line x1="2" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><polyline points="13,5 21,12 13,19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <div class="footer__socials--mobile">
+          <a href="https://www.youtube.com/@RollingScopesSchool"><img src="../../../assets/icons/social/youtube.png" alt="youtube"></a>
+          <a href="https://www.instagram.com/p/CyLSf57IRIe/"><img src="../../../assets/icons/social/instagram.png" alt="instagram"></a>
+          <a href="https://www.facebook.com/RollingScopesSchool"><img src="../../../assets/icons/social/facebook.png" alt="facebook"></a>
+        </div>
+    </div>
+
+    <hr class="footer_divider">
+
+    <div class="footer__bottom">
+        <div class="footer__copyright">
+            <ul>
+                <li>© 2021 Dinak</li>
+                <li>© Yem Digital</li>
+                <li>© Rsschool</li>
+            </ul>
+        </div>
+        <div class="footer__socials">
+            <a href="https://www.youtube.com/@RollingScopesSchool"><img src="../../../assets/icons/social/youtube.png" alt="youtube"></a>
+            <a href="https://www.instagram.com/p/CyLSf57IRIe/"><img src="../../../assets/icons/social/instagram.png" alt="instagram"></a>
+            <a href="https://www.facebook.com/RollingScopesSchool"><img src="../../../assets/icons/social/facebook.png" alt="facebook"></a>
+        </div>
+    </div>
+
+  </div>
+</footer>
+
+  <div id="toast-container"></div>
+  
+  <script src="../../../shared/scripts/navigation.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="../../../dist/bundle.js"></script>
+  
+</body>
+</html>

@@ -1,0 +1,307 @@
+.footer__socials--mobile {
+  display: none;
+}
+
+
+.footer {
+  background: #20113D;
+  color: #fff;
+  padding: 25px 0;
+}
+
+
+.footer_top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+.footer__logo {
+  display: flex;
+  gap: 40px;
+}
+
+.footer__logo img {
+  width: 100%;
+  max-width: 138px;
+  height: auto;
+  
+}
+
+.footer__list {
+  display: flex;
+  gap: 40px;
+}
+
+.footer__list a {
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  transition: 0.3s;
+  text-transform: uppercase;
+}
+
+.footer__list a:hover {
+  color: #f58021;
+}
+
+/* Footer button is here */
+.donate__btn {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  background: #20113D;
+  border: solid 1px #fff;
+  border-radius: 5px;
+  font-family: 'Montserrat', sans-serif;
+  padding: 1em 1.5em;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.btn-arrow {
+  width: 25px;
+  height: 25px;
+  flex-shrink: 0;
+  background: transparent;
+  color: #fff;
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.donate__btn:hover,
+.btn-arrow {
+  color: #ccc;
+  transform: scale(0.90);
+  transition: transform 0.1s;
+} 
+
+/* Button ends here */
+
+.footer__divider {
+  border: none;
+  border-top: 1px solid #fff;
+  margin: 40px 0;
+}
+
+/* From here bottom level starts */
+
+.footer__copyright ul {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.footer__copyright ul li {
+  font-family: 'Montserrat', sans-serif;
+  list-style: none;
+  font-size: 14px;
+  color: #fff;
+}
+
+.footer__socials {
+  display: flex;
+  gap: 20px;
+}
+
+.footer__socials img {
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.footer__socials img:hover {
+  opacity: 0.85;
+  transform: scale(0.90);
+}
+
+
+/* Responsive - 1200 screen */
+
+@media (max-width: 1200px) {
+
+  .footer__container {
+    padding: 0 30px;
+  }
+
+  .footer__logo {
+    gap: 20px;
+  }
+
+  .footer__logo img {
+    max-width: 100px;
+  }
+
+  .footer__list {
+    gap: 20px;
+  }
+
+  .footer__list a {
+    font-size: 0.85rem;
+  }
+
+  .donate__btn {
+    font-size: 0.85rem;
+    padding: 0.8em 1em;
+  }
+
+  .footer__copyright ul {
+    gap: 20px;
+  }
+
+}
+
+
+/* Responsive - 640 screen */
+
+@media (max-width: 640px) {
+
+  .footer__container {
+    padding: 0 20px;
+  }
+
+  .footer_top {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .footer__logo {
+    justify-content: space-between;
+    gap: 60px;
+    
+  }
+
+  .footer__logo img {
+    max-width: 80px;
+  }
+
+  .footer__list {
+    flex-direction: row;
+    gap: 60px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .footer__list a {
+    font-size: 0.8rem;
+  }
+
+  .donate__btn {
+    font-size: 0.85rem;
+    padding: 0.8em 1em;
+  }
+
+  .footer__bottom {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .footer__copyright ul {
+    flex-direction: row;
+    gap: 15px;
+    justify-content: center;
+  }
+
+  .footer__socials {
+    justify-content: center;
+    gap: 60px;
+  }
+
+}
+
+
+/* ---------------------------Responsive - 320 screen ---------------------------*/
+
+@media (max-width: 320px) {
+  .footer__logo img {
+    max-width: 60px;
+  }
+  .footer__list a {
+    font-size: 0.7rem;
+  }
+  .donate__btn {
+    font-size: 0.75rem;
+  }
+  .footer__copyright ul li {
+    font-size: 11px;
+  }
+  .footer_top {
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer__logo {
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.footer__logo img {
+  max-width: 80px;
+}
+
+.footer__list {
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.donate__btn {
+  width: 100%;
+  justify-content: center;
+}
+
+.footer__bottom {
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer__socials {
+  justify-content: center;
+}
+
+.footer__copyright ul {
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.footer__socials--mobile {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  }
+
+.footer__bottom .footer__socials {
+  display: none;
+}
+.footer__socials--mobile img {
+  width: 2rem;
+  height: 2rem;
+  object-fit: contain;
+  }
+}

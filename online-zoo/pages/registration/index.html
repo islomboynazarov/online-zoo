@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration | Online Zoo</title>
+  <link rel="stylesheet" href="../../shared/styles/normalize.css">
+  <link rel="stylesheet" href="../../shared/styles/global.css">
+  <link rel="stylesheet" href="../../shared/styles/header.css">
+  <link rel="stylesheet" href="../../shared/styles/footer.css">
+  <link rel="icon" href="../../favicon.ico">
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="container header__container">
+      <div class="header__logo">
+        <a href="../landing/index.html">
+          <img src="../../assets/icons/ui/logo_zoo.png" alt="logo_zoo">
+        </a>
+      </div>
+      <nav class="header__nav">
+        <ul class="nav__list">
+          <li><a href="../landing/index.html" class="nav__link">About</a></li>
+          <li><a href="../map/index.html" class="nav__link">Map</a></li>
+          <li><a href="../zoos/panda/index.html" class="nav__link">Zoos</a></li>
+          <li><a href="../contact/index.html" class="nav__link">Contact Us</a></li>
+        </ul>
+      </nav>
+      <div class="header__socials">
+        <a href="#"><img src="../../assets/icons/social/youtube.png" alt="YouTube"></a>
+        <a href="#"><img src="../../assets/icons/social/instagram.png" alt="Instagram"></a>
+        <a href="#"><img src="../../assets/icons/social/facebook.png" alt="Facebook"></a>
+      </div>
+      <button class="header__burger" id="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="auth">
+      <div class="auth__container">
+
+        <div class="auth__image">
+          <img src="../../assets/images/animals/landinPage_panda.png" alt="Panda">
+        </div>
+
+        <div class="auth__form-box">
+          <h1 class="auth__title">Register</h1>
+          <p class="auth__subtitle">Create your account to get started.</p>
+
+          <div class="auth__field">
+            <label class="auth__label">Login</label>
+            <input type="text" id="reg-login" class="auth__input" placeholder="Enter your login">
+            <span class="auth__error" id="reg-login-error"></span>
+          </div>
+
+          <div class="auth__field">
+            <label class="auth__label">Name</label>
+            <input type="text" id="reg-name" class="auth__input" placeholder="Enter your name">
+            <span class="auth__error" id="reg-name-error"></span>
+          </div>
+
+          <div class="auth__field">
+            <label class="auth__label">Email</label>
+            <input type="email" id="reg-email" class="auth__input" placeholder="Enter your email">
+            <span class="auth__error" id="reg-email-error"></span>
+          </div>
+
+          <div class="auth__field">
+            <label class="auth__label">Password</label>
+            <input type="password" id="reg-password" class="auth__input" placeholder="Enter your password">
+            <span class="auth__error" id="reg-password-error"></span>
+          </div>
+
+          <div class="auth__field">
+            <label class="auth__label">Confirm Password</label>
+            <input type="password" id="reg-confirm" class="auth__input" placeholder="Confirm your password">
+            <span class="auth__error" id="reg-confirm-error"></span>
+          </div>
+
+          <span class="auth__error auth__error--form" id="reg-form-error"></span>
+
+          <button class="auth__btn" id="reg-btn" disabled>Register</button>
+
+          <p class="auth__switch">
+            Already have an account?
+            <a href="../signin/index.html">Sign In</a>
+          </p>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__container">
+      <div class="footer_top">
+        <div class="footer__logo">
+          <a href="../landing/index.html">
+            <img src="../../assets/icons/ui/logo_zoo_white.png" alt="logo_zoo">
+          </a>
+        </div>
+        <div class="footer__list">
+          <a href="../landing/index.html">About</a>
+          <a href="../map/index.html">Map</a>
+          <a href="../zoos/panda/index.html">Zoos</a>
+          <a href="../contact/index.html">Contact Us</a>
+        </div>
+      </div>
+      <hr class="footer_divider">
+      <div class="footer__bottom">
+        <div class="footer__copyright">
+          <ul>
+            <li>© 2021 Dinak</li>
+            <li>© Yem Digital</li>
+            <li>© Rsschool</li>
+          </ul>
+        </div>
+        <div class="footer__socials">
+          <a href="#"><img src="../../assets/icons/social/youtube.png" alt="youtube"></a>
+          <a href="#"><img src="../../assets/icons/social/instagram.png" alt="instagram"></a>
+          <a href="#"><img src="../../assets/icons/social/facebook.png" alt="facebook"></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../shared/scripts/navigation.js"></script>
+  <script src="../../dist/bundle.js"></script>
+</body>
+</html>
